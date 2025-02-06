@@ -30,3 +30,4 @@ from bs4 import BeautifulSoup
 
 BASE = "https://shop.kingarthurbaking.com"
 CATEGORY_URL = f"{BASE}/mixes"
+OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "products.json"
