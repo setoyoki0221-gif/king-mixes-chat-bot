@@ -31,3 +31,4 @@ from bs4 import BeautifulSoup
 BASE = "https://shop.kingarthurbaking.com"
 CATEGORY_URL = f"{BASE}/mixes"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "products.json"
+META_PATH = OUT_PATH.with_name("meta.json")  # when/where the data was scraped
