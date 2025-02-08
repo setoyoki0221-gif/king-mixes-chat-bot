@@ -40,3 +40,5 @@ HEADERS = {
     ),
     "Accept-Language": "en-US,en;q=0.9",
 }
+
+REQUEST_DELAY = 1.0  # seconds between requests (be polite)
