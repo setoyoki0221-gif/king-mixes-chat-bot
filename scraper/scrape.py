@@ -42,3 +42,4 @@ HEADERS = {
 }
 
 REQUEST_DELAY = 1.0  # seconds between requests (be polite)
+MAX_RETRIES = 3
