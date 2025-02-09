@@ -43,3 +43,7 @@ HEADERS = {
 
 REQUEST_DELAY = 1.0  # seconds between requests (be polite)
 MAX_RETRIES = 3
+
+
+def get(url: str) -> requests.Response:
+    """GET with retries and a polite delay."""
