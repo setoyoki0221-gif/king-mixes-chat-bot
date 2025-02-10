@@ -55,3 +55,4 @@ def get(url: str) -> requests.Response:
             return resp
         except Exception as exc:  # noqa: BLE001
             last_err = exc
+            print(f"  ! attempt {attempt}/{MAX_RETRIES} failed for {url}: {exc}")
