@@ -1,0 +1,16 @@
+# Version policy: the lower bound is the major version this project was developed
+# and tested against (Python 3.13); the upper bound blocks an untested next major.
+# Optional hosted providers live in requirements-optional.txt, test tools in
+# requirements-dev.txt.
+
+# --- Scraping ---
+requests>=2.32,<3
+beautifulsoup4>=4.12,<5
+
+# --- Agent framework ---
+langgraph>=1.0,<2
+langchain-core>=1.0,<2
+
+# --- LLM / embedding providers ---
+# CPU-only PyTorch keeps the Hugging Face Space build small and fast.
+--extra-index-url https://download.pytorch.org/whl/cpu
