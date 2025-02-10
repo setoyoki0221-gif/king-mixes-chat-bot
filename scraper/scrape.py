@@ -47,3 +47,4 @@ MAX_RETRIES = 3
 
 def get(url: str) -> requests.Response:
     """GET with retries and a polite delay."""
+    last_err: Exception | None = None
