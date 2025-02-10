@@ -48,3 +48,10 @@ MAX_RETRIES = 3
 def get(url: str) -> requests.Response:
     """GET with retries and a polite delay."""
     last_err: Exception | None = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=30)
+            resp.raise_for_status()
+            return resp
+        except Exception as exc:  # noqa: BLE001
+            last_err = exc
