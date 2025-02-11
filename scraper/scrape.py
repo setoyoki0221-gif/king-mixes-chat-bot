@@ -62,3 +62,8 @@ def get(url: str) -> requests.Response:
 
 def discover_product_urls() -> list[str]:
     """Walk every listing page and return de-duplicated product URLs in order."""
+    urls: list[str] = []
+    seen: set[str] = set()
+    page = 1
+    while True:
+        listing_url = f"{CATEGORY_URL}?page={page}"
