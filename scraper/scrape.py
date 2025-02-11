@@ -57,3 +57,8 @@ def get(url: str) -> requests.Response:
             last_err = exc
             print(f"  ! attempt {attempt}/{MAX_RETRIES} failed for {url}: {exc}")
             time.sleep(2 * attempt)
+    raise RuntimeError(f"Failed to fetch {url}: {last_err}")
+
+
+def discover_product_urls() -> list[str]:
+    """Walk every listing page and return de-duplicated product URLs in order."""
