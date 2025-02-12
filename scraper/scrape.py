@@ -79,3 +79,9 @@ def discover_product_urls() -> list[str]:
             if not link or not link.get("href"):
                 continue
             href = link["href"].split("?")[0]
+            if href not in seen:
+                seen.add(href)
+                urls.append(href)
+                found_this_page += 1
+
+        print(f"  found {found_this_page} new products (running total {len(urls)})")
