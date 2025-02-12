@@ -70,3 +70,12 @@ def discover_product_urls() -> list[str]:
         print(f"[listing] page {page}: {listing_url}")
         soup = BeautifulSoup(get(listing_url).text, "html.parser")
         cards = soup.select("article.card")
+        if not cards:
+            break
+
+        found_this_page = 0
+        for card in cards:
+            link = card.select_one(".card-title a") or card.select_one("a[href*='/items/']")
+            if not link or not link.get("href"):
+                continue
+            href = link["href"].split("?")[0]
