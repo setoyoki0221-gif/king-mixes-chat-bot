@@ -67,3 +67,6 @@ def discover_product_urls() -> list[str]:
     page = 1
     while True:
         listing_url = f"{CATEGORY_URL}?page={page}"
+        print(f"[listing] page {page}: {listing_url}")
+        soup = BeautifulSoup(get(listing_url).text, "html.parser")
+        cards = soup.select("article.card")
