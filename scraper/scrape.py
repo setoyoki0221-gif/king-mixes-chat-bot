@@ -85,3 +85,4 @@ def discover_product_urls() -> list[str]:
                 found_this_page += 1
 
         print(f"  found {found_this_page} new products (running total {len(urls)})")
+        time.sleep(REQUEST_DELAY)
