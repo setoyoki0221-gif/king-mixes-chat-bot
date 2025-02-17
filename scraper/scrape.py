@@ -86,3 +86,10 @@ def discover_product_urls() -> list[str]:
 
         print(f"  found {found_this_page} new products (running total {len(urls)})")
         time.sleep(REQUEST_DELAY)
+
+        # Stop when the listing has no "next page" link beyond the current one.
+        next_pages = {
+            int(m.group(1))
+            for a in soup.select("li.pagination-item a")
+            if (m := re.search(r"page=(\d+)", a.get("href", "")))
+        }
