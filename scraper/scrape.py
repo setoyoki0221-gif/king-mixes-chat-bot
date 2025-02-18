@@ -93,3 +93,5 @@ def discover_product_urls() -> list[str]:
             for a in soup.select("li.pagination-item a")
             if (m := re.search(r"page=(\d+)", a.get("href", "")))
         }
+        if not next_pages or max(next_pages) <= page:
+            break
