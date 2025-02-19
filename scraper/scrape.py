@@ -98,3 +98,8 @@ def discover_product_urls() -> list[str]:
         page += 1
 
     return urls
+
+
+def clean(text: str | None) -> str:
+    if not text:
+        return ""
