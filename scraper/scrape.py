@@ -95,3 +95,6 @@ def discover_product_urls() -> list[str]:
         }
         if not next_pages or max(next_pages) <= page:
             break
+        page += 1
+
+    return urls
