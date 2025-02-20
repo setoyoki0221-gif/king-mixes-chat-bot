@@ -121,3 +121,7 @@ def parse_price(raw: str | None) -> dict[str, Any]:
     Returns ``{"price": "$8.95", "price_value": 8.95, "promo": "Buy Any 5+/Save $4"}``.
     ``price_value`` is ``None`` and ``price`` is ``""`` when no amount is found.
     """
+    text = clean(raw)
+    m = _PRICE_RE.search(text)
+    if not m:
+        return {"price": "", "price_value": None, "promo": text}
