@@ -103,3 +103,21 @@ def discover_product_urls() -> list[str]:
 def clean(text: str | None) -> str:
     if not text:
         return ""
+    return re.sub(r"\s+", " ", text).strip()
+
+
+_PRICE_RE = re.compile(r"\$\s*(\d[\d,]*(?:\.\d{1,2})?)")
+
+
+def parse_price(raw: str | None) -> dict[str, Any]:
+    """Split a raw price string into a clean price, a number, and any promo text.
+
+    The storefront sometimes appends offer copy to the price element, e.g.
+    ``"$8.95 Buy Any 5+/Save $4"``. Left as-is, that text pollutes the embedded
+    document, the LLM context and the product card, and blocks numeric
+    comparison ("cheapest"). The first dollar amount is the price; whatever
+    follows it is the promo.
+
+    Returns ``{"price": "$8.95", "price_value": 8.95, "promo": "Buy Any 5+/Save $4"}``.
+    ``price_value`` is ``None`` and ``price`` is ``""`` when no amount is found.
+    """
