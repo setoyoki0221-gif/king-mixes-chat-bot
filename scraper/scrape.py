@@ -125,3 +125,5 @@ def parse_price(raw: str | None) -> dict[str, Any]:
     m = _PRICE_RE.search(text)
     if not m:
         return {"price": "", "price_value": None, "promo": text}
+    value = float(m.group(1).replace(",", ""))
+    promo = clean((text[: m.start()] + " " + text[m.end():]))
