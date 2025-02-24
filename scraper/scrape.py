@@ -127,3 +127,15 @@ def parse_price(raw: str | None) -> dict[str, Any]:
         return {"price": "", "price_value": None, "promo": text}
     value = float(m.group(1).replace(",", ""))
     promo = clean((text[: m.start()] + " " + text[m.end():]))
+    return {"price": f"${value:,.2f}", "price_value": value, "promo": promo}
+
+
+def parse_badges(soup: BeautifulSoup) -> list[str]:
+    """Dietary / attribute badges live as _badge_<name> spec rows.
+
+    Every product lists *all* possible badge metafields; only those whose value
+    is "Yes" actually apply, so we filter on the adjacent <dd> value.
+    """
+    badges: set[str] = set()
+    for dt in soup.select("dt"):
+        key = dt.get_text(strip=True).lower()
