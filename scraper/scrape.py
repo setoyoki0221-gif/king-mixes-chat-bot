@@ -139,3 +139,15 @@ def parse_badges(soup: BeautifulSoup) -> list[str]:
     badges: set[str] = set()
     for dt in soup.select("dt"):
         key = dt.get_text(strip=True).lower()
+        m = re.match(r"_badge_(\w+)", key)
+        if not m:
+            continue
+        dd = dt.find_next_sibling("dd")
+        value = clean(dd.get_text()).lower() if dd else ""
+        if value in ("yes", "true", "1"):
+            badges.add(m.group(1))
+    return sorted(badges)
+
+
+def parse_product(url: str) -> dict[str, Any]:
+    soup = BeautifulSoup(get(url).text, "html.parser")
