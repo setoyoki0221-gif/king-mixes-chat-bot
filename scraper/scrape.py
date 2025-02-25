@@ -168,3 +168,5 @@ def parse_product(url: str) -> dict[str, Any]:
 
     rating_el = soup.select_one(".kab-product-rating, [data-rating]")
     rating = None
+    review_count = None
+    product_id = None
