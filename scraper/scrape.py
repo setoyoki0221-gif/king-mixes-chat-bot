@@ -151,3 +151,13 @@ def parse_badges(soup: BeautifulSoup) -> list[str]:
 
 def parse_product(url: str) -> dict[str, Any]:
     soup = BeautifulSoup(get(url).text, "html.parser")
+
+    title_el = soup.select_one("h1.productView-title") or soup.select_one("h1")
+    title = clean(title_el.get_text()) if title_el else ""
+
+    price_el = (
+        soup.select_one("[data-product-price-without-tax]")
+        or soup.select_one(".price--withoutTax")
+        or soup.select_one(".productView-price .price")
+        or soup.select_one(".productView-price")
+    )
