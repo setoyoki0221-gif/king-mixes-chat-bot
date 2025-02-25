@@ -161,3 +161,10 @@ def parse_product(url: str) -> dict[str, Any]:
         or soup.select_one(".productView-price .price")
         or soup.select_one(".productView-price")
     )
+    price_info = parse_price(price_el.get_text() if price_el else "")
+
+    desc_el = soup.select_one("#tab-description") or soup.select_one(".productView-description")
+    description = clean(desc_el.get_text(" ")) if desc_el else ""
+
+    rating_el = soup.select_one(".kab-product-rating, [data-rating]")
+    rating = None
