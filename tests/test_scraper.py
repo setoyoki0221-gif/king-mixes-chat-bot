@@ -1,0 +1,25 @@
+"""Scraper parsing and the guard that stops a bad scrape overwriting good data."""
+
+from __future__ import annotations
+
+import pytest
+from bs4 import BeautifulSoup
+
+import scrape
+
+PRODUCT_HTML = """
+<html><head><meta property="og:image" content="https://img.example/x.jpg"></head><body>
+  <h1 class="productView-title">Test Scone Mix</h1>
+  <span data-product-price-without-tax>$8.95 Buy Any 5+/Save $4</span>
+  <div id="tab-description"><p>A   great
+  mix.</p></div>
+  <div class="kab-product-rating" data-rating="4.8" data-reviews="12" data-product-id="77"></div>
+  <dl>
+    <dt>SKU:</dt><dd>S-1</dd>
+    <dt>UPC:</dt><dd>U-1</dd>
+    <dt>_badge_glutenfree</dt><dd>Yes</dd>
+    <dt>_badge_vegan</dt><dd>No</dd>
+    <dt>_badge_nongmo</dt><dd>yes</dd>
+  </dl>
+</body></html>
+"""
