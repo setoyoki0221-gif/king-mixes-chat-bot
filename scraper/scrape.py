@@ -170,3 +170,12 @@ def parse_product(url: str) -> dict[str, Any]:
     rating = None
     review_count = None
     product_id = None
+    if rating_el:
+        try:
+            rating = float(rating_el.get("data-rating")) if rating_el.get("data-rating") else None
+            review_count = (
+                int(rating_el.get("data-reviews")) if rating_el.get("data-reviews") else None
+            )
+            product_id = rating_el.get("data-product-id")
+        except (TypeError, ValueError):
+            pass
