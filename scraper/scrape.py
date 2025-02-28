@@ -179,3 +179,6 @@ def parse_product(url: str) -> dict[str, Any]:
             product_id = rating_el.get("data-product-id")
         except (TypeError, ValueError):
             pass
+
+    # SKU / UPC from the spec definition list
+    sku = upc = ""
