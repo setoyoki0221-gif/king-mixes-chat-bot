@@ -23,3 +23,23 @@ PRODUCT_HTML = """
   </dl>
 </body></html>
 """
+
+
+# --------------------------------------------------------------------------- #
+# parse_price
+# --------------------------------------------------------------------------- #
+@pytest.mark.parametrize(
+    "raw, price, value, promo",
+    [
+        ("$8.95 Buy Any 5+/Save $4", "$8.95", 8.95, "Buy Any 5+/Save $4"),
+        ("$4.99", "$4.99", 4.99, ""),
+        ("  $1,234.50 ", "$1,234.50", 1234.5, ""),
+        ("$5", "$5.00", 5.0, ""),
+        ("Sale! $7.95", "$7.95", 7.95, "Sale!"),
+        ("", "", None, ""),
+        (None, "", None, ""),
+        ("Call for price", "", None, "Call for price"),
+    ],
+)
+def test_parse_price(raw, price, value, promo):
+    assert scrape.parse_price(raw) == {"price": price, "price_value": value, "promo": promo}
