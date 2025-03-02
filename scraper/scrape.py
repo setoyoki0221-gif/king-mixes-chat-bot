@@ -182,3 +182,5 @@ def parse_product(url: str) -> dict[str, Any]:
 
     # SKU / UPC from the spec definition list
     sku = upc = ""
+    for dt in soup.select("dt"):
+        label = dt.get_text(strip=True).lower()
