@@ -184,3 +184,5 @@ def parse_product(url: str) -> dict[str, Any]:
     sku = upc = ""
     for dt in soup.select("dt"):
         label = dt.get_text(strip=True).lower()
+        dd = dt.find_next_sibling("dd")
+        val = clean(dd.get_text()) if dd else ""
