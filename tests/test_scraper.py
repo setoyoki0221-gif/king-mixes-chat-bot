@@ -47,3 +47,4 @@ def test_parse_price(raw, price, value, promo):
 
 def test_parse_price_is_idempotent_on_clean_prices():
     once = scrape.parse_price("$8.95 Buy Any 5+/Save $4")
+    again = scrape.parse_price(once["price"])
