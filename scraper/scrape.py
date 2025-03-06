@@ -186,3 +186,9 @@ def parse_product(url: str) -> dict[str, Any]:
         label = dt.get_text(strip=True).lower()
         dd = dt.find_next_sibling("dd")
         val = clean(dd.get_text()) if dd else ""
+        if label.startswith("sku"):
+            sku = val
+        elif label.startswith("upc"):
+            upc = val
+
+    og_img = soup.find("meta", {"property": "og:image"})
