@@ -192,3 +192,4 @@ def parse_product(url: str) -> dict[str, Any]:
             upc = val
 
     og_img = soup.find("meta", {"property": "og:image"})
+    image = og_img.get("content") if og_img else ""
