@@ -193,3 +193,18 @@ def parse_product(url: str) -> dict[str, Any]:
 
     og_img = soup.find("meta", {"property": "og:image"})
     image = og_img.get("content") if og_img else ""
+
+    return {
+        "title": title,
+        "url": url,
+        **price_info,  # price (clean "$x.xx"), price_value (float), promo (text)
+        "description": description,
+        "rating": rating,
+        "review_count": review_count,
+        "badges": parse_badges(soup),
+        "sku": sku,
+        "upc": upc,
+        "product_id": product_id,
+        "image": image,
+        "category": "Mixes",
+    }
