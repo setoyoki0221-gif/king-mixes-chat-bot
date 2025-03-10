@@ -49,3 +49,10 @@ def test_parse_price_is_idempotent_on_clean_prices():
     once = scrape.parse_price("$8.95 Buy Any 5+/Save $4")
     again = scrape.parse_price(once["price"])
     assert (again["price"], again["price_value"]) == (once["price"], once["price_value"])
+
+
+# --------------------------------------------------------------------------- #
+# parse_badges / parse_product
+# --------------------------------------------------------------------------- #
+def test_parse_badges_only_keeps_yes_values():
+    soup = BeautifulSoup(PRODUCT_HTML, "html.parser")
