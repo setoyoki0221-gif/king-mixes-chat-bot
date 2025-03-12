@@ -208,3 +208,6 @@ def parse_product(url: str) -> dict[str, Any]:
         "image": image,
         "category": "Mixes",
     }
+
+
+MIN_PRODUCTS = 50          # a "Mixes" listing this small means the page layout changed
