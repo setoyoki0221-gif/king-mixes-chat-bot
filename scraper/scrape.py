@@ -212,3 +212,4 @@ def parse_product(url: str) -> dict[str, Any]:
 
 MIN_PRODUCTS = 50          # a "Mixes" listing this small means the page layout changed
 MIN_SUCCESS_RATIO = 0.9    # share of discovered URLs that must parse
+MAX_INCOMPLETE_RATIO = 0.05  # share of products allowed to lack a title or price
