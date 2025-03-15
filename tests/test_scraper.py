@@ -56,3 +56,4 @@ def test_parse_price_is_idempotent_on_clean_prices():
 # --------------------------------------------------------------------------- #
 def test_parse_badges_only_keeps_yes_values():
     soup = BeautifulSoup(PRODUCT_HTML, "html.parser")
+    assert scrape.parse_badges(soup) == ["glutenfree", "nongmo"]
