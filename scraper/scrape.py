@@ -222,3 +222,8 @@ def validate(products: list[dict[str, Any]], discovered: int) -> list[str]:
     site change or outage could silently overwrite good data with a partial set.
     """
     problems: list[str] = []
+    if discovered < MIN_PRODUCTS:
+        problems.append(
+            f"only {discovered} product URLs discovered (expected >= {MIN_PRODUCTS}); "
+            "the listing page layout may have changed"
+        )
