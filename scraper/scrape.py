@@ -221,3 +221,4 @@ def validate(products: list[dict[str, Any]], discovered: int) -> list[str]:
     The scraper used to skip failing pages with only a printed warning, so a
     site change or outage could silently overwrite good data with a partial set.
     """
+    problems: list[str] = []
