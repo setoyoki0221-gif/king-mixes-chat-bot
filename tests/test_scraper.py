@@ -62,3 +62,5 @@ def test_parse_badges_only_keeps_yes_values():
 def test_parse_product_end_to_end(monkeypatch):
     class FakeResponse:
         text = PRODUCT_HTML
+
+    monkeypatch.setattr(scrape, "get", lambda url: FakeResponse())
