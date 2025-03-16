@@ -213,3 +213,11 @@ def parse_product(url: str) -> dict[str, Any]:
 MIN_PRODUCTS = 50          # a "Mixes" listing this small means the page layout changed
 MIN_SUCCESS_RATIO = 0.9    # share of discovered URLs that must parse
 MAX_INCOMPLETE_RATIO = 0.05  # share of products allowed to lack a title or price
+
+
+def validate(products: list[dict[str, Any]], discovered: int) -> list[str]:
+    """Return a list of problems; empty means the scrape is safe to keep.
+
+    The scraper used to skip failing pages with only a printed warning, so a
+    site change or outage could silently overwrite good data with a partial set.
+    """
