@@ -227,3 +227,8 @@ def validate(products: list[dict[str, Any]], discovered: int) -> list[str]:
             f"only {discovered} product URLs discovered (expected >= {MIN_PRODUCTS}); "
             "the listing page layout may have changed"
         )
+    if discovered and len(products) / discovered < MIN_SUCCESS_RATIO:
+        problems.append(
+            f"only {len(products)}/{discovered} product pages parsed "
+            f"(need >= {MIN_SUCCESS_RATIO:.0%})"
+        )
