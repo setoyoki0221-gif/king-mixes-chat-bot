@@ -64,3 +64,4 @@ def test_parse_product_end_to_end(monkeypatch):
         text = PRODUCT_HTML
 
     monkeypatch.setattr(scrape, "get", lambda url: FakeResponse())
+    p = scrape.parse_product("https://shop.example/items/test")
