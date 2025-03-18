@@ -65,3 +65,5 @@ def test_parse_product_end_to_end(monkeypatch):
 
     monkeypatch.setattr(scrape, "get", lambda url: FakeResponse())
     p = scrape.parse_product("https://shop.example/items/test")
+
+    assert p["title"] == "Test Scone Mix"
