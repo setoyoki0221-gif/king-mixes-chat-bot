@@ -232,3 +232,9 @@ def validate(products: list[dict[str, Any]], discovered: int) -> list[str]:
             f"only {len(products)}/{discovered} product pages parsed "
             f"(need >= {MIN_SUCCESS_RATIO:.0%})"
         )
+    incomplete = [p for p in products if not p["title"] or p["price_value"] is None]
+    if products and len(incomplete) / len(products) > MAX_INCOMPLETE_RATIO:
+        problems.append(
+            f"{len(incomplete)}/{len(products)} products are missing a title or price "
+            "(selectors may be stale)"
+        )
