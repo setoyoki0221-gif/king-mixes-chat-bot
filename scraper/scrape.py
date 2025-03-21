@@ -238,3 +238,23 @@ def validate(products: list[dict[str, Any]], discovered: int) -> list[str]:
             f"{len(incomplete)}/{len(products)} products are missing a title or price "
             "(selectors may be stale)"
         )
+    return problems
+
+
+def main() -> None:
+    print(f"Scraping King Arthur Baking 'Mixes' from {CATEGORY_URL}\n")
+    urls = discover_product_urls()
+    print(f"\nDiscovered {len(urls)} product URLs. Fetching details...\n")
+
+    products: list[dict[str, Any]] = []
+    failed: list[str] = []
+    for i, url in enumerate(urls, 1):
+        print(f"[{i}/{len(urls)}] {url}")
+        try:
+            product = parse_product(url)
+            products.append(product)
+            promo = f" [{product['promo']}]" if product["promo"] else ""
+            print(f"    -> {product['title']!r}  {product['price']}{promo}  "
+                  f"({product['review_count'] or 0} reviews, badges={product['badges']})")
+        except Exception as exc:  # noqa: BLE001
+            failed.append(url)
