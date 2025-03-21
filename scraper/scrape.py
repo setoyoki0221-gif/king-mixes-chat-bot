@@ -258,3 +258,7 @@ def main() -> None:
                   f"({product['review_count'] or 0} reviews, badges={product['badges']})")
         except Exception as exc:  # noqa: BLE001
             failed.append(url)
+            print(f"    ! skipped (error: {exc})")
+        time.sleep(REQUEST_DELAY)
+
+    problems = validate(products, len(urls))
