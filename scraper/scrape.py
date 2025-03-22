@@ -262,3 +262,8 @@ def main() -> None:
         time.sleep(REQUEST_DELAY)
 
     problems = validate(products, len(urls))
+    if problems:
+        # Keep the previous good data untouched.
+        raise SystemExit(
+            "Scrape rejected, existing data left unchanged:\n  - " + "\n  - ".join(problems)
+        )
