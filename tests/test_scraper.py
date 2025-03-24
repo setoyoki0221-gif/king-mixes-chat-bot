@@ -68,3 +68,4 @@ def test_parse_product_end_to_end(monkeypatch):
 
     assert p["title"] == "Test Scone Mix"
     assert (p["price"], p["price_value"], p["promo"]) == ("$8.95", 8.95, "Buy Any 5+/Save $4")
+    assert p["description"] == "A great mix."  # whitespace collapsed
