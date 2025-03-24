@@ -267,3 +267,5 @@ def main() -> None:
         raise SystemExit(
             "Scrape rejected, existing data left unchanged:\n  - " + "\n  - ".join(problems)
         )
+
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
