@@ -269,3 +269,4 @@ def main() -> None:
         )
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUT_PATH.write_text(json.dumps(products, indent=2, ensure_ascii=False), encoding="utf-8")
