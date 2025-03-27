@@ -270,3 +270,15 @@ def main() -> None:
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(products, indent=2, ensure_ascii=False), encoding="utf-8")
+    META_PATH.write_text(
+        json.dumps(
+            {
+                "scraped_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "source": CATEGORY_URL,
+                "count": len(products),
+                "failed_urls": failed,
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
