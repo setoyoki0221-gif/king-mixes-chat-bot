@@ -69,3 +69,7 @@ def test_parse_product_end_to_end(monkeypatch):
     assert p["title"] == "Test Scone Mix"
     assert (p["price"], p["price_value"], p["promo"]) == ("$8.95", 8.95, "Buy Any 5+/Save $4")
     assert p["description"] == "A great mix."  # whitespace collapsed
+    assert (p["rating"], p["review_count"], p["product_id"]) == (4.8, 12, "77")
+    assert (p["sku"], p["upc"]) == ("S-1", "U-1")
+    assert p["badges"] == ["glutenfree", "nongmo"]
+    assert p["image"] == "https://img.example/x.jpg"
