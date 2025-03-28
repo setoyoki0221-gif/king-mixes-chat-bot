@@ -73,3 +73,10 @@ def test_parse_product_end_to_end(monkeypatch):
     assert (p["sku"], p["upc"]) == ("S-1", "U-1")
     assert p["badges"] == ["glutenfree", "nongmo"]
     assert p["image"] == "https://img.example/x.jpg"
+
+
+# --------------------------------------------------------------------------- #
+# validate
+# --------------------------------------------------------------------------- #
+def good_products(n):
+    return [{"title": f"P{i}", "price_value": 5.0} for i in range(n)]
