@@ -282,3 +282,5 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
+    print(f"\nDone. Wrote {len(products)} products to {OUT_PATH}"
+          + (f" ({len(failed)} pages failed)" if failed else ""))
