@@ -11,3 +11,9 @@ __pycache__/
 .venv/
 venv/
 env/
+
+# Data / build artifacts
+data/*.log
+
+# Local tooling settings (personal, not for the repo / HF Space)
+.claude/settings.local.json
