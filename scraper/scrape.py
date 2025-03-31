@@ -284,3 +284,7 @@ def main() -> None:
     )
     print(f"\nDone. Wrote {len(products)} products to {OUT_PATH}"
           + (f" ({len(failed)} pages failed)" if failed else ""))
+
+
+if __name__ == "__main__":
+    sys.exit(main())
