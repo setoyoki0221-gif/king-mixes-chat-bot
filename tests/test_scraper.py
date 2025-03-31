@@ -80,3 +80,11 @@ def test_parse_product_end_to_end(monkeypatch):
 # --------------------------------------------------------------------------- #
 def good_products(n):
     return [{"title": f"P{i}", "price_value": 5.0} for i in range(n)]
+
+
+def test_validate_accepts_a_complete_scrape():
+    assert scrape.validate(good_products(118), discovered=118) == []
+
+
+def test_validate_rejects_a_suspiciously_small_listing():
+    problems = scrape.validate(good_products(10), discovered=10)
