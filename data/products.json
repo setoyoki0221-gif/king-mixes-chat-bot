@@ -454,5 +454,101 @@
     "product_id": "100317",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/587/images/7378/100317__08313_3094__78912.1735928976.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "White Icing Mix",
+    "url": "https://shop.kingarthurbaking.com/items/white-icing-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "",
+    "description": "The perfect royal icing, the fluffiest white frosting, or smooth glaze. Ideal for sugar cookie decorating, this mix can be made as a thin glaze, beaten longer to make a stiff white icing (perfect for raised decorating and assembling the walls of a gingerbread house), or made into a light and fluffy cupcake or cake frosting. Great to have around; a time-saver and multi-tasker, too. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The best part? We do the measuring and mixing for you. The result? Consistent deliciousness that everyone can enjoy, made with simple ingredients we bake with every day in our kitchens — no artificial colors or flavors, no preservatives, and all non-GMO.",
+    "rating": 4.6,
+    "review_count": 461,
+    "badges": [
+      "kosherpareve"
+    ],
+    "sku": "100168",
+    "upc": "071012107209",
+    "product_id": "100168",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/532/images/7091/100168__21623_3095__23181.1724079442.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Gluten-Free Cornbread and Muffin Mix",
+    "url": "https://shop.kingarthurbaking.com/items/gluten-free-cornbread-and-muffin-mix",
+    "price": "$7.95",
+    "price_value": 7.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Finally, Gluten-Free Cornbread! This golden, tender cornbread is easy to prepare with our Gluten-Free Cornbread Mix (we've measured and mixed the same great ingredients you love for you!), loaded with whole grains (that means good and good for you), and is difficult to resist (trust us, we've tried). The mix, made with whole sorghum flour, makes a slightly sweet cornbread with a moist texture. Perfect alongside soup and stews or with a salad. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The result? Mixes that make the finest gluten-free baked goods around. Simple ingredients, reliable results, and deliciousness that everyone can enjoy! Click here to learn more about allergens and cross-contact prevention",
+    "rating": 4.8,
+    "review_count": 568,
+    "badges": [
+      "glutenfree",
+      "kosherpareve",
+      "nongmo",
+      "wholegrain"
+    ],
+    "sku": "200719",
+    "upc": "071012075249",
+    "product_id": "200719",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/620/images/8729/200719G202G_211428_GFCornbreadMuffin_0221-3qtr__15519_3078__39188__46119.1740154756.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Gluten-Free Pancake Mix",
+    "url": "https://shop.kingarthurbaking.com/items/gluten-free-pancake-mix",
+    "price": "$6.95",
+    "price_value": 6.95,
+    "promo": "",
+    "description": "Our very own — King Arthur Gluten-Free Pancake Mix! Finally, a gluten-free pancake mix that's simple to prepare and tastes delicious. Easy gluten-free pancakes are a click away. Keep your pantry stocked with our gluten-free mix — a weekend breakfast essential — and enjoy tender, fluffy pancakes (or waffles) at a moment's notice. We love them plain or dressed up with fresh fruit or chocolate chips. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The result? Mixes that make the finest gluten-free baked goods around. Simple ingredients, reliable results, and deliciousness that everyone can enjoy! Click here to learn more about allergens and cross-contact prevention",
+    "rating": 4.9,
+    "review_count": 548,
+    "badges": [
+      "glutenfree",
+      "kosherpareve",
+      "nongmo",
+      "wholegrain"
+    ],
+    "sku": "211408",
+    "upc": "071012075034",
+    "product_id": "211408",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/801/images/8732/gluten-free-pancake-mix__26271__57103.1740154891.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Alaskan Sourdough Yeast Bread Mix",
+    "url": "https://shop.kingarthurbaking.com/items/alaskan-sourdough-yeast-bread-mix",
+    "price": "$7.95",
+    "price_value": 7.95,
+    "promo": "",
+    "description": "You'll be serving fresh bread from the oven in no time. Turn out a warm loaf of traditional sourdough bread with a chewy texture, a mild sourdough flavor, and a crunchy crust. Shape into a rustic boule, bake in a traditional loaf pan, or divide and make into dinner rolls. Can be made in a bread machine, using the basic dough cycle. Add the ingredients in the order that your bread machine instructions advise. Homemade bread is one of life's greatest pleasures, and our mixes help you bake it easily at home. Made with only the simple, good, non-GMO ingredients you want and nothing you don't: no artificial sweeteners or flavors, no artificial colors, and no high-fructose corn syrup. Video: How to knead bread dough Video: How to tell if bread dough is fully kneaded",
+    "rating": 4.3,
+    "review_count": 646,
+    "badges": [
+      "kosherpareve"
+    ],
+    "sku": "100287",
+    "upc": "071012105069",
+    "product_id": "100287",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/577/images/7321/100287__79359_3156__50405.1724079441.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Buttermilk Pancake Mix",
+    "url": "https://shop.kingarthurbaking.com/items/buttermilk-pancake-mix",
+    "price": "$6.95",
+    "price_value": 6.95,
+    "promo": "",
+    "description": "Buttermilk pancakes - the hero of the breakfast table. There's nothing quite like a stack of tender, fluffy, buttermilk pancakes, and our mix makes it easy to make this breakfast staple at home. Made with real buttermilk, these pancakes rival the stack from your favorite diner. Simply add water, and you're well on your way to syrup-worthy pancakes. A convenient, resealable and recyclable pouch makes it easy to portion just the right amount or take it on the go. Deliciously fluffy with golden, crisp edges and an irresistable buttermilk flavor, it's arguably the best buttermilk pancake mix. Check out pancake recipes using this mix, here . Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The best part? We do the measuring and mixing for you. The result? Consistent deliciousness that everyone can enjoy made with simple ingredients that we bake with every day in our kitchens — no artificial colors or flavors, no preservatives, and all non-GMO.",
+    "rating": 4.4,
+    "review_count": 591,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "211333",
+    "upc": "071012060092",
+    "product_id": "211333",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/798/images/2355/buttermilk-pancake-mix-16-oz-1__23172.1724079445.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
