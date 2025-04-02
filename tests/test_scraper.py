@@ -88,3 +88,8 @@ def test_validate_accepts_a_complete_scrape():
 
 def test_validate_rejects_a_suspiciously_small_listing():
     problems = scrape.validate(good_products(10), discovered=10)
+    assert any("product URLs discovered" in p for p in problems)
+
+
+def test_validate_rejects_many_failed_pages():
+    problems = scrape.validate(good_products(70), discovered=118)
