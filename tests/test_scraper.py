@@ -93,3 +93,8 @@ def test_validate_rejects_a_suspiciously_small_listing():
 
 def test_validate_rejects_many_failed_pages():
     problems = scrape.validate(good_products(70), discovered=118)
+    assert any("product pages parsed" in p for p in problems)
+
+
+def test_validate_allows_a_few_failed_pages():
+    assert scrape.validate(good_products(112), discovered=118) == []  # ~95%
