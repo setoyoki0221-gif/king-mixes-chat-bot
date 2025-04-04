@@ -98,3 +98,9 @@ def test_validate_rejects_many_failed_pages():
 
 def test_validate_allows_a_few_failed_pages():
     assert scrape.validate(good_products(112), discovered=118) == []  # ~95%
+
+
+def test_validate_rejects_missing_titles_or_prices():
+    products = good_products(100)
+    for p in products[:20]:
+        p["price_value"] = None
