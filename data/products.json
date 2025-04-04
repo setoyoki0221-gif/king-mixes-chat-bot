@@ -550,5 +550,79 @@
     "product_id": "211333",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/798/images/2355/buttermilk-pancake-mix-16-oz-1__23172.1724079445.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "Vermont Maple Oat Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/vermont-maple-oat-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Maple oat scones with warm molasses flavor. Made with pure Vermont maple sugar that shines through beautifully, together with molasses, and the finest quality oats, our simple mix bakes up tender, buttery, Vermont Maple Oat Scones. Freshly baked homemade scones are quick and easy with our simple scone mixes. Perfect for serving at breakfast, an afternoon snack, for yourself, your family, or your guests. Simply blend, shape, and bake for warm, delicious scones in fewer than 30 minutes.",
+    "rating": 4.8,
+    "review_count": 655,
+    "badges": [
+      "kosherdairy",
+      "wholegrain"
+    ],
+    "sku": "100215",
+    "upc": "071012100514",
+    "product_id": "100215",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/554/images/7201/100215__92681_3142__53349.1724079452.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Cran-Raspberry White Chocolate Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/cran-raspberry-white-chocolate-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Cranberries and raspberries and white chocolate - oh my! These berry scones are a guaranteed showstopper. Our tender, buttery scones are studded with tangy dried cranberries, creamy white chocolate chips, and sweet, chewy raspberry jammy bits. Freshly baked homemade scones are quick and easy with our simple scone mixes. Perfect for serving at breakfast, an afternoon snack, for yourself, your family, or your guests. Simply blend, shape, and bake for warm, delicious scones in fewer than 30 minutes.",
+    "rating": 4.9,
+    "review_count": 663,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100218",
+    "upc": "071012100620",
+    "product_id": "100218",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/556/images/7209/100218_packagefront__75234_3300__93064.1724079436.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Vanilla Cream Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/vanilla-cream-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Vanilla Cream scones are a teatime classic we can't get enough of! Made with fragrant vanilla beans, our Vanilla Cream scones have a not-too-sweet delicate vanilla flavor, making them perfect for customizing to your particular taste by adding additional ingredients like raisins or other dried fruits. Freshly baked homemade scones are quick and easy with our simple scone mixes. Perfect for serving at breakfast, an afternoon snack, for yourself, your family, or your guests. Simply blend, shape, and bake for warm, delicious scones in fewer than 30 minutes.",
+    "rating": 4.7,
+    "review_count": 645,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100208",
+    "upc": "071012100521",
+    "product_id": "100208",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/547/images/7169/100208__30941_3141__51788.1724079445.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Apple Cinnamon Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/apple-cinnamon-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Enjoy sweet fall flavors in your kitchen all year long with apple cinnamon scones. Made with the finest Vietnamese cinnamon, real apples, and apple cinnamon jammy bits, our simple mix bakes up light, tall, and fluffy. Freshly baked homemade scones are quick and easy with our simple scone mixes. Perfect for serving at breakfast, an afternoon snack, for yourself, your family, or your guests. Simply blend, shape, and bake for warm, delicious scones in fewer than 30 minutes.",
+    "rating": 4.7,
+    "review_count": 643,
+    "badges": [
+      "kosherdairy",
+      "wholegrain"
+    ],
+    "sku": "100202",
+    "upc": "071012100644",
+    "product_id": "100202",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/542/images/7146/100202__54910_3140__06815.1724079439.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
