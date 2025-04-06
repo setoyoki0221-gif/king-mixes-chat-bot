@@ -104,3 +104,5 @@ def test_validate_rejects_missing_titles_or_prices():
     products = good_products(100)
     for p in products[:20]:
         p["price_value"] = None
+    problems = scrape.validate(products, discovered=100)
+    assert any("missing a title or price" in p for p in problems)
