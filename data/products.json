@@ -624,5 +624,100 @@
     "product_id": "100202",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/542/images/7146/100202__54910_3140__06815.1724079439.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "Peaches & Cream Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/peaches-cream-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Tender, buttery peach scones, made easy! Made with the finest cream and packed with chewy Peach Jammy Bits, these scones are tender, buttery, and full of bright, sweet flavor. Our mix makes it quick and easy to whip up a batch — just blend, shape, and bake for warm, delicious scones in under 30 minutes. Perfect for breakfast, an afternoon snack, or sharing with family and friends.",
+    "rating": 4.8,
+    "review_count": 673,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100216",
+    "upc": "071012100729",
+    "product_id": "100216",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/555/images/7205/100216_front__50360_3333__61469.1724079435.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Lemon Ginger Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/lemon-ginger-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "The perfect balance of citrus and spice, bright lemon flavor, and zesty ginger come together in harmony in our tender, buttery Lemon Ginger Scones. Freshly baked homemade scones are quick and easy with our simple scone mixes. Perfect for serving at breakfast, an afternoon snack, for yourself, your family, or your guests. Simply blend, shape, and bake for warm, delicious scones in fewer than 30 minutes.",
+    "rating": 4.8,
+    "review_count": 664,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100214",
+    "upc": "071012100712",
+    "product_id": "100214",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/553/images/7196/100214_front__72170_3331__77725.1724079451.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Gluten-Free Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/gluten-free-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Our easy scone mix makes delicious, buttery scones...fast! Top with jam or lemon curd for a simple breakfast or with fruit and whipped cream for a decadent dessert. Mix in ¼ cup of your own favorite add-ins: dried blueberries, chocolate chips, dried cranberries, nuts, or whatever you're craving in a scone. They're also delicious plain! Just scoop the dough onto pan, bake, and enjoy. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The result? Mixes that make the finest gluten-free baked goods around. Simple ingredients, reliable results, and deliciousness that everyone can enjoy! Click here to learn more about allergens and cross-contact prevention.",
+    "rating": 4.9,
+    "review_count": 1109,
+    "badges": [
+      "glutenfree",
+      "kosherpareve",
+      "nongmo"
+    ],
+    "sku": "310081",
+    "upc": "071012100811",
+    "product_id": "310081",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1276/images/4988/10081G201H_211431_GFScone_0221-3qtr__69671__38464.1724079462.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Gluten-Free Sugar Cookie Mix",
+    "url": "https://shop.kingarthurbaking.com/items/gluten-free-sugar-cookie-mix",
+    "price": "$4.99",
+    "price_value": 4.99,
+    "promo": "",
+    "description": "Gluten-free sugar cookie lovers, rejoice! Now perfect cookies at home are simple to make with our excellent Gluten-Free Sugar Cookie Mix. It saves you time and ensures that every batch is delicious, since we've mixed and measured for you. Easy to roll out, sturdy enough to cut and decorate, these buttery sugar cookies are made with whole-grain oats for added nutrition and flavor. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The result? Mixes that make the finest gluten-free baked goods around. Simple ingredients, reliable results, and deliciousness that everyone can enjoy! Click here to learn more about allergens and cross-contact prevention",
+    "rating": 4.8,
+    "review_count": 507,
+    "badges": [
+      "glutenfree",
+      "kosherpareve",
+      "nongmo",
+      "wholegrain"
+    ],
+    "sku": "200750",
+    "upc": "071012103249",
+    "product_id": "200750",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/621/images/7526/200750G201G_211421_GFSugarCookie_0221-34__47767_3088__10143.1724079443.386.513.png?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Apricot Sour Cream Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/apricot-sour-cream-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "The perfect balance of tangy sour cream and sweet apricot in a tender, buttery scone. With our our easy-to-make mix, you can experience bursts of bright fruity flavor in each bite thanks to our soft and chewy Apricot Jammy Bits, made with real apricots. Freshly baked homemade scones are quick and easy with our simple scone mixes. Perfect for serving at breakfast, an afternoon snack, for yourself, your family, or your guests. Simply blend, shape, and bake for warm, delicious scones in fewer than 30 minutes.",
+    "rating": 4.8,
+    "review_count": 680,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100203",
+    "upc": "071012100545",
+    "product_id": "100203",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/543/images/7151/100203_packagefront__67127_3301__30640.1724079440.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
