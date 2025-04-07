@@ -16,3 +16,7 @@ An AI chatbot that answers questions about the **Mixes** category of
 [King Arthur Baking](https://shop.kingarthurbaking.com/mixes) — flavors, prices,
 dietary options (gluten-free, kosher…), and recommendations — grounded in data
 scraped directly from the store.
+
+Built with **LangChain + LangGraph** (a self-correcting RAG agent), **Chroma**
+for vector search, and a **Streamlit** frontend, deployed on **Hugging Face
+Spaces**.
