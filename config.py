@@ -22,3 +22,5 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()  # no-op on HF Spaces (secrets come from the environment)
+
+ROOT = Path(__file__).resolve().parent
