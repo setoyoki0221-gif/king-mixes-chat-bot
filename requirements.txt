@@ -14,3 +14,6 @@ langchain-core>=1.0,<2
 # --- LLM / embedding providers ---
 # CPU-only PyTorch keeps the Hugging Face Space build small and fast.
 --extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.2,<3                    # CPU inference backend
+langchain-huggingface>=1.0,<2    # local model + HF Inference + embeddings
+sentence-transformers>=3.0,<6    # local embeddings (all-MiniLM-L6-v2)
