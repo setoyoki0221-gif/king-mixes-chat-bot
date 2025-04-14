@@ -27,3 +27,19 @@ ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "products.json"
 CHROMA_DIR = ROOT / "chroma_db"
 COLLECTION_NAME = "king_arthur_mixes"
+
+# Human-readable labels for the raw dietary/attribute badge slugs. Shared by
+# ingest (document text) and the frontend (product-card badges).
+BADGE_LABELS = {
+    "glutenfree": "Gluten-Free",
+    "kosherpareve": "Kosher (Pareve)",
+    "kosherdairy": "Kosher (Dairy)",
+    "nongmo": "Non-GMO",
+    "sourcednongmo": "Sourced Non-GMO",
+    "organic": "Organic",
+    "wholegrain": "Whole Grain",
+    "wholegrain50": "50%+ Whole Grain",
+    "wholegrain100": "100% Whole Grain",
+    "madeintheusa": "Made in the USA",
+    "vegan": "Vegan",
+}
