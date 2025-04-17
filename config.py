@@ -43,3 +43,9 @@ BADGE_LABELS = {
     "madeintheusa": "Made in the USA",
     "vegan": "Vegan",
 }
+
+# --- Provider selection -------------------------------------------------
+# LLM_PROVIDER:   local | ollama | huggingface | gemini | github | openai | groq
+#                 (default: local — a small model on-device, no token/region issues)
+# EMBED_PROVIDER: huggingface | openai   (default: huggingface — free/local)
+EMBED_PROVIDER = os.getenv("EMBED_PROVIDER", "huggingface").lower()
