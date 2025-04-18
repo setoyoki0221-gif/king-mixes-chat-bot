@@ -49,3 +49,4 @@ BADGE_LABELS = {
 #                 (default: local — a small model on-device, no token/region issues)
 # EMBED_PROVIDER: huggingface | openai   (default: huggingface — free/local)
 EMBED_PROVIDER = os.getenv("EMBED_PROVIDER", "huggingface").lower()
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "local").lower()
