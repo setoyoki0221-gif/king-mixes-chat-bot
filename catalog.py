@@ -30,3 +30,4 @@ import config
 from config import BADGE_LABELS
 
 STRUCTURED_LIMIT = 8        # max products handed to the LLM on the structured path
+SEMANTIC_TOPIC_POOL = 12    # semantic candidates kept when a topic matches no title
