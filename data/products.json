@@ -1262,5 +1262,97 @@
     "product_id": "307504",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1280/images/4935/07504G205G_211422_GFCookie_0221-3qtr__54376__22534.1724079465.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "Gluten-Free Banana Bread and Muffin Mix",
+    "url": "https://shop.kingarthurbaking.com/items/gluten-free-banana-bread-and-muffin-mix",
+    "price": "$7.95",
+    "price_value": 7.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "A gluten-free banana bread so good, it's bananas. The best gluten-free banana bread or banana muffins you'll ever bake, in an easy-to-use mix. We believe in food that's delicious and that you can feel good about, so we start with the best ingredients around to make a moist, superior banana bread with the classic flavor you love. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The result? Mixes that make the finest gluten-free baked goods around. Simple ingredients, reliable results, and deliciousness that everyone can enjoy! Click here to learn more about allergens and cross-contact prevention",
+    "rating": 4.9,
+    "review_count": 212,
+    "badges": [
+      "glutenfree",
+      "kosherpareve",
+      "nongmo"
+    ],
+    "sku": "310546",
+    "upc": "071012105465",
+    "product_id": "310546",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1277/images/4991/10546G201H_211423_GFBananaBreadMuffin_1220-3qtr__02954__07038.1724079462.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Double Pie Crust Mix",
+    "url": "https://shop.kingarthurbaking.com/items/double-pie-crust-mix",
+    "price": "$7.95",
+    "price_value": 7.95,
+    "promo": "",
+    "description": "Our simple mix bakes up a flaky, buttery pie crust. Finally, pie crust success is easy with our simple mix, which bakes up a flaky, buttery crust every time. Each box makes enough for a 9\" double-crust pie — or two 9\" single-crust pies — so you’ll always have pie crust at your fingertips. Keep a box in your pantry for quick, perfect results whenever the mood for pie strikes!",
+    "rating": 4.5,
+    "review_count": 288,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100267",
+    "upc": "071012106479",
+    "product_id": "100267",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/574/images/7308/100267_front__68944_3307__59807.1724079438.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Keto Wheat Pizza Crust Mix",
+    "url": "https://shop.kingarthurbaking.com/items/keto-wheat-pizza-crust-mix",
+    "price": "$6.95",
+    "price_value": 6.95,
+    "promo": "",
+    "description": "Delicious keto pizza crusts in a flash. Finally, a pizza crust mix that delivers great pizza taste and texture with only 1g of net carbs per serving! Our easy-to-make mix makes it simple to create crisp and chewy, keto-friendly pizza crusts just the way you like them — no compromises necessary. Packaging includes directions to make one or two crusts .",
+    "rating": 4.5,
+    "review_count": 247,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "212067",
+    "upc": "071012060177",
+    "product_id": "212067",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/999/images/3692/212067_front__79428.1724079453.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Lemon Buttermilk Cake Mix",
+    "url": "https://shop.kingarthurbaking.com/items/lemon-buttermilk-cake-mix",
+    "price": "$14.95",
+    "price_value": 14.95,
+    "promo": "",
+    "description": "Bright, fresh, and full of lemon flavor. Soft, moist, and bursting with the bright tang of lemon, our mix is made with carefully selected ingredients, including sweet cream buttermilk, lemon juice, and lemon oil. It delivers a tender, flavorful cake that’s irresistibly delicious.",
+    "rating": 4.3,
+    "review_count": 436,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100237",
+    "upc": "071012104260",
+    "product_id": "100237",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/566/images/7270/100237__57212_3188__32998.1724079447.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "English Muffin Mix",
+    "url": "https://shop.kingarthurbaking.com/items/white-whole-wheat-english-muffin-mix",
+    "price": "$7.95",
+    "price_value": 7.95,
+    "promo": "",
+    "description": "Fresh, homemade English muffins are a special treat. English muffins, hot off the griddle — who knew we could make our own so easily? Our English Muffin Mix combines half of our White Whole Wheat and All-Purpose Flour for the perfect balance of tender texture and rich flavor. Delicious with butter and jam, or as the base for your favorite breakfast sandwich.",
+    "rating": 4.3,
+    "review_count": 368,
+    "badges": [
+      "wholegrain50"
+    ],
+    "sku": "100266",
+    "upc": "071012403103",
+    "product_id": "100266",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/573/images/7304/100266__78176_3155__48308.1724079437.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
