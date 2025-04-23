@@ -55,3 +55,11 @@ LLM_PROVIDER = os.getenv("LLM_PROVIDER", "local").lower()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+# Hugging Face token: powers the free Inference-API LLM and is the same token
+# used to deploy to HF Spaces.
+HF_TOKEN = os.getenv("HF_TOKEN", "") or os.getenv("HUGGINGFACEHUB_API_TOKEN", "")
+# GitHub Models = free, OpenAI-compatible access to real OpenAI models.
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
+GITHUB_MODELS_BASE_URL = os.getenv(
+    "GITHUB_MODELS_BASE_URL", "https://models.inference.ai.azure.com"
+)
