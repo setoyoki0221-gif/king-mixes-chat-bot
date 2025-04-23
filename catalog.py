@@ -32,3 +32,4 @@ from config import BADGE_LABELS
 STRUCTURED_LIMIT = 8        # max products handed to the LLM on the structured path
 SEMANTIC_TOPIC_POOL = 12    # semantic candidates kept when a topic matches no title
 MAX_FOLLOWUP_CHAIN = 3      # how many earlier questions a follow-up may inherit from
+_PRIOR_REVIEWS = 10         # weight of the prior in the review-weighted rating
