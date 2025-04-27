@@ -63,3 +63,6 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
 GITHUB_MODELS_BASE_URL = os.getenv(
     "GITHUB_MODELS_BASE_URL", "https://models.inference.ai.azure.com"
 )
+
+# --- Model names (sensible defaults per provider) -----------------------
+OPENAI_CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
