@@ -20,3 +20,5 @@ scraped directly from the store.
 Built with **LangChain + LangGraph** (a self-correcting RAG agent), **Chroma**
 for vector search, and a **Streamlit** frontend, deployed on **Hugging Face
 Spaces**.
+
+---
