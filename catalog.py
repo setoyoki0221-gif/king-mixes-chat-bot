@@ -33,3 +33,10 @@ STRUCTURED_LIMIT = 8        # max products handed to the LLM on the structured p
 SEMANTIC_TOPIC_POOL = 12    # semantic candidates kept when a topic matches no title
 MAX_FOLLOWUP_CHAIN = 3      # how many earlier questions a follow-up may inherit from
 _PRIOR_REVIEWS = 10         # weight of the prior in the review-weighted rating
+
+
+# --------------------------------------------------------------------------- #
+# Catalog documents (shared by ingest.py and the agent)
+# --------------------------------------------------------------------------- #
+def product_to_text(p: dict) -> str:
+    """Render a product as a readable, retrieval-friendly text block."""
