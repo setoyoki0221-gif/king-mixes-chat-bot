@@ -1450,5 +1450,96 @@
     "product_id": "307505",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1266/images/4937/gluten-free-chocolate-cake-mix__29612__40253.1724079467.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "Perfectly Tender Flatbread Mix Kit",
+    "url": "https://shop.kingarthurbaking.com/items/perfectly-tender-flatbread-mix-kit",
+    "price": "$7.95",
+    "price_value": 7.95,
+    "promo": "",
+    "description": "Experience the joy of bread baking with our Perfectly Tender Flatbread Mix Kit! In a hurry? Or just hungry? In just about an hour, you can enjoy soft and flavorful flatbread, ideal for crafting savory sandwiches or creating restaurant-quality turnovers in the comfort of your kitchen! Our comprehensive kit includes all the essentials: a flatbread mix, yeast packet, and a flavorful za'atar herb blend, ensuring a convenient and delightful baking experience. Simply add water and oil to the mix, follow instructions, and you're ready to go! From the recipe on the back of the box to new recipes online , there are plenty of ways to let your creativity shine. Flatbread can be frozen for ultimate convenience. Bake, cool completely, transfer to an airtight container, and store in your freezer for later. Placing a piece of parchment between flatbreads will make it easier to take out one at a time and reheat individually. See our blog post for more bread-freezing and thawing tips. Makes : Eight 6” to 7” flatbreads 12 flatbread pockets",
+    "rating": 4.6,
+    "review_count": 77,
+    "badges": [
+      "kosherpareve"
+    ],
+    "sku": "213187",
+    "upc": "071012105939",
+    "product_id": "213187",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1519/images/5720/213187__85207.1724079470.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Quick & Easy Pastry Cream Mix",
+    "url": "https://shop.kingarthurbaking.com/items/quick-and-easy-pastry-cream-mix",
+    "price": "$16.95",
+    "price_value": 16.95,
+    "promo": "",
+    "description": "Traditional pastry cream filling is stirred, cooked, strained. With this easy filling, all you do is stir in milk and refrigerate. No cooking needed, no saucepan to clean — just luscious cream filling! Make rich, elegant vanilla filling, perfect for éclairs, filled cakes, or fruit tarts.",
+    "rating": 4.6,
+    "review_count": 291,
+    "badges": [
+      "kosherdairy"
+    ],
+    "sku": "100127",
+    "upc": "071012302116",
+    "product_id": "100127",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/527/images/7070/100127_front__36910_3290__67659.1724079437.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Gluten-Free All-Purpose Biscuit & Baking Mix",
+    "url": "https://shop.kingarthurbaking.com/items/gluten-free-all-purpose-biscuit-baking-mix",
+    "price": "$6.95",
+    "price_value": 6.95,
+    "promo": "",
+    "description": "Stock your pantry with our all-purpose gluten-free baking mix and you're never far from reliably delicious gluten-free baking. Quite possibly the best thing to happen to gluten-free bakers, this mix is ideal for everything from pancakes at breakfast to biscuits with dinner to shortcake for dessert. With 20 grams of whole grains per serving, you can feel good about using it for all your best recipes. Bakers love this mix for how convenient it makes gluten-free recipes, and there's no grittiness or aftertaste. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The result? Mixes that make the finest gluten-free baked goods around. Simple ingredients, reliable results, and deliciousness that everyone can enjoy! Discover recipes using Gluten-Free Baking Mix. Click here to learn more about allergens and cross-contact prevention",
+    "rating": 4.7,
+    "review_count": 111,
+    "badges": [
+      "glutenfree",
+      "kosherpareve",
+      "nongmo",
+      "wholegrain50"
+    ],
+    "sku": "213243",
+    "upc": "071012075119",
+    "product_id": "213243",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1451/images/5739/213243_front__73891.1724079463.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Keto Wheat Pancake Mix",
+    "url": "https://shop.kingarthurbaking.com/items/Keto-Wheat-Pancake-Mix",
+    "price": "$6.95",
+    "price_value": 6.95,
+    "promo": "",
+    "description": "Low in carbs, high in flavor! With just 2g of net carbs, our quick and simple mix makes it easy to keep your carbs low and your mornings delicious! These keto-friendly pancakes boast 9g of protein and 12g of fiber. Simply add water, and you’re well on your way to stacks of tender, fluffy pancakes perfect for breakfast or even dinner. A convenient, resealable, and recyclable pouch makes it easy to portion just the right amount or save some for next time.",
+    "rating": 4.5,
+    "review_count": 214,
+    "badges": [
+      "kosherpareve"
+    ],
+    "sku": "212259",
+    "upc": "071012060146",
+    "product_id": "212259",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1053/images/4024/212259_front__65354.1724079465.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Quick & Easy Chocolate Mousse Mix",
+    "url": "https://shop.kingarthurbaking.com/items/quick-and-easy-chocolate-mousse-mix",
+    "price": "$14.95",
+    "price_value": 14.95,
+    "promo": "",
+    "description": "This chocolate mousse is the ultimate ingredient for chocolate lovers! We can't say enough good things about this chocolate mousse: While it's ideal for a terrific and simple-to-make chocolate mousse, it also shines in desserts, hot beverages, and more. Add a spoonful to coffee for a delicious mocha, or make a rich and indulgent cup of hot chocolate. We also use it to replace the cocoa in brownie batters for fudgier brownies with a delicate chocolate flavor.",
+    "rating": 4.7,
+    "review_count": 84,
+    "badges": [],
+    "sku": "213465",
+    "upc": "071012200023",
+    "product_id": "213465",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1429/images/8511/213465_front__82392.1730222739.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
