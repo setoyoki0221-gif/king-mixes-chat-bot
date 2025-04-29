@@ -41,3 +41,9 @@ _PRIOR_REVIEWS = 10         # weight of the prior in the review-weighted rating
 def product_to_text(p: dict) -> str:
     """Render a product as a readable, retrieval-friendly text block."""
     lines = [f"Product: {p['title']}", f"Category: {p.get('category', 'Mixes')}"]
+    if p.get("price"):
+        lines.append(f"Price: {p['price']}")
+    if p.get("promo"):
+        lines.append(f"Offer: {p['promo']}")
+    if p.get("rating"):
+        reviews = p.get("review_count") or 0
