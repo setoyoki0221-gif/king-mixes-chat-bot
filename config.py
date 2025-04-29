@@ -66,3 +66,5 @@ GITHUB_MODELS_BASE_URL = os.getenv(
 
 # --- Model names (sensible defaults per provider) -----------------------
 OPENAI_CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+OPENAI_EMBED_MODEL = os.getenv("OPENAI_EMBED_MODEL", "text-embedding-3-small")
+GITHUB_CHAT_MODEL = os.getenv("GITHUB_CHAT_MODEL", "gpt-4o-mini")
