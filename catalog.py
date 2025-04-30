@@ -47,3 +47,7 @@ def product_to_text(p: dict) -> str:
         lines.append(f"Offer: {p['promo']}")
     if p.get("rating"):
         reviews = p.get("review_count") or 0
+        lines.append(f"Rating: {p['rating']} out of 5 ({reviews} reviews)")
+    if p.get("badges"):
+        pretty = ", ".join(BADGE_LABELS.get(b, b) for b in p["badges"])
+        lines.append(f"Attributes: {pretty}")
