@@ -61,3 +61,15 @@ def build_documents(products: list[dict] | None = None) -> list[Document]:
     """One Document per product (title/price/rating/badges/description)."""
     if products is None:
         products = json.loads(config.DATA_PATH.read_text(encoding="utf-8"))
+    docs: list[Document] = []
+    for p in products:
+        metadata = {
+            "title": p["title"],
+            "url": p["url"],
+            "price": p.get("price", ""),
+            "promo": p.get("promo", ""),
+            "rating": p.get("rating") or 0,
+            "review_count": p.get("review_count") or 0,
+            "badges": ", ".join(p.get("badges", [])),
+            "image": p.get("image", ""),
+        }
