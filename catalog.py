@@ -51,3 +51,13 @@ def product_to_text(p: dict) -> str:
     if p.get("badges"):
         pretty = ", ".join(BADGE_LABELS.get(b, b) for b in p["badges"])
         lines.append(f"Attributes: {pretty}")
+    if p.get("description"):
+        lines.append(f"Description: {p['description']}")
+    lines.append(f"URL: {p['url']}")
+    return "\n".join(lines)
+
+
+def build_documents(products: list[dict] | None = None) -> list[Document]:
+    """One Document per product (title/price/rating/badges/description)."""
+    if products is None:
+        products = json.loads(config.DATA_PATH.read_text(encoding="utf-8"))
