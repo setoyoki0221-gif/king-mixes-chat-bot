@@ -73,3 +73,7 @@ def build_documents(products: list[dict] | None = None) -> list[Document]:
             "badges": ", ".join(p.get("badges", [])),
             "image": p.get("image", ""),
         }
+        # Numeric price enables exact comparison/sorting. Chroma rejects None
+        # metadata values, so the key is only set when a price was parsed.
+        if p.get("price_value") is not None:
+            metadata["price_value"] = float(p["price_value"])
