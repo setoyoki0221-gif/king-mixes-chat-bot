@@ -76,3 +76,11 @@ HF_EMBED_MODEL = os.getenv("HF_EMBED_MODEL", "sentence-transformers/all-MiniLM-L
 # 1.5B is the deployment default (good quality on HF Spaces free CPU); override
 # with LOCAL_CHAT_MODEL=Qwen/Qwen2.5-0.5B-Instruct for a faster, lighter model.
 LOCAL_CHAT_MODEL = os.getenv("LOCAL_CHAT_MODEL", "Qwen/Qwen2.5-1.5B-Instruct")
+LOCAL_MAX_NEW_TOKENS = int(os.getenv("LOCAL_MAX_NEW_TOKENS", "220"))
+# Ollama: fast quantized local models via the Ollama app (better quality+speed).
+OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_CHAT_MODEL", "qwen2.5:3b")
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+
+# Fast mode: skip the grade/rewrite reasoning loop (retrieve -> generate only).
+# Roughly halves latency on CPU at the cost of the self-correction step.
+AGENT_FAST = os.getenv("AGENT_FAST", "0") in ("1", "true", "True")
