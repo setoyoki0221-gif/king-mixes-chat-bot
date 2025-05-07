@@ -77,3 +77,10 @@ def build_documents(products: list[dict] | None = None) -> list[Document]:
         # metadata values, so the key is only set when a price was parsed.
         if p.get("price_value") is not None:
             metadata["price_value"] = float(p["price_value"])
+        docs.append(Document(page_content=product_to_text(p), metadata=metadata))
+    return docs
+
+
+@lru_cache(maxsize=1)
+def get_catalog() -> tuple[Document, ...]:
+    """The full catalog, loaded once (118 products — tiny)."""
