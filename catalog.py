@@ -84,3 +84,8 @@ def build_documents(products: list[dict] | None = None) -> list[Document]:
 @lru_cache(maxsize=1)
 def get_catalog() -> tuple[Document, ...]:
     """The full catalog, loaded once (118 products — tiny)."""
+    return tuple(build_documents())
+
+
+def badges_of(doc: Document) -> set[str]:
+    return {b.strip() for b in (doc.metadata.get("badges") or "").split(",") if b.strip()}
