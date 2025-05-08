@@ -1706,5 +1706,90 @@
     "product_id": "213848",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1595/images/8995/213848_front__79037.1749575651.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "Coconut Macaroon Cookie Mix",
+    "url": "https://shop.kingarthurbaking.com/items/coconut-macaroon-cookie-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "",
+    "description": "Coconut macaroons made super-simple! Just add water, scoop, and bake. If you love coconut, this is your cookie. Ever so slightly toasty on the outside, moist and chewy inside, you can dress macaroons up even more by making them thumbprint style and placing a chocolate disk on top when they come out of the oven. Our mixes are carefully crafted in our test kitchen through meticulous taste-testing (it's a tough job, but we're up to the challenge!) and blending to replicate our favorite recipes. The best part? We do the measuring and mixing for you. The result? Consistent deliciousness that everyone can enjoy made with simple ingredients that we bake with every day in our kitchens — no artificial colors or flavors, no preservatives, and all non-GMO.",
+    "rating": 4.7,
+    "review_count": 3,
+    "badges": [
+      "kosherpareve",
+      "sourcednongmo"
+    ],
+    "sku": "400016",
+    "upc": "071012002085",
+    "product_id": "400016",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1836/images/9609/400016-front__70620.1767724012.386.513.png?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Eclairs and Cream Puffs Set",
+    "url": "https://shop.kingarthurbaking.com/items/eclairs-and-cream-puffs-set",
+    "price": "$53.01",
+    "price_value": 53.01,
+    "promo": "",
+    "description": "Effortless éclairs and cream puffs! Make bakery-worthy éclairs and cream puffs at home with this convenient set. It includes everything you need to pipe, bake, and fill your pastries with ease: choux pastry piping tips, disposable pastry bags, Quick-and-Easy Choux Pastry, and Quick-and-Easy Pastry Cream. Perfect for creating light, crisp shells and luscious fillings, this set takes the guesswork out of classic French pastries. See all Special Savings »",
+    "rating": 0.0,
+    "review_count": 0,
+    "badges": [],
+    "sku": "214197",
+    "upc": "",
+    "product_id": "214197",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1722/images/8812/214197-Eclairs-and-Cream-Puffs-Set_Silo__83734.1745246565.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Pancake Art Kit",
+    "url": "https://shop.kingarthurbaking.com/items/pancake-art-kit",
+    "price": "$40.52",
+    "price_value": 40.52,
+    "promo": "",
+    "description": "Because breakfast should never be boring! Bring creativity to the breakfast table with the Color Pancake Art Set! This all-in-one set has the essentials to make light and fluffy, colorful pancakes! Made with vibrant Plant-Based Food Colors derived from natural ingredients — no artificial dyes here — you can flip up countless pancakes with a feel-good twist. Perfect for weekend mornings, birthday breakfasts, or any time you want to add a little whimsy to your stack. Start with simple designs (like shapes, clouds, hearts, and smiley faces), then experiment with more intricate and creative designs as you get comfortable! Goes great with Zojirushi Gourmet Sizzler Electric Griddle !",
+    "rating": 4.0,
+    "review_count": 5,
+    "badges": [],
+    "sku": "400080",
+    "upc": "",
+    "product_id": "400080",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1804/images/9457/400080__67461.1760727240.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Cupcake Party Kit",
+    "url": "https://shop.kingarthurbaking.com/items/cupcake-party-kit",
+    "price": "$66.27",
+    "price_value": 66.27,
+    "promo": "",
+    "description": "One set, endless celebrations. Get the party started with the Cupcake Party Kit! Whether it’s a birthday, holiday, or just because, this all-in-one set has everything you need to bake and decorate festive cupcakes for any occasion. Set includes Nonstick Baking Cups, our Golden Yellow Cake Mix, Buttercream Frosting Mix, Pastry Bags and Tips Set, and a set of natural food colors. Best of all, it also includes our How to Guide for Unicorn Cupcakes!",
+    "rating": 5.0,
+    "review_count": 1,
+    "badges": [],
+    "sku": "400079",
+    "upc": "",
+    "product_id": "400079",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/1803/images/9322/400080__30998.1759426436.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Cinnamon Pecan Scone Mix",
+    "url": "https://shop.kingarthurbaking.com/items/cinnamon-pecan-scone-mix",
+    "price": "$8.95",
+    "price_value": 8.95,
+    "promo": "Buy Any 5+/Save $4",
+    "description": "Cinnamon scones with an extra boost of pecan goodness. With our simple scone mix, fresh, homemade scones are quick and easy—ready in under 30 minutes! Made with our signature Vietnamese cinnamon, sweet cinnamon bits, and crunchy diced pecans, this mix brings irresistible flavor to every bite. Perfect for breakfast, an afternoon treat, or sharing with family and friends. Just mix, shape, and bake for warm, golden scones that fill your kitchen with the cozy scent of cinnamon and nuts.",
+    "rating": 4.8,
+    "review_count": 693,
+    "badges": [
+      "kosherpareve"
+    ],
+    "sku": "100207",
+    "upc": "071012100569",
+    "product_id": "100207",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/546/images/7164/100207_packagefront__22495_3303__70884.1724079442.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
