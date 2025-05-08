@@ -84,3 +84,7 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 # Fast mode: skip the grade/rewrite reasoning loop (retrieve -> generate only).
 # Roughly halves latency on CPU at the cost of the self-correction step.
 AGENT_FAST = os.getenv("AGENT_FAST", "0") in ("1", "true", "True")
+
+
+def active_chat_model() -> str:
+    """Name of the chat model the selected LLM_PROVIDER will use (for display)."""
