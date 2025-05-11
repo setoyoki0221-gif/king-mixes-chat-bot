@@ -93,3 +93,8 @@ def badges_of(doc: Document) -> set[str]:
 
 def compact_line(doc: Document) -> str:
     """One short line per product — lets the LLM read ~8 products cheaply."""
+    m = doc.metadata
+    bits = [m.get("title", "")]
+    if m.get("price"):
+        bits.append(m["price"] + (f" ({m['promo']})" if m.get("promo") else ""))
+    rating, n = float(m.get("rating") or 0), int(m.get("review_count") or 0)
