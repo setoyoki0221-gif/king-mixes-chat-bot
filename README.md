@@ -22,3 +22,18 @@ for vector search, and a **Streamlit** frontend, deployed on **Hugging Face
 Spaces**.
 
 ---
+
+## How it works
+
+```
+shop.kingarthurbaking.com/mixes
+        │  (1) scraper/scrape.py  — requests + BeautifulSoup
+        ▼
+   data/products.json   (118 products, clean numeric prices + promo text)
+        │  (2) ingest.py  — one document per product, embedded
+        ▼
+   chroma_db/           (persistent vector store)
+        │  (3) agent.py + catalog.py  — LangGraph agent
+        ▼
+   Streamlit app.py     — chat + live agent-graph plot
+```
