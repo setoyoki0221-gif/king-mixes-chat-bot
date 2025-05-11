@@ -89,3 +89,7 @@ def get_catalog() -> tuple[Document, ...]:
 
 def badges_of(doc: Document) -> set[str]:
     return {b.strip() for b in (doc.metadata.get("badges") or "").split(",") if b.strip()}
+
+
+def compact_line(doc: Document) -> str:
+    """One short line per product — lets the LLM read ~8 products cheaply."""
