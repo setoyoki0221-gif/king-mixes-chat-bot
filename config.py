@@ -88,3 +88,12 @@ AGENT_FAST = os.getenv("AGENT_FAST", "0") in ("1", "true", "True")
 
 def active_chat_model() -> str:
     """Name of the chat model the selected LLM_PROVIDER will use (for display)."""
+    return {
+        "local": LOCAL_CHAT_MODEL,
+        "ollama": OLLAMA_CHAT_MODEL,
+        "huggingface": HF_CHAT_MODEL,
+        "gemini": GEMINI_CHAT_MODEL,
+        "github": GITHUB_CHAT_MODEL,
+        "openai": OPENAI_CHAT_MODEL,
+        "groq": GROQ_CHAT_MODEL,
+    }.get(LLM_PROVIDER, LLM_PROVIDER)
