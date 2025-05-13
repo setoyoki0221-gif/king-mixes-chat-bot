@@ -97,3 +97,7 @@ def active_chat_model() -> str:
         "openai": OPENAI_CHAT_MODEL,
         "groq": GROQ_CHAT_MODEL,
     }.get(LLM_PROVIDER, LLM_PROVIDER)
+
+
+def require_llm_key() -> None:
+    """Validate that the selected LLM provider has its key set."""
