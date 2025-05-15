@@ -98,3 +98,7 @@ def compact_line(doc: Document) -> str:
     if m.get("price"):
         bits.append(m["price"] + (f" ({m['promo']})" if m.get("promo") else ""))
     rating, n = float(m.get("rating") or 0), int(m.get("review_count") or 0)
+    bits.append(
+        f"{rating:.1f}/5 from {n} review{'' if n == 1 else 's'}" if rating else "no ratings yet"
+    )
+    attrs = ", ".join(BADGE_LABELS.get(b, b) for b in sorted(badges_of(doc)))
