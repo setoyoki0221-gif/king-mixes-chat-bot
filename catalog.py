@@ -102,3 +102,6 @@ def compact_line(doc: Document) -> str:
         f"{rating:.1f}/5 from {n} review{'' if n == 1 else 's'}" if rating else "no ratings yet"
     )
     attrs = ", ".join(BADGE_LABELS.get(b, b) for b in sorted(badges_of(doc)))
+    if attrs:
+        bits.append(attrs)
+    return "- " + " | ".join(bits)
