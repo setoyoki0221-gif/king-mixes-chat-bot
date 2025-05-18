@@ -101,3 +101,5 @@ def active_chat_model() -> str:
 
 def require_llm_key() -> None:
     """Validate that the selected LLM provider has its key set."""
+    if LLM_PROVIDER == "openai" and not OPENAI_API_KEY:
+        raise RuntimeError("LLM_PROVIDER=openai but OPENAI_API_KEY is not set.")
