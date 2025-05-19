@@ -105,3 +105,14 @@ def compact_line(doc: Document) -> str:
     if attrs:
         bits.append(attrs)
     return "- " + " | ".join(bits)
+
+
+# --------------------------------------------------------------------------- #
+# Query understanding (rule-based)
+# --------------------------------------------------------------------------- #
+SORT_LABELS = {
+    "price_asc": "price, lowest first",
+    "price_desc": "price, highest first",
+    "rating": "rating weighted by number of reviews, best first",
+    "reviews": "number of reviews, most first",
+}
