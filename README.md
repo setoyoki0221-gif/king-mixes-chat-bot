@@ -37,3 +37,9 @@ shop.kingarthurbaking.com/mixes
         ▼
    Streamlit app.py     — chat + live agent-graph plot
 ```
+
+### The agent (LangGraph)
+
+This is an **agentic** retrieval pipeline, not a plain retrieve-then-answer
+chain. It self-checks retrieval quality and reformulates weak queries before
+answering:
