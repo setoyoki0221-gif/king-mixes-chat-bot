@@ -2046,5 +2046,91 @@
     "product_id": "207159",
     "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/253/images/6294/207159_broccoli_cheddar_soup__86861_4185__29652.1724079437.386.513.jpg?c=1",
     "category": "Mixes"
+  },
+  {
+    "title": "Chicken and Rice Soup",
+    "url": "https://shop.kingarthurbaking.com/items/kentucky-chicken-and-rice-soup",
+    "price": "$9.95",
+    "price_value": 9.95,
+    "promo": "",
+    "description": "Savor the rich taste of homemade soup, made from this premium mix. If we're not cooking from scratch, we're mixing up delicious soups from Frontier's convenient mixes. Made with the finest natural ingredients, no added salt, no preservatives or MSG, you can taste the difference — our families and friends always ask for the recipe! Made of wholesome, all-natural ingredients, it's the perfect shortcut to a hearty dinner. Mix makes a thick and homey, gluten-free chicken and rice soup with classic poultry herbs for a rich, savory flavor.",
+    "rating": 4.5,
+    "review_count": 181,
+    "badges": [
+      "nongmo"
+    ],
+    "sku": "204458",
+    "upc": "766694301464",
+    "product_id": "204458",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/222/images/6222/204458_chicken_and_rice_soup__66822_4184__33525.1724079438.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Cake and Frosting Pack",
+    "url": "https://shop.kingarthurbaking.com/items/cake-and-frosting-pack",
+    "price": "$34.01",
+    "price_value": 34.01,
+    "promo": "",
+    "description": "Stock up and save with this pack of mixes and frostings. You get our two best-selling cake mixes in chocolate and golden vanilla, plus two frostings mixes also in chocolate and vanilla. Mix and match to bake tender, moist layer cakes smothered in sweet, creamy frosting.",
+    "rating": 4.8,
+    "review_count": 305,
+    "badges": [],
+    "sku": "201962",
+    "upc": "",
+    "product_id": "201962",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/196/images/6156/201962_set__41290_3291__52110.1724079430.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Chicken Stew",
+    "url": "https://shop.kingarthurbaking.com/items/chicken-stew",
+    "price": "$9.95",
+    "price_value": 9.95,
+    "promo": "",
+    "description": "Add your own fresh chicken, broth, and optional extra ingredients. If we're not cooking from scratch, we're mixing up delicious soups from Frontier's convenient mixes. Made with the finest natural ingredients, no added salt, no preservatives or MSG, you can taste the difference — our families and friends always ask for the recipe! With its blend of peas, carrots, potatoes, and white beans and just the right seasoning, this soup is as thick and rich as the inside of a chicken pot pie. Just add onion, broth, and chicken for a hearty stew ready in only 30 minutes.",
+    "rating": 4.3,
+    "review_count": 148,
+    "badges": [],
+    "sku": "201362",
+    "upc": "766694001418",
+    "product_id": "201362",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/142/images/6022/201362_package__35209_4224__56732.1724079438.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Tortilla Soup",
+    "url": "https://shop.kingarthurbaking.com/items/tortilla-soup",
+    "price": "$9.95",
+    "price_value": 9.95,
+    "promo": "",
+    "description": "Just add broth, cooked chicken, and salsa, simmer, and serve. If we're not cooking from scratch, we're mixing up delicious soups from Frontier's convenient mixes. Made with the finest natural ingredients, no added salt, no preservatives or MSG, you can taste the difference — our families and friends always ask for the recipe! With a soup this good, full of zesty Mexican spices, quick cooking black beans, peppers and sweet corn, you’ll want to host a party. Just add chicken, salsa, and broth for a festive dinner ready in 30 minutes. Create your own toppings bar for a special treat!",
+    "rating": 4.6,
+    "review_count": 179,
+    "badges": [
+      "nongmo"
+    ],
+    "sku": "201276",
+    "upc": "766694301204",
+    "product_id": "201276",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/136/images/6012/201276_tortilla_soup__91314_4181__25352.1724079433.386.513.jpg?c=1",
+    "category": "Mixes"
+  },
+  {
+    "title": "Corn Chowder",
+    "url": "https://shop.kingarthurbaking.com/items/illinois-prairie-corn-chowder",
+    "price": "$9.95",
+    "price_value": 9.95,
+    "promo": "",
+    "description": "You won't believe this tasty soup comes from a mix. If we're not cooking from scratch, we're mixing up delicious soups from Frontier's convenient mixes. Made with the finest natural ingredients, no added salt, no preservatives or MSG, you can taste the difference — our families and friends always ask for the recipe! Bursting with bright yellow and super sweet corn (non-GMO), red peppers and rice, this delightful chowder will have the pickiest eater asking for more. Just add diced potatoes and cream for a special dinner.",
+    "rating": 4.7,
+    "review_count": 169,
+    "badges": [
+      "nongmo"
+    ],
+    "sku": "201272",
+    "upc": "766694001036",
+    "product_id": "201272",
+    "image": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/134/images/6007/201272_Corn_Chowder__46888_4180__27750.1724079432.386.513.jpg?c=1",
+    "category": "Mixes"
   }
 ]
