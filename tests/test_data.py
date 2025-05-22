@@ -22,3 +22,7 @@ def products():
 
 def test_dataset_is_not_trivially_small(products):
     assert len(products) >= 50
+
+
+def test_urls_are_unique_and_on_the_store(products):
+    urls = [p["url"] for p in products]
