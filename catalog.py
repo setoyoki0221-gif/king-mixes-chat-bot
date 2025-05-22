@@ -116,3 +116,9 @@ SORT_LABELS = {
     "rating": "rating weighted by number of reviews, best first",
     "reviews": "number of reviews, most first",
 }
+_SORT_HINTS = {
+    "price_asc": "The FIRST product listed is the cheapest.",
+    "price_desc": "The FIRST product listed is the most expensive.",
+    "rating": "The FIRST product listed is the top rated.",
+    "reviews": "The FIRST product listed has the most reviews.",
+}
