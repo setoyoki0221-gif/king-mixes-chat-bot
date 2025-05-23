@@ -122,3 +122,12 @@ _SORT_HINTS = {
     "rating": "The FIRST product listed is the top rated.",
     "reviews": "The FIRST product listed has the most reviews.",
 }
+
+# Order matters: first match wins.
+_SORT_PATTERNS = [
+    ("price_desc", r"most expensive|priciest|costliest|highest[- ]priced?|highest price"),
+    ("price_asc", r"cheap(?:est|er)?\b|least expensive|lowest[- ]priced?|lowest price|"
+                  r"most affordable|budget"),
+    ("rating", r"(?:top|best|highest)[- ](?:rated|reviewed|rating|ratings|reviews?)"),
+    ("reviews", r"most (?:reviews?|reviewed|popular)"),
+]
