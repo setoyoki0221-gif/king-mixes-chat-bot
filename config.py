@@ -108,3 +108,8 @@ def require_llm_key() -> None:
             "LLM_PROVIDER=groq but GROQ_API_KEY is not set. Get a free key "
             "(no credit card) at https://console.groq.com/keys"
         )
+    if LLM_PROVIDER == "github" and not GITHUB_TOKEN:
+        raise RuntimeError(
+            "LLM_PROVIDER=github but GITHUB_TOKEN is not set. Get a free token "
+            "at https://github.com/settings/tokens (fine-grained, no scopes needed)."
+        )
