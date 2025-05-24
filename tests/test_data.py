@@ -26,3 +26,4 @@ def test_dataset_is_not_trivially_small(products):
 
 def test_urls_are_unique_and_on_the_store(products):
     urls = [p["url"] for p in products]
+    assert len(urls) == len(set(urls))
