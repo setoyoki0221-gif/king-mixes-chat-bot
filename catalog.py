@@ -131,3 +131,16 @@ _SORT_PATTERNS = [
     ("rating", r"(?:top|best|highest)[- ](?:rated|reviewed|rating|ratings|reviews?)"),
     ("reviews", r"most (?:reviews?|reviewed|popular)"),
 ]
+
+# "(group)" = any-of; every group in a query must match (AND of ORs).
+_BADGE_PATTERNS = [
+    (r"gluten[- ]?free", ("glutenfree",)),
+    (r"vegan", ("vegan",)),
+    (r"organic", ("organic",)),
+    (r"non[- ]?gmo", ("nongmo", "sourcednongmo")),
+    (r"pareve", ("kosherpareve",)),
+    (r"kosher", ("kosherpareve", "kosherdairy")),
+    (r"whole[- ]?grain", ("wholegrain", "wholegrain50", "wholegrain100")),
+    (r"made in (?:the )?(?:usa|u\.s\.a?\.?|us|united states)|american[- ]made",
+     ("madeintheusa",)),
+]
