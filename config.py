@@ -113,3 +113,8 @@ def require_llm_key() -> None:
             "LLM_PROVIDER=github but GITHUB_TOKEN is not set. Get a free token "
             "at https://github.com/settings/tokens (fine-grained, no scopes needed)."
         )
+    if LLM_PROVIDER == "gemini" and not GOOGLE_API_KEY:
+        raise RuntimeError(
+            "LLM_PROVIDER=gemini but GOOGLE_API_KEY is not set. Get a free key "
+            "(no credit card) at https://aistudio.google.com/apikey"
+        )
