@@ -144,3 +144,7 @@ _BADGE_PATTERNS = [
     (r"made in (?:the )?(?:usa|u\.s\.a?\.?|us|united states)|american[- ]made",
      ("madeintheusa",)),
 ]
+
+# A price bound needs a "$" or a currency word, so "at least 4 stars" or "under
+# 10 reviews" are never mistaken for prices.
+_NUM = r"(\d+(?:\.\d+)?)"
