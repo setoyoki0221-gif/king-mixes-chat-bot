@@ -118,3 +118,8 @@ def require_llm_key() -> None:
             "LLM_PROVIDER=gemini but GOOGLE_API_KEY is not set. Get a free key "
             "(no credit card) at https://aistudio.google.com/apikey"
         )
+    if LLM_PROVIDER == "huggingface" and not HF_TOKEN:
+        raise RuntimeError(
+            "LLM_PROVIDER=huggingface but HF_TOKEN is not set. Get a free token "
+            "at https://huggingface.co/settings/tokens (Read access is enough)."
+        )
