@@ -148,3 +148,8 @@ _BADGE_PATTERNS = [
 # A price bound needs a "$" or a currency word, so "at least 4 stars" or "under
 # 10 reviews" are never mistaken for prices.
 _NUM = r"(\d+(?:\.\d+)?)"
+_MAX_PRICE_PATTERNS = [
+    rf"(?:under|below|less than|cheaper than|at most|up to|no more than|within)\s*\$\s*{_NUM}",
+    rf"(?:under|below|less than|cheaper than|at most|up to|no more than|within)\s*{_NUM}\s*(?:dollars?|bucks|usd)\b",
+    rf"\$\s*{_NUM}\s*(?:or (?:less|under|below|cheaper))",
+]
