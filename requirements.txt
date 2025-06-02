@@ -17,3 +17,9 @@ langchain-core>=1.0,<2
 torch>=2.2,<3                    # CPU inference backend
 langchain-huggingface>=1.0,<2    # local model + HF Inference + embeddings
 sentence-transformers>=3.0,<6    # local embeddings (all-MiniLM-L6-v2)
+transformers>=4.44,<6            # on-device LLM (Qwen2.5-Instruct)
+langchain-ollama>=1.0,<2         # fast local models via the Ollama app (local dev)
+langchain-openai>=1.0,<2         # optional: OpenAI / GitHub Models providers
+
+# --- Vector store ---
+langchain-chroma>=1.0,<2
