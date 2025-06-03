@@ -33,3 +33,11 @@ def test_urls_are_unique_and_on_the_store(products):
 def test_required_fields_present(products):
     for p in products:
         assert p["title"].strip(), p["url"]
+        assert p["description"].strip(), p["url"]
+        assert p["image"].startswith("http"), p["url"]
+
+
+def test_prices_are_clean_numbers(products):
+    """Regression: promo copy ("Buy Any 5+/Save $4") used to be glued onto the price."""
+    for p in products:
+        assert re.fullmatch(r"\$\d{1,3}(,\d{3})*\.\d\d", p["price"]), (p["title"], p["price"])
