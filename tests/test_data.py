@@ -28,3 +28,8 @@ def test_urls_are_unique_and_on_the_store(products):
     urls = [p["url"] for p in products]
     assert len(urls) == len(set(urls))
     assert all(u.startswith("https://shop.kingarthurbaking.com/") for u in urls)
+
+
+def test_required_fields_present(products):
+    for p in products:
+        assert p["title"].strip(), p["url"]
