@@ -42,3 +42,20 @@ def titles(result):
 )
 def test_sort_detection(text, sort):
     assert parse_query(text).sort == sort
+
+
+@pytest.mark.parametrize(
+    "text, group",
+    [
+        ("gluten-free mixes", ("glutenfree",)),
+        ("Gluten Free brownies", ("glutenfree",)),
+        ("vegan options", ("vegan",)),
+        ("non-GMO mixes", ("nongmo", "sourcednongmo")),
+        ("kosher mixes", ("kosherpareve", "kosherdairy")),
+        ("pareve mixes", ("kosherpareve",)),
+        ("whole grain mixes", ("wholegrain", "wholegrain50", "wholegrain100")),
+        ("made in the USA", ("madeintheusa",)),
+    ],
+)
+def test_badge_filters(text, group):
+    assert group in parse_query(text).badge_groups
