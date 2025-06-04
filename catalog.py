@@ -153,3 +153,8 @@ _MAX_PRICE_PATTERNS = [
     rf"(?:under|below|less than|cheaper than|at most|up to|no more than|within)\s*{_NUM}\s*(?:dollars?|bucks|usd)\b",
     rf"\$\s*{_NUM}\s*(?:or (?:less|under|below|cheaper))",
 ]
+_MIN_PRICE_PATTERNS = [
+    rf"(?:over|above|more than|at least|from)\s*\$\s*{_NUM}",
+    rf"(?:over|above|more than|at least)\s*{_NUM}\s*(?:dollars?|bucks|usd)\b",
+    rf"\$\s*{_NUM}\s*(?:or (?:more|over|above))",
+]
