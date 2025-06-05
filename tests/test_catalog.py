@@ -59,3 +59,7 @@ def test_sort_detection(text, sort):
 )
 def test_badge_filters(text, group):
     assert group in parse_query(text).badge_groups
+
+
+def test_multiple_filters_all_required():
+    spec = parse_query("cheapest gluten-free kosher mix")
