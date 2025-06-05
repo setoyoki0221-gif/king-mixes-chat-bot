@@ -41,3 +41,4 @@ def test_prices_are_clean_numbers(products):
     """Regression: promo copy ("Buy Any 5+/Save $4") used to be glued onto the price."""
     for p in products:
         assert re.fullmatch(r"\$\d{1,3}(,\d{3})*\.\d\d", p["price"]), (p["title"], p["price"])
+        assert p["price_value"] == pytest.approx(float(p["price"].lstrip("$").replace(",", "")))
