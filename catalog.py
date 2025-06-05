@@ -158,3 +158,15 @@ _MIN_PRICE_PATTERNS = [
     rf"(?:over|above|more than|at least)\s*{_NUM}\s*(?:dollars?|bucks|usd)\b",
     rf"\$\s*{_NUM}\s*(?:or (?:more|over|above))",
 ]
+
+_STOP = set(
+    """a an the and or of to for in on with without from by at as is are was were be been am
+    do does did you your yours i me my we our us it its this that these those them they
+    what whats which who whom how when where why can could would should will shall may might
+    have has had having get got give list show tell recommend suggest find need want looking
+    look like any some all every each more most less least than then too very just only also
+    mix mixes product products item items one ones option options thing things kind kinds type
+    types baking bake baked king arthur please thanks thank hello hey available sell selling
+    carry offer offers there here out about best good better great top buy order
+    price priced cost costs much many""".split()
+)
