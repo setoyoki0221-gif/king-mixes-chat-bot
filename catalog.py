@@ -170,3 +170,8 @@ _STOP = set(
     carry offer offers there here out about best good better great top buy order
     price priced cost costs much many""".split()
 )
+
+
+@dataclass
+class QuerySpec:
+    """What the user is structurally asking for (empty = pure semantic query)."""
