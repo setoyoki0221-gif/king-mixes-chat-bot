@@ -175,3 +175,5 @@ _STOP = set(
 @dataclass
 class QuerySpec:
     """What the user is structurally asking for (empty = pure semantic query)."""
+
+    sort: str | None = None
