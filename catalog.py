@@ -178,3 +178,4 @@ class QuerySpec:
 
     sort: str | None = None
     badge_groups: list[tuple[str, ...]] = field(default_factory=list)
+    max_price: float | None = None
