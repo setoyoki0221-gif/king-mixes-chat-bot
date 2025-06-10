@@ -47,3 +47,8 @@ def test_prices_are_clean_numbers(products):
 
 def test_ratings_are_consistent_with_review_counts(products):
     """Unrated products carry rating 0.0 (or null) and 0 reviews; rated ones are in (0, 5]."""
+    for p in products:
+        rating, reviews = p["rating"] or 0, p["review_count"] or 0
+        assert reviews >= 0, p["title"]
+        if reviews == 0:
+            assert rating == 0, f"{p['title']}: rating without reviews"
