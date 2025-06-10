@@ -177,3 +177,4 @@ class QuerySpec:
     """What the user is structurally asking for (empty = pure semantic query)."""
 
     sort: str | None = None
+    badge_groups: list[tuple[str, ...]] = field(default_factory=list)
