@@ -64,3 +64,4 @@ def test_badge_filters(text, group):
 def test_multiple_filters_all_required():
     spec = parse_query("cheapest gluten-free kosher mix")
     assert ("glutenfree",) in spec.badge_groups
+    assert ("kosherpareve", "kosherdairy") in spec.badge_groups
