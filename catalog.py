@@ -181,3 +181,10 @@ class QuerySpec:
     max_price: float | None = None
     min_price: float | None = None
     topic: list[str] = field(default_factory=list)
+
+    @property
+    def structured(self) -> bool:
+        return bool(
+            self.sort or self.badge_groups
+            or self.max_price is not None or self.min_price is not None
+        )
