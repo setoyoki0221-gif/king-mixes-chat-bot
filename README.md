@@ -43,3 +43,11 @@ shop.kingarthurbaking.com/mixes
 This is an **agentic** retrieval pipeline, not a plain retrieve-then-answer
 chain. It self-checks retrieval quality and reformulates weak queries before
 answering:
+
+```
+retrieve → grade → (relevant?) ── yes ──► generate → END
+                       │
+                       no, retries left
+                       ▼
+                   rewrite → retrieve (loop)
+```
