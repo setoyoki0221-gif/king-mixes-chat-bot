@@ -52,3 +52,9 @@ def test_ratings_are_consistent_with_review_counts(products):
         assert reviews >= 0, p["title"]
         if reviews == 0:
             assert rating == 0, f"{p['title']}: rating without reviews"
+        else:
+            assert 0 < rating <= 5, f"{p['title']}: reviews without a valid rating"
+
+
+def test_badges_are_known(products):
+    known = set(config.BADGE_LABELS)
