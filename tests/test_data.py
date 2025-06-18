@@ -58,3 +58,9 @@ def test_ratings_are_consistent_with_review_counts(products):
 
 def test_badges_are_known(products):
     known = set(config.BADGE_LABELS)
+    unknown = {b for p in products for b in p["badges"]} - known
+    assert not unknown, f"add labels for new badges to config.BADGE_LABELS: {unknown}"
+
+
+def test_meta_matches_dataset(products):
+    meta = json.loads(config.DATA_PATH.with_name("meta.json").read_text(encoding="utf-8"))
