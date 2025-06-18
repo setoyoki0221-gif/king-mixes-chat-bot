@@ -66,3 +66,22 @@ def test_multiple_filters_all_required():
     assert ("glutenfree",) in spec.badge_groups
     assert ("kosherpareve", "kosherdairy") in spec.badge_groups
     assert spec.sort == "price_asc"
+
+
+@pytest.mark.parametrize(
+    "text, mx, mn",
+    [
+        ("mixes under $7", 7.0, None),
+        ("less than 10 dollars", 10.0, None),
+        ("$8 or less", 8.0, None),
+        ("cheaper than $5.50", 5.5, None),
+        ("over $20", None, 20.0),
+        ("at least 15 dollars", None, 15.0),
+        # Numbers that are NOT prices must be ignored.
+        ("mixes with at least 4 stars", None, None),
+        ("under 10 reviews", None, None),
+        ("rated over 4.5", None, None),
+    ],
+)
+def test_price_bounds(text, mx, mn):
+    spec = parse_query(text)
