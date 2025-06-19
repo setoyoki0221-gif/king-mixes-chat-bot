@@ -64,3 +64,9 @@ def test_badges_are_known(products):
 
 def test_meta_matches_dataset(products):
     meta = json.loads(config.DATA_PATH.with_name("meta.json").read_text(encoding="utf-8"))
+    assert meta["count"] == len(products)
+    assert meta["scraped_at"]
+
+
+def test_documents_have_chroma_safe_metadata(products):
+    """Chroma rejects None metadata values; ingest would crash on them."""
