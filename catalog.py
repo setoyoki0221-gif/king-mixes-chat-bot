@@ -188,3 +188,12 @@ class QuerySpec:
             self.sort or self.badge_groups
             or self.max_price is not None or self.min_price is not None
         )
+
+
+def parse_query(text: str) -> QuerySpec:
+    """Extract sort / attribute filters / price bounds / topic words from text."""
+    s = " " + (text or "").lower() + " "
+    spec = QuerySpec()
+
+    def take(pattern: str) -> re.Match | None:
+        """Find a pattern and cut it out so later passes don't re-read it."""
