@@ -197,3 +197,5 @@ def parse_query(text: str) -> QuerySpec:
 
     def take(pattern: str) -> re.Match | None:
         """Find a pattern and cut it out so later passes don't re-read it."""
+        nonlocal s
+        m = re.search(pattern, s)
