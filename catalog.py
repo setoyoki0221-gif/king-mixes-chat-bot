@@ -199,3 +199,10 @@ def parse_query(text: str) -> QuerySpec:
         """Find a pattern and cut it out so later passes don't re-read it."""
         nonlocal s
         m = re.search(pattern, s)
+        if m:
+            s = s[: m.start()] + " " + s[m.end():]
+        return m
+
+    for pat in _MAX_PRICE_PATTERNS:
+        if m := take(pat):
+            spec.max_price = float(m.group(1))
