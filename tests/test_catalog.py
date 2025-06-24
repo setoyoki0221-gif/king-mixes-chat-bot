@@ -85,3 +85,4 @@ def test_multiple_filters_all_required():
 )
 def test_price_bounds(text, mx, mn):
     spec = parse_query(text)
+    assert (spec.max_price, spec.min_price) == (mx, mn)
