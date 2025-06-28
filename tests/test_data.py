@@ -70,3 +70,8 @@ def test_meta_matches_dataset(products):
 
 def test_documents_have_chroma_safe_metadata(products):
     """Chroma rejects None metadata values; ingest would crash on them."""
+    docs = build_documents(products)
+    assert len(docs) == len(products)
+    for d in docs:
+        for k, v in d.metadata.items():
+            assert isinstance(v, (str, int, float, bool)), (d.metadata["title"], k, v)
