@@ -24,3 +24,4 @@ from providers import get_embeddings
 
 def main() -> None:
     docs = build_documents()
+    print(f"Loaded {len(docs)} product documents from {config.DATA_PATH.name}")
