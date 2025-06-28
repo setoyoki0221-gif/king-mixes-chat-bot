@@ -86,3 +86,9 @@ def test_multiple_filters_all_required():
 def test_price_bounds(text, mx, mn):
     spec = parse_query(text)
     assert (spec.max_price, spec.min_price) == (mx, mn)
+
+
+def test_topic_words_exclude_filler_and_intent():
+    assert parse_query("What's the cheapest chocolate chip cookie mix?").topic == [
+        "chocolate", "chip", "cookie",
+    ]
