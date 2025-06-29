@@ -75,3 +75,14 @@ def test_documents_have_chroma_safe_metadata(products):
     for d in docs:
         for k, v in d.metadata.items():
             assert isinstance(v, (str, int, float, bool)), (d.metadata["title"], k, v)
+
+
+def test_document_text_contains_the_facts_the_bot_answers_from(products):
+    doc = build_documents(products)[0]
+    p = products[0]
+    assert p["title"] in doc.page_content and p["price"] in doc.page_content
+    assert p["url"] in doc.page_content
+
+
+def test_offer_line_only_when_promo(products):
+    with_promo = next(p for p in products if p["promo"])
