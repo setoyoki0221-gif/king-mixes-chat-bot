@@ -92,3 +92,4 @@ def test_topic_words_exclude_filler_and_intent():
     assert parse_query("What's the cheapest chocolate chip cookie mix?").topic == [
         "chocolate", "chip", "cookie",
     ]
+    assert parse_query("Do you have gluten-free options?").topic == []
