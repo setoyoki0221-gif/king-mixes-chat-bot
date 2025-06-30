@@ -211,3 +211,6 @@ def parse_query(text: str) -> QuerySpec:
         if m := take(pat):
             spec.min_price = float(m.group(1))
             break
+    for sort, pat in _SORT_PATTERNS:
+        if take(pat):
+            spec.sort = sort
