@@ -214,3 +214,7 @@ def parse_query(text: str) -> QuerySpec:
     for sort, pat in _SORT_PATTERNS:
         if take(pat):
             spec.sort = sort
+            break
+    for pat, group in _BADGE_PATTERNS:
+        if take(pat) and group not in spec.badge_groups:
+            spec.badge_groups.append(group)
