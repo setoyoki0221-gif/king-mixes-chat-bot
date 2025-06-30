@@ -218,3 +218,7 @@ def parse_query(text: str) -> QuerySpec:
     for pat, group in _BADGE_PATTERNS:
         if take(pat) and group not in spec.badge_groups:
             spec.badge_groups.append(group)
+
+    for tok in re.findall(r"[a-z]+", s):
+        if len(tok) > 2 and tok not in _STOP and tok not in spec.topic:
+            spec.topic.append(tok)
