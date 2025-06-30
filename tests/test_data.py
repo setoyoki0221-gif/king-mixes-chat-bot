@@ -86,3 +86,5 @@ def test_document_text_contains_the_facts_the_bot_answers_from(products):
 
 def test_offer_line_only_when_promo(products):
     with_promo = next(p for p in products if p["promo"])
+    without = next(p for p in products if not p["promo"])
+    assert "Offer:" in product_to_text(with_promo)
