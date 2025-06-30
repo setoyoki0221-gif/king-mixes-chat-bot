@@ -25,3 +25,7 @@ from providers import get_embeddings
 def main() -> None:
     docs = build_documents()
     print(f"Loaded {len(docs)} product documents from {config.DATA_PATH.name}")
+
+    # Rebuild cleanly so re-runs are deterministic.
+    if config.CHROMA_DIR.exists():
+        shutil.rmtree(config.CHROMA_DIR)
