@@ -99,3 +99,10 @@ def test_plain_semantic_questions_are_not_structured():
     for q in ["What cookie mixes do you have?", "Tell me about the brownie mix",
               "Recommend a mix for a kid's birthday party"]:
         assert not parse_query(q).structured
+
+
+# --------------------------------------------------------------------------- #
+# structured_search (synthetic catalog)
+# --------------------------------------------------------------------------- #
+def run(q, catalog, prior=(), rank=None):
+    text, spec = resolve_question(q, list(prior))
