@@ -88,3 +88,9 @@ def test_offer_line_only_when_promo(products):
     with_promo = next(p for p in products if p["promo"])
     without = next(p for p in products if not p["promo"])
     assert "Offer:" in product_to_text(with_promo)
+    assert "Offer:" not in product_to_text(without)
+    assert "Save $4" not in product_to_text(with_promo).split("Offer:")[0]  # not in the price line
+
+
+def test_catalog_stays_diverse(products):
+    """A broken scrape that returns one product type repeatedly would show here."""
