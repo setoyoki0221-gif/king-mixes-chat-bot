@@ -222,3 +222,4 @@ def parse_query(text: str) -> QuerySpec:
     for tok in re.findall(r"[a-z]+", s):
         if len(tok) > 2 and tok not in _STOP and tok not in spec.topic:
             spec.topic.append(tok)
+    return spec
