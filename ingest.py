@@ -29,3 +29,5 @@ def main() -> None:
     # Rebuild cleanly so re-runs are deterministic.
     if config.CHROMA_DIR.exists():
         shutil.rmtree(config.CHROMA_DIR)
+
+    embeddings = get_embeddings()
