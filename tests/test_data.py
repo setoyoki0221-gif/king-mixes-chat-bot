@@ -94,3 +94,5 @@ def test_offer_line_only_when_promo(products):
 
 def test_catalog_stays_diverse(products):
     """A broken scrape that returns one product type repeatedly would show here."""
+    first_words = Counter(p["title"].split()[0] for p in products)
+    assert first_words.most_common(1)[0][1] < len(products) * 0.6
