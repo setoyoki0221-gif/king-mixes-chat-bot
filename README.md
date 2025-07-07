@@ -51,3 +51,11 @@ retrieve → grade → (relevant?) ── yes ──► generate → END
                        ▼
                    rewrite → retrieve (loop)
 ```
+
+- **retrieve** — *hybrid*: aggregate questions (see below) are answered by an
+  exact lookup over the whole catalog; everything else uses semantic search
+- **grade** — the LLM judges whether semantic results are relevant (skipped for
+  exact lookups, which are correct by construction)
+- **rewrite** — if not, reformulate the query (told what already failed) and
+  retry, up to 2×
+- **generate** — answer grounded *only* in the catalog, with sources
