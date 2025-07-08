@@ -32,3 +32,10 @@ def main() -> None:
 
     embeddings = get_embeddings()
     print(f"Embedding via '{config.EMBED_PROVIDER}' and writing to {config.CHROMA_DIR.name}/ ...")
+
+    Chroma.from_documents(
+        documents=docs,
+        embedding=embeddings,
+        collection_name=config.COLLECTION_NAME,
+        persist_directory=str(config.CHROMA_DIR),
+    )
