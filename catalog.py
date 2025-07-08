@@ -229,3 +229,4 @@ def parse_query(text: str) -> QuerySpec:
 # Follow-up resolution
 # --------------------------------------------------------------------------- #
 _LEADING_FOLLOWUP = re.compile(r"^\W*(?:and|also|what about|how about|which (?:is|are|one))\b")
+_DEICTIC = re.compile(r"\b(?:one|ones|those|these|them)\b")
