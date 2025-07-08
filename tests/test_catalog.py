@@ -107,3 +107,4 @@ def test_plain_semantic_questions_are_not_structured():
 def run(q, catalog, prior=(), rank=None):
     text, spec = resolve_question(q, list(prior))
     assert spec.structured, f"{q!r} should be a structured query"
+    return structured_search(spec, catalog, semantic_rank=rank, query_text=text)
