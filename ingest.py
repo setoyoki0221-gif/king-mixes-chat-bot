@@ -31,3 +31,4 @@ def main() -> None:
         shutil.rmtree(config.CHROMA_DIR)
 
     embeddings = get_embeddings()
+    print(f"Embedding via '{config.EMBED_PROVIDER}' and writing to {config.CHROMA_DIR.name}/ ...")
