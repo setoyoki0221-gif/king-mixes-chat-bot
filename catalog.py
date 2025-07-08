@@ -223,3 +223,9 @@ def parse_query(text: str) -> QuerySpec:
         if len(tok) > 2 and tok not in _STOP and tok not in spec.topic:
             spec.topic.append(tok)
     return spec
+
+
+# --------------------------------------------------------------------------- #
+# Follow-up resolution
+# --------------------------------------------------------------------------- #
+_LEADING_FOLLOWUP = re.compile(r"^\W*(?:and|also|what about|how about|which (?:is|are|one))\b")
