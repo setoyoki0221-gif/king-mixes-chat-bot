@@ -230,3 +230,12 @@ def parse_query(text: str) -> QuerySpec:
 # --------------------------------------------------------------------------- #
 _LEADING_FOLLOWUP = re.compile(r"^\W*(?:and|also|what about|how about|which (?:is|are|one))\b")
 _DEICTIC = re.compile(r"\b(?:one|ones|those|these|them)\b")
+
+
+def is_followup(text: str) -> bool:
+    """True for short questions that lean on the previous turn.
+
+    "Which is best for beginners?" / "And the cheapest?" are follow-ups by their
+    opening words. "What's the cheapest one?" is one because it refers to "one"
+    yet names no product topic of its own — "Recommend one cookie mix" does not.
+    """
