@@ -108,3 +108,7 @@ def run(q, catalog, prior=(), rank=None):
     text, spec = resolve_question(q, list(prior))
     assert spec.structured, f"{q!r} should be a structured query"
     return structured_search(spec, catalog, semantic_rank=rank, query_text=text)
+
+
+def test_cheapest_is_exact_over_whole_catalog(mini_catalog):
+    r = run("cheapest mix", mini_catalog)
