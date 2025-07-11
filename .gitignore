@@ -17,3 +17,9 @@ data/*.log
 
 # Local tooling settings (personal, not for the repo / HF Space)
 .claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
