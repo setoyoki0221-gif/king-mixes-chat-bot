@@ -239,3 +239,6 @@ def is_followup(text: str) -> bool:
     opening words. "What's the cheapest one?" is one because it refers to "one"
     yet names no product topic of its own — "Recommend one cookie mix" does not.
     """
+    t = (text or "").lower()
+    if _LEADING_FOLLOWUP.search(t):
+        return True
