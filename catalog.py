@@ -242,3 +242,8 @@ def is_followup(text: str) -> bool:
     t = (text or "").lower()
     if _LEADING_FOLLOWUP.search(t):
         return True
+    return bool(_DEICTIC.search(t)) and not parse_query(t).topic
+
+
+def merge_specs(specs: list[QuerySpec]) -> QuerySpec:
+    """Combine chained questions: filters/topic accumulate, sort/price: last wins."""
