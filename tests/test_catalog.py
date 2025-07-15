@@ -112,3 +112,5 @@ def run(q, catalog, prior=(), rank=None):
 
 def test_cheapest_is_exact_over_whole_catalog(mini_catalog):
     r = run("cheapest mix", mini_catalog)
+    assert titles(r)[0] == "Gluten-Free Sugar Cookie Mix"
+    assert r.total == len(mini_catalog)
