@@ -39,3 +39,5 @@ def main() -> None:
         collection_name=config.COLLECTION_NAME,
         persist_directory=str(config.CHROMA_DIR),
     )
+
+    print(f"Done. Vector store with {len(docs)} documents persisted to {config.CHROMA_DIR}")
