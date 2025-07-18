@@ -41,3 +41,7 @@ def main() -> None:
     )
 
     print(f"Done. Vector store with {len(docs)} documents persisted to {config.CHROMA_DIR}")
+
+
+if __name__ == "__main__":
+    main()
