@@ -247,3 +247,6 @@ def is_followup(text: str) -> bool:
 
 def merge_specs(specs: list[QuerySpec]) -> QuerySpec:
     """Combine chained questions: filters/topic accumulate, sort/price: last wins."""
+    out = QuerySpec()
+    for sp in specs:
+        out.sort = sp.sort or out.sort
