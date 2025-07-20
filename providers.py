@@ -15,3 +15,4 @@ import config
 # grading with a tiny output budget, one for generation) share a single copy of
 # the weights in memory instead of loading the model twice.
 _local_model = None
+_local_tokenizer = None
