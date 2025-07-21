@@ -114,3 +114,8 @@ def test_cheapest_is_exact_over_whole_catalog(mini_catalog):
     r = run("cheapest mix", mini_catalog)
     assert titles(r)[0] == "Gluten-Free Sugar Cookie Mix"
     assert r.total == len(mini_catalog)
+    assert "FIRST product listed is the cheapest" in r.note
+
+
+def test_most_expensive(mini_catalog):
+    assert titles(run("most expensive mix", mini_catalog))[0] == "Cupcake Party Kit"
