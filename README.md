@@ -59,3 +59,5 @@ retrieve → grade → (relevant?) ── yes ──► generate → END
 - **rewrite** — if not, reformulate the query (told what already failed) and
   retry, up to 2×
 - **generate** — answer grounded *only* in the catalog, with sources
+
+The compiled graph is rendered live in the app's sidebar.
