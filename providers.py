@@ -16,3 +16,6 @@ import config
 # the weights in memory instead of loading the model twice.
 _local_model = None
 _local_tokenizer = None
+# Streamlit runs each session on its own thread; without this lock two first
+# visitors would each load the multi-GB model at the same moment.
+_local_lock = threading.Lock()
