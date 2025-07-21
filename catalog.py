@@ -250,3 +250,8 @@ def merge_specs(specs: list[QuerySpec]) -> QuerySpec:
     out = QuerySpec()
     for sp in specs:
         out.sort = sp.sort or out.sort
+        out.max_price = sp.max_price if sp.max_price is not None else out.max_price
+        out.min_price = sp.min_price if sp.min_price is not None else out.min_price
+        for g in sp.badge_groups:
+            if g not in out.badge_groups:
+                out.badge_groups.append(g)
