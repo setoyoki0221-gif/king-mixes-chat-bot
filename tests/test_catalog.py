@@ -119,3 +119,7 @@ def test_cheapest_is_exact_over_whole_catalog(mini_catalog):
 
 def test_most_expensive(mini_catalog):
     assert titles(run("most expensive mix", mini_catalog))[0] == "Cupcake Party Kit"
+
+
+def test_filter_counts_everything_not_just_top_k(mini_catalog):
+    r = run("gluten-free mixes", mini_catalog)
