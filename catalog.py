@@ -255,3 +255,6 @@ def merge_specs(specs: list[QuerySpec]) -> QuerySpec:
         for g in sp.badge_groups:
             if g not in out.badge_groups:
                 out.badge_groups.append(g)
+        for t in sp.topic:
+            if t not in out.topic:
+                out.topic.append(t)
