@@ -19,3 +19,7 @@ _local_tokenizer = None
 # Streamlit runs each session on its own thread; without this lock two first
 # visitors would each load the multi-GB model at the same moment.
 _local_lock = threading.Lock()
+
+
+def _load_local_model():
+    global _local_model, _local_tokenizer
