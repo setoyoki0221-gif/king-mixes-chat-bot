@@ -258,3 +258,18 @@ def merge_specs(specs: list[QuerySpec]) -> QuerySpec:
         for t in sp.topic:
             if t not in out.topic:
                 out.topic.append(t)
+    return out
+
+
+def resolve_question(question: str, prior_questions: list[str]) -> tuple[str, QuerySpec]:
+    """Return (text to embed, merged spec) after folding in earlier questions.
+
+    ``prior_questions`` are the user's earlier questions, oldest first. A
+    standalone question is returned untouched; a follow-up is chained back to the
+    nearest question(s) it depends on.
+    """
+    chain = [question]
+    i = len(prior_questions) - 1
+    while is_followup(chain[0]) and i >= 0 and len(chain) <= MAX_FOLLOWUP_CHAIN:
+        chain.insert(0, prior_questions[i])
+        i -= 1
