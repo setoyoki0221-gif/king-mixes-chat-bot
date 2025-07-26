@@ -23,3 +23,7 @@ _local_lock = threading.Lock()
 
 def _load_local_model():
     global _local_model, _local_tokenizer
+    if _local_model is None:
+        with _local_lock:
+            if _local_model is None:  # re-check: another thread may have loaded it
+                import torch
