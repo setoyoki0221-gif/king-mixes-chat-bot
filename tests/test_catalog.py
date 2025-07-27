@@ -123,3 +123,9 @@ def test_most_expensive(mini_catalog):
 
 def test_filter_counts_everything_not_just_top_k(mini_catalog):
     r = run("gluten-free mixes", mini_catalog)
+    assert r.total == 2
+    assert all("glutenfree" in badges_of(d) for d in r.docs)
+
+
+def test_unmatched_attribute_returns_nothing_with_clear_note(mini_catalog):
+    r = run("vegan options", mini_catalog)
