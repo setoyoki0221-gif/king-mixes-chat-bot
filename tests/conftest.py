@@ -34,3 +34,8 @@ def mini_catalog() -> tuple[Document, ...]:
         make_doc("Cupcake Party Kit", 66.27, 5.0, 1, []),
         make_doc("Pancake Mix", 6.95, 4.8, 1000, ["kosherdairy"], promo="Buy Any 5+/Save $4"),
     )
+
+
+@pytest.fixture(scope="session")
+def real_catalog():
+    import catalog
