@@ -273,3 +273,14 @@ def resolve_question(question: str, prior_questions: list[str]) -> tuple[str, Qu
     while is_followup(chain[0]) and i >= 0 and len(chain) <= MAX_FOLLOWUP_CHAIN:
         chain.insert(0, prior_questions[i])
         i -= 1
+    return " ".join(chain), merge_specs([parse_query(q) for q in chain])
+
+
+# --------------------------------------------------------------------------- #
+# Structured search
+# --------------------------------------------------------------------------- #
+@dataclass
+class LookupResult:
+    docs: list[Document]   # compact, ordered, at most `limit`
+    note: str              # tells the LLM what was done and how to read the list
+    total: int             # products that matched before the limit
