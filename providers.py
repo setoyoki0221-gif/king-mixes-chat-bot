@@ -27,3 +27,16 @@ def _load_local_model():
         with _local_lock:
             if _local_model is None:  # re-check: another thread may have loaded it
                 import torch
+                from transformers import AutoModelForCausalLM, AutoTokenizer
+
+                # Use all CPU cores for inference (default can under-utilise the CPU).
+                torch.set_num_threads(os.cpu_count() or 4)
+                _local_tokenizer = AutoTokenizer.from_pretrained(config.LOCAL_CHAT_MODEL)
+                _local_model = AutoModelForCausalLM.from_pretrained(
+                    config.LOCAL_CHAT_MODEL, torch_dtype=torch.float32
+                )
+    return _local_model, _local_tokenizer
+
+
+def _optional_import(module: str, package: str, provider: str):
+    """Import a provider package that is not in the core requirements."""
