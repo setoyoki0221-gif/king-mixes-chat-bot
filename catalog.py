@@ -284,3 +284,7 @@ class LookupResult:
     docs: list[Document]   # compact, ordered, at most `limit`
     note: str              # tells the LLM what was done and how to read the list
     total: int             # products that matched before the limit
+
+
+def _passes(doc: Document, spec: QuerySpec) -> bool:
+    have = badges_of(doc)
