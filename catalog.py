@@ -291,3 +291,12 @@ def _passes(doc: Document, spec: QuerySpec) -> bool:
     if any(not have.intersection(group) for group in spec.badge_groups):
         return False
     pv = doc.metadata.get("price_value")
+    if spec.max_price is not None and (pv is None or pv > spec.max_price):
+        return False
+    if spec.min_price is not None and (pv is None or pv < spec.min_price):
+        return False
+    return True
+
+
+def _singular(tok: str) -> str:
+    return tok[:-1] if len(tok) > 3 and tok.endswith("s") and not tok.endswith("ss") else tok
