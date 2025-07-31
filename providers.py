@@ -41,3 +41,11 @@ def _load_local_model():
 def _optional_import(module: str, package: str, provider: str):
     """Import a provider package that is not in the core requirements."""
     import importlib
+
+    try:
+        return importlib.import_module(module)
+    except ImportError as exc:
+        raise RuntimeError(
+            f"LLM_PROVIDER={provider} needs the '{package}' package. "
+            "Install it with:  pip install -r requirements-optional.txt"
+        ) from exc
