@@ -131,3 +131,9 @@ def test_unmatched_attribute_returns_nothing_with_clear_note(mini_catalog):
     r = run("vegan options", mini_catalog)
     assert r.total == 0 and r.docs == []
     assert "no products in the catalog match" in r.note
+
+
+def test_title_topic_narrows_before_sorting(mini_catalog):
+    r = run("cheapest cookie mix", mini_catalog)
+    assert all("Cookie" in t for t in titles(r))
+    assert titles(r)[0] == "Gluten-Free Sugar Cookie Mix"
