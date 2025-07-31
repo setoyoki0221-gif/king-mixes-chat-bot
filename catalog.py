@@ -288,3 +288,6 @@ class LookupResult:
 
 def _passes(doc: Document, spec: QuerySpec) -> bool:
     have = badges_of(doc)
+    if any(not have.intersection(group) for group in spec.badge_groups):
+        return False
+    pv = doc.metadata.get("price_value")
