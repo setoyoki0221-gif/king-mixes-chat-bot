@@ -137,3 +137,8 @@ def test_title_topic_narrows_before_sorting(mini_catalog):
     r = run("cheapest cookie mix", mini_catalog)
     assert all("Cookie" in t for t in titles(r))
     assert titles(r)[0] == "Gluten-Free Sugar Cookie Mix"
+    assert r.total == 3
+
+
+def test_combined_filter_and_sort(mini_catalog):
+    r = run("cheapest gluten-free mix", mini_catalog)
