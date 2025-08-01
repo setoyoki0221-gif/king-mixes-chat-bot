@@ -49,3 +49,9 @@ def _optional_import(module: str, package: str, provider: str):
             f"LLM_PROVIDER={provider} needs the '{package}' package. "
             "Install it with:  pip install -r requirements-optional.txt"
         ) from exc
+
+
+def get_embeddings():
+    """Return an embeddings object for the configured EMBED_PROVIDER."""
+    if config.EMBED_PROVIDER == "openai":
+        from langchain_openai import OpenAIEmbeddings
