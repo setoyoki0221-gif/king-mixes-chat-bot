@@ -300,3 +300,9 @@ def _passes(doc: Document, spec: QuerySpec) -> bool:
 
 def _singular(tok: str) -> str:
     return tok[:-1] if len(tok) > 3 and tok.endswith("s") and not tok.endswith("ss") else tok
+
+
+def _match_topic(
+    pool: list[Document], tokens: list[str], require_all: bool = True
+) -> list[Document]:
+    """Products whose title contains all (or, if relaxed, any) of the topic words."""
