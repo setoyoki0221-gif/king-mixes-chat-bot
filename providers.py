@@ -55,3 +55,11 @@ def get_embeddings():
     """Return an embeddings object for the configured EMBED_PROVIDER."""
     if config.EMBED_PROVIDER == "openai":
         from langchain_openai import OpenAIEmbeddings
+
+        # check_embedding_ctx_length=False avoids a tiktoken vocab download
+        # that is blocked on some networks; product docs are short anyway.
+        return OpenAIEmbeddings(
+            model=config.OPENAI_EMBED_MODEL,
+            api_key=config.OPENAI_API_KEY,
+            check_embedding_ctx_length=False,
+        )
