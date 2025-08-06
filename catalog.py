@@ -312,3 +312,7 @@ def _match_topic(
         d for d in pool
         if combine(p.search(d.metadata.get("title", "").lower()) for p in pats)
     ]
+
+
+def _mean_rating(catalog: tuple[Document, ...] | list[Document]) -> float:
+    rated = [float(d.metadata["rating"]) for d in catalog if d.metadata.get("rating")]
