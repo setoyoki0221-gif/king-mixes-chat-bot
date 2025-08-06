@@ -142,3 +142,10 @@ def test_title_topic_narrows_before_sorting(mini_catalog):
 
 def test_combined_filter_and_sort(mini_catalog):
     r = run("cheapest gluten-free mix", mini_catalog)
+    assert titles(r) == ["Gluten-Free Sugar Cookie Mix", "Fudge Brownie Mix"]
+
+
+def test_rating_sort_is_review_weighted(mini_catalog):
+    """5.0 from a single review must not outrank 4.9 from 300 reviews."""
+    order = titles(run("top rated mixes", mini_catalog))
+    assert order.index("Fudge Brownie Mix") < order.index("Confetti Sugar Cookie Mix")
