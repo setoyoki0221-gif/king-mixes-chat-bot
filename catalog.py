@@ -306,3 +306,9 @@ def _match_topic(
     pool: list[Document], tokens: list[str], require_all: bool = True
 ) -> list[Document]:
     """Products whose title contains all (or, if relaxed, any) of the topic words."""
+    pats = [re.compile(r"\b" + re.escape(_singular(t))) for t in tokens]
+    combine = all if require_all else any
+    return [
+        d for d in pool
+        if combine(p.search(d.metadata.get("title", "").lower()) for p in pats)
+    ]
