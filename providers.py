@@ -63,3 +63,12 @@ def get_embeddings():
             api_key=config.OPENAI_API_KEY,
             check_embedding_ctx_length=False,
         )
+
+    if config.EMBED_PROVIDER == "huggingface":
+        from langchain_huggingface import HuggingFaceEmbeddings
+
+        # Local, free, CPU-friendly. Downloads ~90MB model once and caches it.
+        return HuggingFaceEmbeddings(
+            model_name=config.HF_EMBED_MODEL,
+            encode_kwargs={"normalize_embeddings": True},
+        )
