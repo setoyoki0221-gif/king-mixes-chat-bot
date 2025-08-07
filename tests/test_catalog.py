@@ -149,3 +149,14 @@ def test_rating_sort_is_review_weighted(mini_catalog):
     """5.0 from a single review must not outrank 4.9 from 300 reviews."""
     order = titles(run("top rated mixes", mini_catalog))
     assert order.index("Fudge Brownie Mix") < order.index("Confetti Sugar Cookie Mix")
+    assert order.index("Fudge Brownie Mix") < order.index("Cupcake Party Kit")
+
+
+def test_price_cap(mini_catalog):
+    r = run("mixes under $7", mini_catalog)
+    assert all(d.metadata["price_value"] <= 7 for d in r.docs)
+    assert r.total == 3
+
+
+def test_limit_and_more_not_shown_note(mini_catalog):
+    _, spec = resolve_question("cheapest mix", [])
