@@ -72,3 +72,5 @@ def get_embeddings():
             model_name=config.HF_EMBED_MODEL,
             encode_kwargs={"normalize_embeddings": True},
         )
+
+    raise ValueError(f"Unknown EMBED_PROVIDER: {config.EMBED_PROVIDER!r}")
