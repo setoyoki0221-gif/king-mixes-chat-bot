@@ -316,3 +316,8 @@ def _match_topic(
 
 def _mean_rating(catalog: tuple[Document, ...] | list[Document]) -> float:
     rated = [float(d.metadata["rating"]) for d in catalog if d.metadata.get("rating")]
+    return sum(rated) / len(rated) if rated else 0.0
+
+
+def _weighted_rating(doc: Document, mean: float) -> float:
+    """Review-weighted rating, so 5.0 from 1 review doesn't beat 4.8 from 500."""
