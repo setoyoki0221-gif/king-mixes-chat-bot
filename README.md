@@ -61,3 +61,9 @@ retrieve → grade → (relevant?) ── yes ──► generate → END
 - **generate** — answer grounded *only* in the catalog, with sources
 
 The compiled graph is rendered live in the app's sidebar.
+
+### Why retrieval is hybrid
+
+Similarity search returns the few closest documents, so it cannot rank or count:
+"cheapest" would mean "cheapest of the six nearest matches". `catalog.py` parses
+those intents with plain rules (no LLM) and filters/sorts the *whole* catalog:
