@@ -321,3 +321,8 @@ def _mean_rating(catalog: tuple[Document, ...] | list[Document]) -> float:
 
 def _weighted_rating(doc: Document, mean: float) -> float:
     """Review-weighted rating, so 5.0 from 1 review doesn't beat 4.8 from 500."""
+    r = float(doc.metadata.get("rating") or 0)
+    n = int(doc.metadata.get("review_count") or 0)
+    if not r or not n:
+        return 0.0
+    return (n * r + _PRIOR_REVIEWS * mean) / (n + _PRIOR_REVIEWS)
