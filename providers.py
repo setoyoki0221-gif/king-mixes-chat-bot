@@ -74,3 +74,12 @@ def get_embeddings():
         )
 
     raise ValueError(f"Unknown EMBED_PROVIDER: {config.EMBED_PROVIDER!r}")
+
+
+def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
+    """Return a chat model for the configured LLM_PROVIDER.
+
+    max_new_tokens lets callers cap output length per task (e.g. a 4-token budget
+    for the YES/NO grader). It is honoured by the local provider and ignored by
+    hosted providers that don't expose it cheaply.
+    """
