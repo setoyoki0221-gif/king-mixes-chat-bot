@@ -160,3 +160,6 @@ def test_price_cap(mini_catalog):
 
 def test_limit_and_more_not_shown_note(mini_catalog):
     _, spec = resolve_question("cheapest mix", [])
+    r = structured_search(spec, mini_catalog, limit=2)
+    assert len(r.docs) == 2 and r.total == len(mini_catalog)
+    assert "more not shown" in r.note
