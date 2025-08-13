@@ -83,3 +83,4 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
     for the YES/NO grader). It is honoured by the local provider and ignored by
     hosted providers that don't expose it cheaply.
     """
+    config.require_llm_key()
