@@ -326,3 +326,8 @@ def _weighted_rating(doc: Document, mean: float) -> float:
     if not r or not n:
         return 0.0
     return (n * r + _PRIOR_REVIEWS * mean) / (n + _PRIOR_REVIEWS)
+
+
+def _sort_key(sort: str, mean: float) -> Callable[[Document], tuple]:
+    def price(d: Document, missing: float) -> float:
+        v = d.metadata.get("price_value")
