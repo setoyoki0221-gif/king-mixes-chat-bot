@@ -39,3 +39,5 @@ def mini_catalog() -> tuple[Document, ...]:
 @pytest.fixture(scope="session")
 def real_catalog():
     import catalog
+
+    return catalog.get_catalog()
