@@ -84,3 +84,6 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
     hosted providers that don't expose it cheaply.
     """
     config.require_llm_key()
+
+    if config.LLM_PROVIDER == "openai":
+        from langchain_openai import ChatOpenAI
