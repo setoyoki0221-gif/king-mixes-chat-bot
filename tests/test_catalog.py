@@ -163,3 +163,11 @@ def test_limit_and_more_not_shown_note(mini_catalog):
     r = structured_search(spec, mini_catalog, limit=2)
     assert len(r.docs) == 2 and r.total == len(mini_catalog)
     assert "more not shown" in r.note
+
+
+def test_price_ties_broken_by_weighted_rating():
+    tied = (
+        make_doc("Mediocre Mix", 5.00, 3.5, 200),
+        make_doc("Excellent Mix", 5.00, 4.9, 200),
+        make_doc("Pricey Mix", 9.00, 5.0, 900),
+    )
