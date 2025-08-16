@@ -41,3 +41,4 @@ from catalog import QuerySpec, get_catalog, resolve_question, structured_search
 from providers import get_embeddings, get_llm
 
 MAX_REWRITES = 2
+RETRIEVE_K = 6
