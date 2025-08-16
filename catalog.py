@@ -335,3 +335,19 @@ def _sort_key(sort: str, mean: float) -> Callable[[Document], tuple]:
 
     def reviews(d: Document) -> int:
         return int(d.metadata.get("review_count") or 0)
+
+    if sort == "price_asc":
+        return lambda d: (price(d, float("inf")), -_weighted_rating(d, mean))
+    if sort == "price_desc":
+        return lambda d: (-price(d, float("-inf")), -_weighted_rating(d, mean))
+    if sort == "reviews":
+        return lambda d: (-reviews(d), -_weighted_rating(d, mean))
+    return lambda d: (-_weighted_rating(d, mean), -reviews(d))  # "rating"
+
+
+def _criteria(spec: QuerySpec, topic_used: bool) -> str:
+    parts = [" or ".join(BADGE_LABELS.get(b, b) for b in g) for g in spec.badge_groups]
+    if spec.max_price is not None:
+        parts.append(f"price at most ${spec.max_price:g}")
+    if spec.min_price is not None:
+        parts.append(f"price at least ${spec.min_price:g}")
