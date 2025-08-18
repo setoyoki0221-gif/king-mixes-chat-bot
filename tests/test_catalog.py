@@ -171,3 +171,9 @@ def test_price_ties_broken_by_weighted_rating():
         make_doc("Excellent Mix", 5.00, 4.9, 200),
         make_doc("Pricey Mix", 9.00, 5.0, 900),
     )
+    assert titles(run("cheapest mix", tied)) == ["Excellent Mix", "Mediocre Mix", "Pricey Mix"]
+
+
+def test_topic_without_title_match_uses_semantic_ranking_not_one_weak_hit(mini_catalog):
+    """'party' appears in exactly one title; that must not collapse the answer to one kit."""
+    ranked = [mini_catalog[4], mini_catalog[5], mini_catalog[1], mini_catalog[2]]  # birthday first
