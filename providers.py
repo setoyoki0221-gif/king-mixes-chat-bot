@@ -87,3 +87,9 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
 
     if config.LLM_PROVIDER == "openai":
         from langchain_openai import ChatOpenAI
+
+        return ChatOpenAI(
+            model=config.OPENAI_CHAT_MODEL,
+            api_key=config.OPENAI_API_KEY,
+            temperature=temperature,
+        )
