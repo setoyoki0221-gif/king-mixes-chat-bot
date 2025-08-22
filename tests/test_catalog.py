@@ -177,3 +177,6 @@ def test_price_ties_broken_by_weighted_rating():
 def test_topic_without_title_match_uses_semantic_ranking_not_one_weak_hit(mini_catalog):
     """'party' appears in exactly one title; that must not collapse the answer to one kit."""
     ranked = [mini_catalog[4], mini_catalog[5], mini_catalog[1], mini_catalog[2]]  # birthday first
+    r = run("cheapest mix for a kid's birthday party", mini_catalog, rank=lambda t: ranked)
+    assert r.total >= 3
+    assert titles(r)[0] != "Cupcake Party Kit"
