@@ -93,3 +93,9 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             api_key=config.OPENAI_API_KEY,
             temperature=temperature,
         )
+
+    if config.LLM_PROVIDER == "local":
+        # Small instruct model running on-device via transformers. No API token,
+        # no network, no regional restrictions. The model is loaded once and
+        # shared; only a lightweight pipeline wrapper is created per call.
+        from transformers import pipeline as hf_pipeline
