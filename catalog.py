@@ -351,3 +351,5 @@ def _criteria(spec: QuerySpec, topic_used: bool) -> str:
         parts.append(f"price at most ${spec.max_price:g}")
     if spec.min_price is not None:
         parts.append(f"price at least ${spec.min_price:g}")
+    if topic_used and spec.topic:
+        parts.append("topic '" + " ".join(spec.topic) + "'")
