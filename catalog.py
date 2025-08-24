@@ -353,3 +353,4 @@ def _criteria(spec: QuerySpec, topic_used: bool) -> str:
         parts.append(f"price at least ${spec.min_price:g}")
     if topic_used and spec.topic:
         parts.append("topic '" + " ".join(spec.topic) + "'")
+    return "; ".join(parts) if parts else "no extra filters"
