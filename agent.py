@@ -43,3 +43,7 @@ from providers import get_embeddings, get_llm
 MAX_REWRITES = 2
 RETRIEVE_K = 6
 MAX_HISTORY_MESSAGES = 6  # prior turns sent to the LLM (keeps small models fast/on-topic)
+
+
+def _message_text(resp) -> str:
+    """Extract plain text from an LLM response (AIMessage or raw string)."""
