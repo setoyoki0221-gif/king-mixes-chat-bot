@@ -99,3 +99,6 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
         # no network, no regional restrictions. The model is loaded once and
         # shared; only a lightweight pipeline wrapper is created per call.
         from transformers import pipeline as hf_pipeline
+        from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
+
+        model, tokenizer = _load_local_model()
