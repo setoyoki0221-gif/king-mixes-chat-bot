@@ -23,3 +23,8 @@ langchain-openai>=1.0,<2         # optional: OpenAI / GitHub Models providers
 
 # --- Vector store ---
 langchain-chroma>=1.0,<2
+chromadb>=1.0,<2
+
+# --- Frontend ---
+streamlit>=1.39,<2
+markdown>=3.6,<4                 # render agent answers (markdown -> HTML) in cards
