@@ -354,3 +354,18 @@ def _criteria(spec: QuerySpec, topic_used: bool) -> str:
     if topic_used and spec.topic:
         parts.append("topic '" + " ".join(spec.topic) + "'")
     return "; ".join(parts) if parts else "no extra filters"
+
+
+def structured_search(
+    spec: QuerySpec,
+    catalog: tuple[Document, ...] | list[Document],
+    semantic_rank: Callable[[str], list[Document]] | None = None,
+    query_text: str = "",
+    limit: int = STRUCTURED_LIMIT,
+) -> LookupResult:
+    """Filter + sort the whole catalog for a structured query.
+
+    ``semantic_rank(text)`` should return catalog products ordered by similarity;
+    it is used to (a) pick topic candidates when no title contains the topic words
+    and (b) order results when the question gave no explicit sort.
+    """
