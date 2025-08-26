@@ -180,3 +180,9 @@ def test_topic_without_title_match_uses_semantic_ranking_not_one_weak_hit(mini_c
     r = run("cheapest mix for a kid's birthday party", mini_catalog, rank=lambda t: ranked)
     assert r.total >= 3
     assert titles(r)[0] != "Cupcake Party Kit"
+    assert r.docs[0].metadata["price_value"] < 20
+
+
+def test_semantic_rank_not_called_when_not_needed(mini_catalog):
+    def boom(_):
+        raise AssertionError("embedding search should not run for a plain sorted lookup")
