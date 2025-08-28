@@ -102,3 +102,13 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
         from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
 
         model, tokenizer = _load_local_model()
+        gen = hf_pipeline(
+            "text-generation",
+            model=model,
+            tokenizer=tokenizer,
+            max_new_tokens=max_new_tokens or config.LOCAL_MAX_NEW_TOKENS,
+            do_sample=temperature > 0,
+            temperature=max(temperature, 0.01),
+            return_full_text=False,
+            repetition_penalty=1.1,
+        )
