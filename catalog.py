@@ -369,3 +369,12 @@ def structured_search(
     it is used to (a) pick topic candidates when no title contains the topic words
     and (b) order results when the question gave no explicit sort.
     """
+    pool = [d for d in catalog if _passes(d, spec)]
+    mean = _mean_rating(catalog)
+
+    # Semantic order is only computed if something actually needs it (it embeds
+    # the query), and at most once.
+    _pos: dict[str, int] | None = None
+
+    def by_similarity(d: Document) -> int:
+        nonlocal _pos
