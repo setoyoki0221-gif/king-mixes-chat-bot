@@ -48,3 +48,7 @@ MAX_HISTORY_MESSAGES = 6  # prior turns sent to the LLM (keeps small models fast
 def _message_text(resp) -> str:
     """Extract plain text from an LLM response (AIMessage or raw string)."""
     return resp.content if isinstance(resp, AIMessage) else str(resp)
+
+
+def _format_context(documents: list[Document], sep: str = "\n\n") -> str:
+    """Join retrieved product documents into a single context block."""
