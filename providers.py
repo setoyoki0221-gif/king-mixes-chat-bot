@@ -112,3 +112,4 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             return_full_text=False,
             repetition_penalty=1.1,
         )
+        return ChatHuggingFace(llm=HuggingFacePipeline(pipeline=gen))
