@@ -186,3 +186,5 @@ def test_topic_without_title_match_uses_semantic_ranking_not_one_weak_hit(mini_c
 def test_semantic_rank_not_called_when_not_needed(mini_catalog):
     def boom(_):
         raise AssertionError("embedding search should not run for a plain sorted lookup")
+
+    run("cheapest mix", mini_catalog, rank=boom)  # sort given, no topic -> no embeddings needed
