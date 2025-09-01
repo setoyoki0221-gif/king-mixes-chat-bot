@@ -378,3 +378,5 @@ def structured_search(
 
     def by_similarity(d: Document) -> int:
         nonlocal _pos
+        if _pos is None:
+            ranked = semantic_rank(query_text) if semantic_rank and query_text else []
