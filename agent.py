@@ -52,3 +52,4 @@ def _message_text(resp) -> str:
 
 def _format_context(documents: list[Document], sep: str = "\n\n") -> str:
     """Join retrieved product documents into a single context block."""
+    return sep.join(d.page_content for d in documents)
