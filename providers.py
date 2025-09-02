@@ -113,3 +113,8 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             repetition_penalty=1.1,
         )
         return ChatHuggingFace(llm=HuggingFacePipeline(pipeline=gen))
+
+    if config.LLM_PROVIDER == "ollama":
+        # Quantized local models served by the Ollama app — much faster on CPU
+        # than fp32 transformers, so a smarter 1.5B/3B model stays responsive.
+        from langchain_ollama import ChatOllama
