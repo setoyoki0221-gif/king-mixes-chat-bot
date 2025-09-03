@@ -380,3 +380,5 @@ def structured_search(
         nonlocal _pos
         if _pos is None:
             ranked = semantic_rank(query_text) if semantic_rank and query_text else []
+            _pos = {x.metadata["url"]: i for i, x in enumerate(ranked)}
+        return _pos.get(d.metadata["url"], 10**6)
