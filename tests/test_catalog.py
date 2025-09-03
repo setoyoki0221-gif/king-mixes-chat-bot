@@ -188,3 +188,8 @@ def test_semantic_rank_not_called_when_not_needed(mini_catalog):
         raise AssertionError("embedding search should not run for a plain sorted lookup")
 
     run("cheapest mix", mini_catalog, rank=boom)  # sort given, no topic -> no embeddings needed
+
+
+def test_compact_line_format(mini_catalog):
+    line = compact_line(mini_catalog[6])
+    assert line.startswith("- Pancake Mix | $6.95 (Buy Any 5+/Save $4) | 4.8/5 from 1000 reviews")
