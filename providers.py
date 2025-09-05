@@ -118,3 +118,10 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
         # Quantized local models served by the Ollama app — much faster on CPU
         # than fp32 transformers, so a smarter 1.5B/3B model stays responsive.
         from langchain_ollama import ChatOllama
+
+        return ChatOllama(
+            model=config.OLLAMA_CHAT_MODEL,
+            base_url=config.OLLAMA_BASE_URL,
+            temperature=temperature,
+            num_predict=max_new_tokens or config.LOCAL_MAX_NEW_TOKENS,
+        )
