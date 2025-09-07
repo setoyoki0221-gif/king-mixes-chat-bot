@@ -382,3 +382,5 @@ def structured_search(
             ranked = semantic_rank(query_text) if semantic_rank and query_text else []
             _pos = {x.metadata["url"]: i for i, x in enumerate(ranked)}
         return _pos.get(d.metadata["url"], 10**6)
+
+    can_rank = semantic_rank is not None and bool(query_text)
