@@ -384,3 +384,5 @@ def structured_search(
         return _pos.get(d.metadata["url"], 10**6)
 
     can_rank = semantic_rank is not None and bool(query_text)
+
+    topic_used = False
