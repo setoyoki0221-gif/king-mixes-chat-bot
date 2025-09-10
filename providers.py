@@ -125,3 +125,8 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             temperature=temperature,
             num_predict=max_new_tokens or config.LOCAL_MAX_NEW_TOKENS,
         )
+
+    if config.LLM_PROVIDER == "huggingface":
+        # Free Hugging Face Inference API. Uses the same HF token as deployment
+        # and works in regions where other providers are blocked.
+        from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
