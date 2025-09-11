@@ -62,3 +62,4 @@ class AgentState(TypedDict):
     """Shared state passed between graph nodes."""
 
     messages: Annotated[list[BaseMessage], add_messages]  # full chat history
+    question: str            # the (possibly rewritten) query used for retrieval
