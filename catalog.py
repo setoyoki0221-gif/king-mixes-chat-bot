@@ -386,3 +386,9 @@ def structured_search(
     can_rank = semantic_rank is not None and bool(query_text)
 
     topic_used = False
+    if spec.topic and pool:
+        # Narrow by title only when EVERY topic word is in the title ("cookie",
+        # "chocolate chip cookie") — strong evidence of a product-type query. A
+        # partial hit is unreliable: in "kid's birthday party", "party" alone would
+        # pick out one unrelated kit and make it "the cheapest".
+        narrowed = _match_topic(pool, spec.topic)
