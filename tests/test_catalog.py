@@ -196,3 +196,4 @@ def test_compact_line_format(mini_catalog):
     singular = compact_line(mini_catalog[2])
     assert "from 1 review" in singular and "1 reviews" not in singular
     unrated = Document(page_content="", metadata={"title": "X", "price": "$1.00", "rating": 0})
+    assert "no ratings yet" in compact_line(unrated)
