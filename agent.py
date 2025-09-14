@@ -63,3 +63,9 @@ class AgentState(TypedDict):
 
     messages: Annotated[list[BaseMessage], add_messages]  # full chat history
     question: str            # the (possibly rewritten) query used for retrieval
+    original_question: str   # what the user actually asked
+    documents: list[Document]
+    note: str                # how the documents were chosen (structured lookups only)
+    structured: bool         # True when documents came from an exact catalog lookup
+    relevant: bool           # grader verdict on the current documents
+    generation: str
