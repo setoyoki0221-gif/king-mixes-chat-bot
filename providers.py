@@ -130,3 +130,11 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
         # Free Hugging Face Inference API. Uses the same HF token as deployment
         # and works in regions where other providers are blocked.
         from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+
+        endpoint = HuggingFaceEndpoint(
+            repo_id=config.HF_CHAT_MODEL,
+            huggingfacehub_api_token=config.HF_TOKEN,
+            task="text-generation",
+            temperature=max(temperature, 0.01),  # HF API rejects temperature=0
+            max_new_tokens=700,
+        )
