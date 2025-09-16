@@ -392,3 +392,5 @@ def structured_search(
         # partial hit is unreliable: in "kid's birthday party", "party" alone would
         # pick out one unrelated kit and make it "the cheapest".
         narrowed = _match_topic(pool, spec.topic)
+        if narrowed:
+            pool, topic_used = narrowed, True
