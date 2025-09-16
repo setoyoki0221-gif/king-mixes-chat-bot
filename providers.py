@@ -138,3 +138,4 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             temperature=max(temperature, 0.01),  # HF API rejects temperature=0
             max_new_tokens=700,
         )
+        return ChatHuggingFace(llm=endpoint)
