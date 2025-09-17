@@ -197,3 +197,24 @@ def test_compact_line_format(mini_catalog):
     assert "from 1 review" in singular and "1 reviews" not in singular
     unrated = Document(page_content="", metadata={"title": "X", "price": "$1.00", "rating": 0})
     assert "no ratings yet" in compact_line(unrated)
+
+
+# --------------------------------------------------------------------------- #
+# Follow-ups
+# --------------------------------------------------------------------------- #
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("What's the cheapest one?", True),
+        ("And the most expensive one?", True),
+        ("Which is best for beginners?", True),
+        ("What about gluten-free?", True),
+        ("Which of those are kosher?", True),
+        ("Do you have vegan options?", False),
+        ("What cookie mixes do you have?", False),
+        ("Recommend one cookie mix", False),  # names its own topic
+        ("What gluten-free mixes do you have?", False),
+    ],
+)
+def test_is_followup(text, expected):
+    assert is_followup(text) is expected
