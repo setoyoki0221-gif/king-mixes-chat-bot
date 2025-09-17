@@ -69,3 +69,4 @@ class AgentState(TypedDict):
     structured: bool         # True when documents came from an exact catalog lookup
     relevant: bool           # grader verdict on the current documents
     generation: str
+    rewrites: int
