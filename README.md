@@ -67,3 +67,11 @@ The compiled graph is rendered live in the app's sidebar.
 Similarity search returns the few closest documents, so it cannot rank or count:
 "cheapest" would mean "cheapest of the six nearest matches". `catalog.py` parses
 those intents with plain rules (no LLM) and filters/sorts the *whole* catalog:
+
+| Question | Handled as |
+|---|---|
+| "What's the cheapest mix?" / "most expensive" | sort by numeric price |
+| "Top rated" / "best reviews" / "most popular" | sort by review-weighted rating (5.0 from 1 review doesn't beat 4.9 from 300) |
+| "gluten-free", "kosher", "non-GMO", "vegan"… | filter on the product's attribute badges, with an exact total count |
+| "under $7", "$8 or less" | numeric price bounds |
+| "What's the cheapest **one**?" (follow-up) | inherits the topic/filters of the earlier question |
