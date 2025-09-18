@@ -394,3 +394,8 @@ def structured_search(
         narrowed = _match_topic(pool, spec.topic)
         if narrowed:
             pool, topic_used = narrowed, True
+        elif can_rank:  # otherwise rely on meaning: the closest matches, then sort
+            pool = sorted(pool, key=by_similarity)[:SEMANTIC_TOPIC_POOL]
+            topic_used = True
+        else:  # no embeddings available (e.g. unit tests): relaxed title match
+            partial = _match_topic(pool, spec.topic, require_all=False)
