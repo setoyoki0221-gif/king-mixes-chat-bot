@@ -218,3 +218,7 @@ def test_compact_line_format(mini_catalog):
 )
 def test_is_followup(text, expected):
     assert is_followup(text) is expected
+
+
+def test_followup_inherits_topic():
+    text, spec = resolve_question("What's the cheapest one?", ["What cookie mixes do you have?"])
