@@ -139,3 +139,8 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             max_new_tokens=700,
         )
         return ChatHuggingFace(llm=endpoint)
+
+    if config.LLM_PROVIDER == "gemini":
+        ChatGoogleGenerativeAI = _optional_import(
+            "langchain_google_genai", "langchain-google-genai", "gemini"
+        ).ChatGoogleGenerativeAI
