@@ -399,3 +399,5 @@ def structured_search(
             topic_used = True
         else:  # no embeddings available (e.g. unit tests): relaxed title match
             partial = _match_topic(pool, spec.topic, require_all=False)
+            if partial:
+                pool, topic_used = partial, True
