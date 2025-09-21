@@ -70,3 +70,9 @@ class AgentState(TypedDict):
     relevant: bool           # grader verdict on the current documents
     generation: str
     rewrites: int
+
+
+# --------------------------------------------------------------------------- #
+# Lazily-constructed singletons (built once, reused across turns)
+# --------------------------------------------------------------------------- #
+_vectorstore: Chroma | None = None
