@@ -401,3 +401,8 @@ def structured_search(
             partial = _match_topic(pool, spec.topic, require_all=False)
             if partial:
                 pool, topic_used = partial, True
+
+    if spec.sort:
+        pool = sorted(pool, key=_sort_key(spec.sort, mean))
+    elif can_rank:
+        pool = sorted(pool, key=by_similarity)
