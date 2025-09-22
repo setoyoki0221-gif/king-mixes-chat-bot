@@ -76,3 +76,4 @@ class AgentState(TypedDict):
 # Lazily-constructed singletons (built once, reused across turns)
 # --------------------------------------------------------------------------- #
 _vectorstore: Chroma | None = None
+_gen_llm = None
