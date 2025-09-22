@@ -144,3 +144,9 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
         ChatGoogleGenerativeAI = _optional_import(
             "langchain_google_genai", "langchain-google-genai", "gemini"
         ).ChatGoogleGenerativeAI
+
+        return ChatGoogleGenerativeAI(
+            model=config.GEMINI_CHAT_MODEL,
+            google_api_key=config.GOOGLE_API_KEY,
+            temperature=temperature,
+        )
