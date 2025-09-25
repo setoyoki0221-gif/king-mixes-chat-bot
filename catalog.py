@@ -406,3 +406,8 @@ def structured_search(
         pool = sorted(pool, key=_sort_key(spec.sort, mean))
     elif can_rank:
         pool = sorted(pool, key=by_similarity)
+    else:
+        pool = sorted(pool, key=_sort_key("rating", mean))
+
+    total = len(pool)
+    criteria = _criteria(spec, topic_used)
