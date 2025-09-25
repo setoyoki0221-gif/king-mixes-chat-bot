@@ -77,3 +77,4 @@ class AgentState(TypedDict):
 # --------------------------------------------------------------------------- #
 _vectorstore: Chroma | None = None
 _gen_llm = None
+_short_llm = None
