@@ -150,3 +150,8 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             google_api_key=config.GOOGLE_API_KEY,
             temperature=temperature,
         )
+
+    if config.LLM_PROVIDER == "github":
+        # GitHub Models is OpenAI-compatible: real OpenAI models, free, via a
+        # GitHub token and a custom base URL.
+        from langchain_openai import ChatOpenAI
