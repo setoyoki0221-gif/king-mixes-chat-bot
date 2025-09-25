@@ -222,3 +222,4 @@ def test_is_followup(text, expected):
 
 def test_followup_inherits_topic():
     text, spec = resolve_question("What's the cheapest one?", ["What cookie mixes do you have?"])
+    assert spec.topic == ["cookie"] and spec.sort == "price_asc"
