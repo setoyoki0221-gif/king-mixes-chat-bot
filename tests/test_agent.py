@@ -15,3 +15,6 @@ import agent
 # --------------------------------------------------------------------------- #
 class Recorder:
     """Stub chat model: records every prompt it receives and returns a reply."""
+
+    def __init__(self, reply="OK"):
+        self.reply = reply
