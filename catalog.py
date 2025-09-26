@@ -411,3 +411,8 @@ def structured_search(
 
     total = len(pool)
     criteria = _criteria(spec, topic_used)
+    if total == 0:
+        note = (
+            f"CATALOG LOOKUP: no products in the catalog match ({criteria}). "
+            "Tell the user you couldn't find any; do not suggest otherwise."
+        )
