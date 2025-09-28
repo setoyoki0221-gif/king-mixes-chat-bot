@@ -78,3 +78,7 @@ class AgentState(TypedDict):
 _vectorstore: Chroma | None = None
 _gen_llm = None
 _short_llm = None
+# Streamlit serves each browser session on its own thread, so two first visitors
+# can reach these lazy getters at once. The lock (double-checked below) makes sure
+# only one of them builds the object.
+_init_lock = threading.RLock()
