@@ -155,3 +155,10 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
         # GitHub Models is OpenAI-compatible: real OpenAI models, free, via a
         # GitHub token and a custom base URL.
         from langchain_openai import ChatOpenAI
+
+        return ChatOpenAI(
+            model=config.GITHUB_CHAT_MODEL,
+            api_key=config.GITHUB_TOKEN,
+            base_url=config.GITHUB_MODELS_BASE_URL,
+            temperature=temperature,
+        )
