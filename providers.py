@@ -162,3 +162,6 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             base_url=config.GITHUB_MODELS_BASE_URL,
             temperature=temperature,
         )
+
+    if config.LLM_PROVIDER == "groq":
+        ChatGroq = _optional_import("langchain_groq", "langchain-groq", "groq").ChatGroq
