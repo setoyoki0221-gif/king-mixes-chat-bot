@@ -75,3 +75,6 @@ those intents with plain rules (no LLM) and filters/sorts the *whole* catalog:
 | "gluten-free", "kosher", "non-GMO", "vegan"… | filter on the product's attribute badges, with an exact total count |
 | "under $7", "$8 or less" | numeric price bounds |
 | "What's the cheapest **one**?" (follow-up) | inherits the topic/filters of the earlier question |
+
+If an attribute matches nothing (e.g. there are no vegan-labelled mixes), the bot
+says so rather than guessing. Anything it can't parse falls back to semantic search.
