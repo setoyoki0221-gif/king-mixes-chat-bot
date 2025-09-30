@@ -416,3 +416,7 @@ def structured_search(
             f"CATALOG LOOKUP: no products in the catalog match ({criteria}). "
             "Tell the user you couldn't find any; do not suggest otherwise."
         )
+        return LookupResult([], note, 0)
+
+    shown = pool[:limit]
+    order = SORT_LABELS.get(spec.sort or "", "relevance")
