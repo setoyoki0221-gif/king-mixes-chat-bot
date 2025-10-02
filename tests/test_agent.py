@@ -18,3 +18,4 @@ class Recorder:
 
     def __init__(self, reply="OK"):
         self.reply = reply
+        self.prompts: list[list] = []
