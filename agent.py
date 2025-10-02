@@ -82,3 +82,7 @@ _short_llm = None
 # can reach these lazy getters at once. The lock (double-checked below) makes sure
 # only one of them builds the object.
 _init_lock = threading.RLock()
+
+
+def get_vectorstore() -> Chroma:
+    global _vectorstore
