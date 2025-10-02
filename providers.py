@@ -165,3 +165,9 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
 
     if config.LLM_PROVIDER == "groq":
         ChatGroq = _optional_import("langchain_groq", "langchain-groq", "groq").ChatGroq
+
+        return ChatGroq(
+            model=config.GROQ_CHAT_MODEL,
+            api_key=config.GROQ_API_KEY,
+            temperature=temperature,
+        )
