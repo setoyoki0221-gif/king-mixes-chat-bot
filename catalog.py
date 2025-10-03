@@ -420,3 +420,11 @@ def structured_search(
 
     shown = pool[:limit]
     order = SORT_LABELS.get(spec.sort or "", "relevance")
+    note = " ".join(
+        part for part in (
+            f"CATALOG LOOKUP over the whole catalog ({criteria}): {total} matching "
+            f"product(s); listing the top {len(shown)}, sorted by {order}.",
+            _SORT_HINTS[spec.sort] if spec.sort else "",
+            f"({total - len(shown)} more not shown.)" if total > len(shown) else "",
+        ) if part
+    )
