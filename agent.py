@@ -86,3 +86,11 @@ _init_lock = threading.RLock()
 
 def get_vectorstore() -> Chroma:
     global _vectorstore
+    if _vectorstore is None:
+        with _init_lock:
+            if _vectorstore is None:
+                _vectorstore = Chroma(
+                    collection_name=config.COLLECTION_NAME,
+                    persist_directory=str(config.CHROMA_DIR),
+                    embedding_function=get_embeddings(),
+                )
