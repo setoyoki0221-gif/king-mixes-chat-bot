@@ -19,3 +19,6 @@ class Recorder:
     def __init__(self, reply="OK"):
         self.reply = reply
         self.prompts: list[list] = []
+
+    def __call__(self, prompt_value):
+        msgs = prompt_value.to_messages()
