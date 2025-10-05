@@ -229,3 +229,10 @@ def test_followup_inherits_topic():
 def test_followup_inherits_filters():
     _, spec = resolve_question("What's the cheapest one?", ["What gluten-free mixes do you have?"])
     assert spec.badge_groups == [("glutenfree",)] and spec.sort == "price_asc"
+
+
+def test_followup_chain_and_override():
+    _, spec = resolve_question(
+        "And the most expensive one?",
+        ["What cookie mixes do you have?", "What's the cheapest one?"],
+    )
