@@ -428,3 +428,5 @@ def structured_search(
             f"({total - len(shown)} more not shown.)" if total > len(shown) else "",
         ) if part
     )
+    docs = [Document(page_content=compact_line(d), metadata=d.metadata) for d in shown]
+    return LookupResult(docs, note, total)
