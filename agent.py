@@ -94,3 +94,4 @@ def get_vectorstore() -> Chroma:
                     persist_directory=str(config.CHROMA_DIR),
                     embedding_function=get_embeddings(),
                 )
+    return _vectorstore
