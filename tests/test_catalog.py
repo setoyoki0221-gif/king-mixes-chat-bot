@@ -236,3 +236,4 @@ def test_followup_chain_and_override():
         "And the most expensive one?",
         ["What cookie mixes do you have?", "What's the cheapest one?"],
     )
+    assert spec.topic == ["cookie"]
