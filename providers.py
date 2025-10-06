@@ -171,3 +171,5 @@ def get_llm(temperature: float = 0.2, max_new_tokens: int | None = None):
             api_key=config.GROQ_API_KEY,
             temperature=temperature,
         )
+
+    raise ValueError(f"Unknown LLM_PROVIDER: {config.LLM_PROVIDER!r}")
