@@ -22,3 +22,5 @@ class Recorder:
 
     def __call__(self, prompt_value):
         msgs = prompt_value.to_messages()
+        self.prompts.append(msgs)
+        text = self.reply(msgs) if callable(self.reply) else self.reply
