@@ -237,3 +237,4 @@ def test_followup_chain_and_override():
         ["What cookie mixes do you have?", "What's the cheapest one?"],
     )
     assert spec.topic == ["cookie"]
+    assert spec.sort == "price_desc"  # latest sort wins
