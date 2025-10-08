@@ -95,3 +95,7 @@ def get_vectorstore() -> Chroma:
                     embedding_function=get_embeddings(),
                 )
     return _vectorstore
+
+
+def gen_llm():
+    """LLM for writing the final answer (longer output budget)."""
