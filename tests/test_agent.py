@@ -24,3 +24,12 @@ class Recorder:
         msgs = prompt_value.to_messages()
         self.prompts.append(msgs)
         text = self.reply(msgs) if callable(self.reply) else self.reply
+        return AIMessage(content=text)
+
+    def runnable(self):
+        return RunnableLambda(self)
+
+
+def make_state(text="q", history=(), **over):
+    """Agent state for a user turn `text`; `over` may override any field
+    (e.g. question=<a rewritten query>, rewrites=1)."""
