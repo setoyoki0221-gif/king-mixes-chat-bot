@@ -99,3 +99,8 @@ def get_vectorstore() -> Chroma:
 
 def gen_llm():
     """LLM for writing the final answer (longer output budget)."""
+    global _gen_llm
+    if _gen_llm is None:
+        with _init_lock:
+            if _gen_llm is None:
+                _gen_llm = get_llm(temperature=0.2)
