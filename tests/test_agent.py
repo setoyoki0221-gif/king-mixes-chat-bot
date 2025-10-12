@@ -33,3 +33,14 @@ class Recorder:
 def make_state(text="q", history=(), **over):
     """Agent state for a user turn `text`; `over` may override any field
     (e.g. question=<a rewritten query>, rewrites=1)."""
+    state = {
+        "messages": [*history, HumanMessage(content=text)],
+        "question": text,
+        "original_question": text,
+        "documents": [],
+        "note": "",
+        "structured": False,
+        "relevant": True,
+        "generation": "",
+        "rewrites": 0,
+    }
