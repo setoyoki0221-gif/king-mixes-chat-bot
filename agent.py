@@ -104,3 +104,9 @@ def gen_llm():
         with _init_lock:
             if _gen_llm is None:
                 _gen_llm = get_llm(temperature=0.2)
+    return _gen_llm
+
+
+def short_llm():
+    """LLM for grade/rewrite — greedy and tiny output, so it's fast on CPU."""
+    global _short_llm
