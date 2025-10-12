@@ -238,3 +238,7 @@ def test_followup_chain_and_override():
     )
     assert spec.topic == ["cookie"]
     assert spec.sort == "price_desc"  # latest sort wins
+
+
+def test_standalone_question_ignores_history():
+    text, spec = resolve_question("What cookie mixes do you have?", ["What gluten-free mixes do you have?"])
