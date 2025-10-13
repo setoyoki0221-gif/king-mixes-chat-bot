@@ -110,3 +110,15 @@ def gen_llm():
 def short_llm():
     """LLM for grade/rewrite — greedy and tiny output, so it's fast on CPU."""
     global _short_llm
+    if _short_llm is None:
+        with _init_lock:
+            if _short_llm is None:
+                _short_llm = get_llm(temperature=0.0, max_new_tokens=24)
+    return _short_llm
+
+
+# --------------------------------------------------------------------------- #
+# Graph nodes
+# --------------------------------------------------------------------------- #
+def _semantic_rank(text: str) -> list[Document]:
+    """Every catalog product ordered by similarity to `text`."""
