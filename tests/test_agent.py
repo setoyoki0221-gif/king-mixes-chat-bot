@@ -44,3 +44,4 @@ def make_state(text="q", history=(), **over):
         "generation": "",
         "rewrites": 0,
     }
+    state.update(over)
