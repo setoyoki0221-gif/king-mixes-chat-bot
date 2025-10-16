@@ -248,3 +248,4 @@ def test_standalone_question_ignores_history():
 
 def test_semantic_followup_carries_context_into_embedding_text():
     text, spec = resolve_question("Which is best for beginners?", ["What cookie mixes do you have?"])
+    assert "cookie" in text and not spec.structured
