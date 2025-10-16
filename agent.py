@@ -123,3 +123,12 @@ def short_llm():
 def _semantic_rank(text: str) -> list[Document]:
     """Every catalog product ordered by similarity to `text`."""
     return get_vectorstore().similarity_search(text, k=len(get_catalog()))
+
+
+def retrieve(state: AgentState) -> dict:
+    """Hybrid retrieval: exact catalog lookup for aggregate questions, else semantic.
+
+    On the first pass the question is resolved against earlier user turns so a
+    follow-up keeps its topic/filters. After a rewrite, `question` is already a
+    standalone search string, so it goes straight to semantic search.
+    """
