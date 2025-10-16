@@ -45,3 +45,4 @@ def make_state(text="q", history=(), **over):
         "rewrites": 0,
     }
     state.update(over)
+    return state
