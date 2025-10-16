@@ -122,3 +122,4 @@ def short_llm():
 # --------------------------------------------------------------------------- #
 def _semantic_rank(text: str) -> list[Document]:
     """Every catalog product ordered by similarity to `text`."""
+    return get_vectorstore().similarity_search(text, k=len(get_catalog()))
