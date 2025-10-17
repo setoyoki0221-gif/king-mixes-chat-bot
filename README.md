@@ -78,3 +78,5 @@ those intents with plain rules (no LLM) and filters/sorts the *whole* catalog:
 
 If an attribute matches nothing (e.g. there are no vegan-labelled mixes), the bot
 says so rather than guessing. Anything it can't parse falls back to semantic search.
+
+---
