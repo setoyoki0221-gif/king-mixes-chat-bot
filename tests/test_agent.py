@@ -46,3 +46,8 @@ def make_state(text="q", history=(), **over):
     }
     state.update(over)
     return state
+
+
+def no_embeddings(monkeypatch):
+    def boom():
+        raise AssertionError("this path must not touch the vector store / embeddings")
