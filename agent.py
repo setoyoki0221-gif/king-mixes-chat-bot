@@ -132,3 +132,6 @@ def retrieve(state: AgentState) -> dict:
     follow-up keeps its topic/filters. After a rewrite, `question` is already a
     standalone search string, so it goes straight to semantic search.
     """
+    if state["rewrites"] == 0:
+        prior = [str(m.content) for m in state["messages"][:-1] if m.type == "human"]
+        text, spec = resolve_question(state["original_question"], prior)
