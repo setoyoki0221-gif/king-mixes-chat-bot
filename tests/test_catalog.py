@@ -253,3 +253,4 @@ def test_semantic_followup_carries_context_into_embedding_text():
 
 def test_followup_with_no_history_is_just_the_question():
     text, _ = resolve_question("What's the cheapest one?", [])
+    assert text == "What's the cheapest one?"
