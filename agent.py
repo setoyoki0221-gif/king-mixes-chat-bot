@@ -137,3 +137,8 @@ def retrieve(state: AgentState) -> dict:
         text, spec = resolve_question(state["original_question"], prior)
     else:
         text, spec = state["question"], QuerySpec()
+
+    if spec.structured:
+        found = structured_search(
+            spec, get_catalog(), semantic_rank=_semantic_rank, query_text=text
+        )
