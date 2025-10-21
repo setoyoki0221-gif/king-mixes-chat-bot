@@ -135,3 +135,5 @@ def retrieve(state: AgentState) -> dict:
     if state["rewrites"] == 0:
         prior = [str(m.content) for m in state["messages"][:-1] if m.type == "human"]
         text, spec = resolve_question(state["original_question"], prior)
+    else:
+        text, spec = state["question"], QuerySpec()
