@@ -53,3 +53,8 @@ def no_embeddings(monkeypatch):
         raise AssertionError("this path must not touch the vector store / embeddings")
 
     monkeypatch.setattr(agent, "get_vectorstore", boom)
+
+
+class FakeStore:
+    def __init__(self, docs):
+        self.docs, self.queries = docs, []
