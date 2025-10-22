@@ -142,3 +142,7 @@ def retrieve(state: AgentState) -> dict:
         found = structured_search(
             spec, get_catalog(), semantic_rank=_semantic_rank, query_text=text
         )
+        return {"documents": found.docs, "note": found.note, "structured": True}
+
+    docs = get_vectorstore().similarity_search(text, k=RETRIEVE_K)
+    return {"documents": docs, "note": "", "structured": False}
