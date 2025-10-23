@@ -146,3 +146,23 @@ def retrieve(state: AgentState) -> dict:
 
     docs = get_vectorstore().similarity_search(text, k=RETRIEVE_K)
     return {"documents": docs, "note": "", "structured": False}
+
+
+GRADE_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            "You decide whether a set of retrieved baking-mix products is "
+            "ON-TOPIC for the user's question. Judge the TOPIC, not whether the "
+            "answer is spelled out.\n"
+            "- Answer YES if the products are the kind of thing the user asked "
+            "about (e.g. cookie mixes for a question about cookies, or any mixes "
+            "for a question about prices/ratings). For 'cheapest', 'best', or "
+            "'list' questions, relevant products are always YES.\n"
+            "- Answer NO only if the products are about something COMPLETELY "
+            "different from the question.\n"
+            "Reply with exactly one word: YES or NO.",
+        ),
+        ("human", "Question: {q}\n\nProducts:\n{ctx}\n\nOn-topic? YES or NO."),
+    ]
+)
