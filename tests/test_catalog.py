@@ -261,3 +261,8 @@ def test_followup_with_no_history_is_just_the_question():
 # --------------------------------------------------------------------------- #
 def test_real_cheapest_is_the_true_minimum(real_catalog):
     r = run("cheapest mix", real_catalog)
+    assert r.docs[0].metadata["price_value"] == min(d.metadata["price_value"] for d in real_catalog)
+
+
+def test_real_gluten_free_total_matches_badge_count(real_catalog):
+    expected = sum("glutenfree" in badges_of(d) for d in real_catalog)
