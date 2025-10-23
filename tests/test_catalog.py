@@ -254,3 +254,10 @@ def test_semantic_followup_carries_context_into_embedding_text():
 def test_followup_with_no_history_is_just_the_question():
     text, _ = resolve_question("What's the cheapest one?", [])
     assert text == "What's the cheapest one?"
+
+
+# --------------------------------------------------------------------------- #
+# Real catalog invariants (robust to re-scrapes: no hard-coded titles/prices)
+# --------------------------------------------------------------------------- #
+def test_real_cheapest_is_the_true_minimum(real_catalog):
+    r = run("cheapest mix", real_catalog)
