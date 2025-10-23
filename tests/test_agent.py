@@ -58,3 +58,6 @@ def no_embeddings(monkeypatch):
 class FakeStore:
     def __init__(self, docs):
         self.docs, self.queries = docs, []
+
+    def similarity_search(self, text, k=4):
+        self.queries.append((text, k))
