@@ -61,3 +61,12 @@ class FakeStore:
 
     def similarity_search(self, text, k=4):
         self.queries.append((text, k))
+        return self.docs[:k]
+
+
+# --------------------------------------------------------------------------- #
+# Prompt construction
+# --------------------------------------------------------------------------- #
+def test_generate_prompt_passes_braces_through_verbatim():
+    """Regression: '{...}' in chat history used to raise KeyError."""
+    history = [HumanMessage(content="Can I use {flour} and {{sugar}}? {"), AIMessage(content="Sure {x} }")]
