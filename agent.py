@@ -166,3 +166,12 @@ GRADE_PROMPT = ChatPromptTemplate.from_messages(
         ("human", "Question: {q}\n\nProducts:\n{ctx}\n\nOn-topic? YES or NO."),
     ]
 )
+
+
+def grade_documents(state: AgentState) -> dict:
+    """Ask the LLM whether the retrieved products are relevant to the question.
+
+    Reasoning step: if retrieval missed, we'd rather rewrite than answer from
+    irrelevant context. Uses a simple YES/NO completion so it works across all
+    providers (no tool-calling required).
+    """
