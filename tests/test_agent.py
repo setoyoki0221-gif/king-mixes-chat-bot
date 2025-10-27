@@ -70,3 +70,14 @@ class FakeStore:
 def test_generate_prompt_passes_braces_through_verbatim():
     """Regression: '{...}' in chat history used to raise KeyError."""
     history = [HumanMessage(content="Can I use {flour} and {{sugar}}? {"), AIMessage(content="Sure {x} }")]
+    msgs = agent.GENERATE_PROMPT.invoke(
+        {"context": "Product: A {braces} too", "history": history, "question": "And {this}?"}
+    ).to_messages()
+    assert [m.type for m in msgs] == ["system", "human", "ai", "human"]
+    assert msgs[1].content == "Can I use {flour} and {{sugar}}? {"
+    assert "A {braces} too" in msgs[0].content
+    assert msgs[3].content == "And {this}?"
+
+
+def test_generate_trims_history_and_prepends_lookup_note(monkeypatch):
+    rec = Recorder("final")
