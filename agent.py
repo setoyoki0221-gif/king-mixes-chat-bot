@@ -175,3 +175,7 @@ def grade_documents(state: AgentState) -> dict:
     irrelevant context. Uses a simple YES/NO completion so it works across all
     providers (no tool-calling required).
     """
+    if state.get("structured"):
+        # An exact lookup is already correct by construction (an empty result
+        # means "nothing matches", not "bad search"), so don't second-guess it.
+        return {"relevant": True}
