@@ -266,3 +266,10 @@ def test_real_cheapest_is_the_true_minimum(real_catalog):
 
 def test_real_gluten_free_total_matches_badge_count(real_catalog):
     expected = sum("glutenfree" in badges_of(d) for d in real_catalog)
+    r = run("gluten-free mixes", real_catalog)
+    assert r.total == expected and expected > 6  # more than a top-6 search could ever list
+
+
+def test_real_top_rated_is_not_a_one_review_product(real_catalog):
+    top = run("top rated mixes", real_catalog).docs[0].metadata
+    assert top["review_count"] >= 10
