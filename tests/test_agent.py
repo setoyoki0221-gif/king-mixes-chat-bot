@@ -81,3 +81,9 @@ def test_generate_prompt_passes_braces_through_verbatim():
 
 def test_generate_trims_history_and_prepends_lookup_note(monkeypatch):
     rec = Recorder("final")
+    monkeypatch.setattr(agent, "_gen_llm", rec.runnable())
+    history = []
+    for i in range(10):
+        history += [HumanMessage(content=f"q{i} {{x}}"), AIMessage(content=f"a{i}")]
+    state = make_state("now", history, documents=[make_doc("A Mix", 5.0)], note="CATALOG LOOKUP: note",
+                       structured=True)
