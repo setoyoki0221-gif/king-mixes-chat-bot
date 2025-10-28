@@ -179,3 +179,5 @@ def grade_documents(state: AgentState) -> dict:
         # An exact lookup is already correct by construction (an empty result
         # means "nothing matches", not "bad search"), so don't second-guess it.
         return {"relevant": True}
+    if not state["documents"]:
+        return {"relevant": False}
