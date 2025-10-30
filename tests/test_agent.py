@@ -87,3 +87,12 @@ def test_generate_trims_history_and_prepends_lookup_note(monkeypatch):
         history += [HumanMessage(content=f"q{i} {{x}}"), AIMessage(content=f"a{i}")]
     state = make_state("now", history, documents=[make_doc("A Mix", 5.0)], note="CATALOG LOOKUP: note",
                        structured=True)
+
+    out = agent.generate(state)
+
+    sent = rec.prompts[0]
+    assert len(sent) == 1 + agent.MAX_HISTORY_MESSAGES + 1          # system + trimmed history + question
+    assert sent[1].content == "q7 {x}"                              # oldest kept = 6th from the end
+    assert sent[0].content.split("Context:\n", 1)[1].startswith("CATALOG LOOKUP: note")
+    assert out["generation"] == "final"
+    assert out["messages"][0].content == "final"
