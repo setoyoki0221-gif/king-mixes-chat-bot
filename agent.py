@@ -182,3 +182,15 @@ def grade_documents(state: AgentState) -> dict:
     if not state["documents"]:
         return {"relevant": False}
     context = _format_context(state["documents"])
+    try:
+        resp = (GRADE_PROMPT | short_llm()).invoke(
+            {"q": state["original_question"], "ctx": context}
+        )
+        text = _message_text(resp)
+        # Lenient parse: only treat as irrelevant when the FIRST word is "no".
+        # (Avoids "not", "none", etc. being misread as a rejection.)
+        words = re.findall(r"[a-z]+", text.lower())
+        relevant = not (words and words[0] == "no")
+    except Exception:
+        # If grading fails for any reason, don't block the answer.
+        relevant = True
