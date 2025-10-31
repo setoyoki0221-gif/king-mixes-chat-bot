@@ -181,3 +181,4 @@ def grade_documents(state: AgentState) -> dict:
         return {"relevant": True}
     if not state["documents"]:
         return {"relevant": False}
+    context = _format_context(state["documents"])
