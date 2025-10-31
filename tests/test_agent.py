@@ -96,3 +96,10 @@ def test_generate_trims_history_and_prepends_lookup_note(monkeypatch):
     assert sent[0].content.split("Context:\n", 1)[1].startswith("CATALOG LOOKUP: note")
     assert out["generation"] == "final"
     assert out["messages"][0].content == "final"
+
+
+def test_generate_with_no_documents_says_so(monkeypatch):
+    rec = Recorder()
+    monkeypatch.setattr(agent, "_gen_llm", rec.runnable())
+    agent.generate(make_state("anything"))
+    assert "no matching products were found" in rec.prompts[0][0].content
