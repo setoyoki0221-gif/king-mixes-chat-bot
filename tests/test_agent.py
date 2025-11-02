@@ -103,3 +103,11 @@ def test_generate_with_no_documents_says_so(monkeypatch):
     monkeypatch.setattr(agent, "_gen_llm", rec.runnable())
     agent.generate(make_state("anything"))
     assert "no matching products were found" in rec.prompts[0][0].content
+
+
+# --------------------------------------------------------------------------- #
+# Grading and routing
+# --------------------------------------------------------------------------- #
+def test_grade_skips_the_llm_for_exact_lookups(monkeypatch):
+    def explode():
+        raise AssertionError("grader LLM must not be called for a structured lookup")
