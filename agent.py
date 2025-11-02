@@ -194,3 +194,6 @@ def grade_documents(state: AgentState) -> dict:
     except Exception:
         # If grading fails for any reason, don't block the answer.
         relevant = True
+    # NOTE: never discard the documents — grading only decides whether to try a
+    # better search. Generation always keeps the retrieved products as context.
+    return {"relevant": relevant}
