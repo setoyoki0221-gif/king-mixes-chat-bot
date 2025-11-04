@@ -197,3 +197,18 @@ def grade_documents(state: AgentState) -> dict:
     # NOTE: never discard the documents — grading only decides whether to try a
     # better search. Generation always keeps the retrieved products as context.
     return {"relevant": relevant}
+
+
+REWRITE_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            "You write search queries for a catalog of baking mixes. The previous "
+            "query did not retrieve relevant products. Write a DIFFERENT query for "
+            "the user's question: expand abbreviations, add synonyms for key "
+            "concepts, and focus on product attributes (flavor, type, dietary "
+            "needs). Return only the new query.",
+        ),
+        ("human", "Question: {q}\nPrevious query (failed): {prev}"),
+    ]
+)
