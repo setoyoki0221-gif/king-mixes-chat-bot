@@ -212,3 +212,13 @@ REWRITE_PROMPT = ChatPromptTemplate.from_messages(
         ("human", "Question: {q}\nPrevious query (failed): {prev}"),
     ]
 )
+
+
+def rewrite_query(state: AgentState) -> dict:
+    """Reformulate the question to improve retrieval.
+
+    The model is greedy (temperature 0), so asking it to rewrite the same input
+    twice would return the same query. Each attempt therefore sees the query that
+    just failed and is told to produce a different one. If it still comes back
+    unchanged, further retries are pointless, so the rewrite budget is spent.
+    """
