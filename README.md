@@ -80,3 +80,8 @@ If an attribute matches nothing (e.g. there are no vegan-labelled mixes), the bo
 says so rather than guessing. Anything it can't parse falls back to semantic search.
 
 ---
+
+## Providers (all free, configurable via env)
+
+The app is **provider-flexible** — pick a backend with two env vars. The default
+runs a small model **on-device** (no API key, works in any region):
