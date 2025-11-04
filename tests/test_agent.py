@@ -111,3 +111,6 @@ def test_generate_with_no_documents_says_so(monkeypatch):
 def test_grade_skips_the_llm_for_exact_lookups(monkeypatch):
     def explode():
         raise AssertionError("grader LLM must not be called for a structured lookup")
+
+    monkeypatch.setattr(agent, "short_llm", explode)
+    assert agent.grade_documents(make_state(structured=True, documents=[])) == {"relevant": True}
