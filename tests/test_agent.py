@@ -114,3 +114,7 @@ def test_grade_skips_the_llm_for_exact_lookups(monkeypatch):
 
     monkeypatch.setattr(agent, "short_llm", explode)
     assert agent.grade_documents(make_state(structured=True, documents=[])) == {"relevant": True}
+
+
+def test_grade_no_documents_is_irrelevant():
+    assert agent.grade_documents(make_state(documents=[])) == {"relevant": False}
