@@ -222,3 +222,4 @@ def rewrite_query(state: AgentState) -> dict:
     just failed and is told to produce a different one. If it still comes back
     unchanged, further retries are pointless, so the rewrite budget is spent.
     """
+    previous = state["question"]
