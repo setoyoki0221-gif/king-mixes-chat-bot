@@ -118,3 +118,13 @@ def test_grade_skips_the_llm_for_exact_lookups(monkeypatch):
 
 def test_grade_no_documents_is_irrelevant():
     assert agent.grade_documents(make_state(documents=[])) == {"relevant": False}
+
+
+@pytest.mark.parametrize(
+    "reply, relevant",
+    [("YES", True), ("yes.", True), ("NO", False), ("No, these are unrelated", False),
+     ("Not sure", True),   # lenient: only a leading "no" rejects
+     ("", True)],
+)
+def test_grade_parsing_is_lenient(monkeypatch, reply, relevant):
+    monkeypatch.setattr(agent, "_short_llm", Recorder(reply).runnable())
