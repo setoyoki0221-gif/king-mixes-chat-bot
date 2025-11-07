@@ -226,3 +226,4 @@ def rewrite_query(state: AgentState) -> dict:
     resp = (REWRITE_PROMPT | short_llm()).invoke(
         {"q": state["original_question"], "prev": previous}
     )
+    new_q = _message_text(resp).strip().strip("\"'")
