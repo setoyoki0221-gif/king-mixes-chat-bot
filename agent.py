@@ -223,3 +223,6 @@ def rewrite_query(state: AgentState) -> dict:
     unchanged, further retries are pointless, so the rewrite budget is spent.
     """
     previous = state["question"]
+    resp = (REWRITE_PROMPT | short_llm()).invoke(
+        {"q": state["original_question"], "prev": previous}
+    )
