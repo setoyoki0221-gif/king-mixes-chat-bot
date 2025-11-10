@@ -142,3 +142,12 @@ def test_grade_failure_never_blocks_the_answer(monkeypatch):
 
 def test_decide_after_grading():
     assert agent.decide_after_grading(make_state(relevant=True)) == "generate"
+    assert agent.decide_after_grading(make_state(relevant=False, rewrites=0)) == "rewrite"
+    assert agent.decide_after_grading(make_state(relevant=False, rewrites=agent.MAX_REWRITES)) == "generate"
+
+
+# --------------------------------------------------------------------------- #
+# Rewriting
+# --------------------------------------------------------------------------- #
+def test_rewrite_is_told_what_failed_and_counts_an_attempt(monkeypatch):
+    rec = Recorder('"gluten free baking mix"')
