@@ -129,3 +129,4 @@ def test_grade_no_documents_is_irrelevant():
 def test_grade_parsing_is_lenient(monkeypatch, reply, relevant):
     monkeypatch.setattr(agent, "_short_llm", Recorder(reply).runnable())
     state = make_state(documents=[make_doc("A Mix", 5.0)])
+    assert agent.grade_documents(state) == {"relevant": relevant}
