@@ -227,3 +227,5 @@ def rewrite_query(state: AgentState) -> dict:
         {"q": state["original_question"], "prev": previous}
     )
     new_q = _message_text(resp).strip().strip("\"'")
+    if not new_q or new_q.lower() == previous.strip().lower():
+        return {"question": previous, "rewrites": MAX_REWRITES}
