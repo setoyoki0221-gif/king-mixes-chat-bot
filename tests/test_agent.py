@@ -130,3 +130,15 @@ def test_grade_parsing_is_lenient(monkeypatch, reply, relevant):
     monkeypatch.setattr(agent, "_short_llm", Recorder(reply).runnable())
     state = make_state(documents=[make_doc("A Mix", 5.0)])
     assert agent.grade_documents(state) == {"relevant": relevant}
+
+
+def test_grade_failure_never_blocks_the_answer(monkeypatch):
+    def broken(_pv):
+        raise RuntimeError("model crashed")
+
+    monkeypatch.setattr(agent, "_short_llm", RunnableLambda(broken))
+    assert agent.grade_documents(make_state(documents=[make_doc("A", 1.0)])) == {"relevant": True}
+
+
+def test_decide_after_grading():
+    assert agent.decide_after_grading(make_state(relevant=True)) == "generate"
