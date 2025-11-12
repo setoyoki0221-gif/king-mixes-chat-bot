@@ -255,3 +255,14 @@ answer. When listing, mention how many matched in total.
 
 Context:
 {context}"""
+
+# Prior turns are injected through a MessagesPlaceholder, so they are passed as
+# message objects and never parsed as template text. (Inlining them as
+# (role, content) tuples made any "{...}" the user typed raise a KeyError.)
+GENERATE_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        ("system", GENERATE_SYSTEM),
+        MessagesPlaceholder("history"),
+        ("human", "{question}"),
+    ]
+)
