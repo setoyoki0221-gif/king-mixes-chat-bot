@@ -151,3 +151,5 @@ def test_decide_after_grading():
 # --------------------------------------------------------------------------- #
 def test_rewrite_is_told_what_failed_and_counts_an_attempt(monkeypatch):
     rec = Recorder('"gluten free baking mix"')
+    monkeypatch.setattr(agent, "_short_llm", rec.runnable())
+    out = agent.rewrite_query(make_state("gf stuff", question="gf stuff", rewrites=0))
