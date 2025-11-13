@@ -266,3 +266,7 @@ GENERATE_PROMPT = ChatPromptTemplate.from_messages(
         ("human", "{question}"),
     ]
 )
+
+
+def generate(state: AgentState) -> dict:
+    """Produce the grounded final answer."""
