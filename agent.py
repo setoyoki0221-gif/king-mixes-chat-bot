@@ -270,3 +270,5 @@ GENERATE_PROMPT = ChatPromptTemplate.from_messages(
 
 def generate(state: AgentState) -> dict:
     """Produce the grounded final answer."""
+    if state["documents"]:
+        sep = "\n" if state.get("structured") else "\n\n"  # compact lines vs full docs
