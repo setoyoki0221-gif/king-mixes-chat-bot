@@ -153,3 +153,6 @@ def test_rewrite_is_told_what_failed_and_counts_an_attempt(monkeypatch):
     rec = Recorder('"gluten free baking mix"')
     monkeypatch.setattr(agent, "_short_llm", rec.runnable())
     out = agent.rewrite_query(make_state("gf stuff", question="gf stuff", rewrites=0))
+    assert out == {"question": "gluten free baking mix", "rewrites": 1}  # quotes stripped
+    human = rec.prompts[0][1].content
+    assert "gf stuff" in human and "Previous query (failed)" in human
