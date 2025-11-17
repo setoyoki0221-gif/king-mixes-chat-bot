@@ -156,3 +156,7 @@ def test_rewrite_is_told_what_failed_and_counts_an_attempt(monkeypatch):
     assert out == {"question": "gluten free baking mix", "rewrites": 1}  # quotes stripped
     human = rec.prompts[0][1].content
     assert "gf stuff" in human and "Previous query (failed)" in human
+
+
+def test_second_rewrite_sees_the_first_rewrite_not_the_original(monkeypatch):
+    rec = Recorder("third try")
