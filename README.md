@@ -85,3 +85,11 @@ says so rather than guessing. Anything it can't parse falls back to semantic sea
 
 The app is **provider-flexible** — pick a backend with two env vars. The default
 runs a small model **on-device** (no API key, works in any region):
+
+| Knob | Default | Other options |
+|---|---|---|
+| `LLM_PROVIDER` | `local` (Qwen2.5-1.5B-Instruct, on-device) | `ollama`, `huggingface`, `gemini`, `github`, `openai`, `groq` |
+| `EMBED_PROVIDER` | `huggingface` (all-MiniLM-L6-v2, local) | `openai` |
+
+See [.env.example](.env.example) for every variable. `gemini` and `groq` need an
+extra package: `pip install -r requirements-optional.txt`.
