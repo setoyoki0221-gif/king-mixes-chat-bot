@@ -273,3 +273,5 @@ def generate(state: AgentState) -> dict:
     if state["documents"]:
         sep = "\n" if state.get("structured") else "\n\n"  # compact lines vs full docs
         context = _format_context(state["documents"], sep)
+    else:
+        context = "(no matching products were found in the catalog)"
