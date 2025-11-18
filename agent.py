@@ -275,3 +275,5 @@ def generate(state: AgentState) -> dict:
         context = _format_context(state["documents"], sep)
     else:
         context = "(no matching products were found in the catalog)"
+    if state.get("note"):
+        context = f"{state['note']}\n\n{context}"
