@@ -160,3 +160,5 @@ def test_rewrite_is_told_what_failed_and_counts_an_attempt(monkeypatch):
 
 def test_second_rewrite_sees_the_first_rewrite_not_the_original(monkeypatch):
     rec = Recorder("third try")
+    monkeypatch.setattr(agent, "_short_llm", rec.runnable())
+    agent.rewrite_query(make_state("orig", question="first rewrite", rewrites=1))
