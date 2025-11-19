@@ -162,3 +162,11 @@ def test_second_rewrite_sees_the_first_rewrite_not_the_original(monkeypatch):
     rec = Recorder("third try")
     monkeypatch.setattr(agent, "_short_llm", rec.runnable())
     agent.rewrite_query(make_state("orig", question="first rewrite", rewrites=1))
+    assert "first rewrite" in rec.prompts[0][1].content
+
+
+@pytest.mark.parametrize("reply", ["same query", "  SAME QUERY ", ""])
+def test_unchanged_rewrite_spends_the_remaining_budget(monkeypatch, reply):
+    monkeypatch.setattr(agent, "_short_llm", Recorder(reply).runnable())
+    out = agent.rewrite_query(make_state("orig", question="same query", rewrites=0))
+    assert out["rewrites"] == agent.MAX_REWRITES and out["question"] == "same query"
