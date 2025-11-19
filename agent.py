@@ -277,3 +277,12 @@ def generate(state: AgentState) -> dict:
         context = "(no matching products were found in the catalog)"
     if state.get("note"):
         context = f"{state['note']}\n\n{context}"
+
+    answer = (GENERATE_PROMPT | gen_llm()).invoke(
+        {
+            "context": context,
+            # prior turns (the current question is last), newest few only
+            "history": state["messages"][:-1][-MAX_HISTORY_MESSAGES:],
+            "question": state["original_question"],
+        }
+    )
