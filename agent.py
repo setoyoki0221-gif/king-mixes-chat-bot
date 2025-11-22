@@ -286,3 +286,4 @@ def generate(state: AgentState) -> dict:
             "question": state["original_question"],
         }
     )
+    text = _message_text(answer)
