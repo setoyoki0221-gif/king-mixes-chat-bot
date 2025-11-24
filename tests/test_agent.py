@@ -170,3 +170,10 @@ def test_unchanged_rewrite_spends_the_remaining_budget(monkeypatch, reply):
     monkeypatch.setattr(agent, "_short_llm", Recorder(reply).runnable())
     out = agent.rewrite_query(make_state("orig", question="same query", rewrites=0))
     assert out["rewrites"] == agent.MAX_REWRITES and out["question"] == "same query"
+
+
+# --------------------------------------------------------------------------- #
+# Retrieval routing
+# --------------------------------------------------------------------------- #
+def test_structured_followup_uses_history_and_no_embeddings(monkeypatch, real_catalog):
+    no_embeddings(monkeypatch)
