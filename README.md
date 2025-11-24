@@ -93,3 +93,5 @@ runs a small model **on-device** (no API key, works in any region):
 
 See [.env.example](.env.example) for every variable. `gemini` and `groq` need an
 extra package: `pip install -r requirements-optional.txt`.
+
+---
