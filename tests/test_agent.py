@@ -177,3 +177,4 @@ def test_unchanged_rewrite_spends_the_remaining_budget(monkeypatch, reply):
 # --------------------------------------------------------------------------- #
 def test_structured_followup_uses_history_and_no_embeddings(monkeypatch, real_catalog):
     no_embeddings(monkeypatch)
+    hist = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
