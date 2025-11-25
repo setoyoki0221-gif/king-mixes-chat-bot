@@ -287,3 +287,4 @@ def generate(state: AgentState) -> dict:
         }
     )
     text = _message_text(answer)
+    return {"generation": text, "messages": [AIMessage(content=text)]}
