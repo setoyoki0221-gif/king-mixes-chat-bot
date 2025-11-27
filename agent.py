@@ -300,3 +300,5 @@ def decide_after_grading(state: AgentState) -> str:
     rewrite budget. Crucially, the retrieved documents are always kept, so a
     misfiring grader can only cost an extra search — never an empty answer.
     """
+    if state.get("relevant", True):
+        return "generate"
