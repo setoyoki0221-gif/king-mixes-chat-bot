@@ -16,3 +16,9 @@ import agent
 import config
 
 pytestmark = pytest.mark.retrieval
+
+
+@pytest.fixture(scope="module")
+def store():
+    if not config.CHROMA_DIR.exists():
+        pytest.skip("chroma_db not built — run `python ingest.py`")
