@@ -288,3 +288,15 @@ def generate(state: AgentState) -> dict:
     )
     text = _message_text(answer)
     return {"generation": text, "messages": [AIMessage(content=text)]}
+
+
+# --------------------------------------------------------------------------- #
+# Conditional routing
+# --------------------------------------------------------------------------- #
+def decide_after_grading(state: AgentState) -> str:
+    """Decide whether to answer now or try a better search.
+
+    We answer when the documents are judged relevant OR we've exhausted our
+    rewrite budget. Crucially, the retrieved documents are always kept, so a
+    misfiring grader can only cost an extra search — never an empty answer.
+    """
