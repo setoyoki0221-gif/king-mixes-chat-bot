@@ -178,3 +178,9 @@ def test_unchanged_rewrite_spends_the_remaining_budget(monkeypatch, reply):
 def test_structured_followup_uses_history_and_no_embeddings(monkeypatch, real_catalog):
     no_embeddings(monkeypatch)
     hist = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
+    out = agent.retrieve(make_state("What's the cheapest one?", hist))
+
+    assert out["structured"] is True and "CATALOG LOOKUP" in out["note"]
+    assert out["documents"], "expected cookie mixes"
+    assert all("cookie" in d.metadata["title"].lower() for d in out["documents"])
+    cookie_prices = [d.metadata["price_value"] for d in real_catalog if "cookie" in d.metadata["title"].lower()]
