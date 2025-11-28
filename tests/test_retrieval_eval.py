@@ -22,3 +22,4 @@ pytestmark = pytest.mark.retrieval
 def store():
     if not config.CHROMA_DIR.exists():
         pytest.skip("chroma_db not built — run `python ingest.py`")
+    return agent.get_vectorstore()
