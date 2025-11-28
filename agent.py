@@ -302,3 +302,6 @@ def decide_after_grading(state: AgentState) -> str:
     """
     if state.get("relevant", True):
         return "generate"
+    if state["rewrites"] >= MAX_REWRITES:
+        return "generate"  # out of retries; answer from what we have
+    return "rewrite"
