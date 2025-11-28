@@ -184,3 +184,8 @@ def test_structured_followup_uses_history_and_no_embeddings(monkeypatch, real_ca
     assert out["documents"], "expected cookie mixes"
     assert all("cookie" in d.metadata["title"].lower() for d in out["documents"])
     cookie_prices = [d.metadata["price_value"] for d in real_catalog if "cookie" in d.metadata["title"].lower()]
+    assert out["documents"][0].metadata["price_value"] == min(cookie_prices)
+
+
+def test_semantic_question_uses_vector_store_at_k6(monkeypatch):
+    store = FakeStore([make_doc(f"Mix {i}", 5.0 + i) for i in range(10)])
