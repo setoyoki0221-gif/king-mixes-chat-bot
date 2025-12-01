@@ -28,3 +28,110 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+
+# --------------------------------------------------------------------------- #
+# Styling
+# --------------------------------------------------------------------------- #
+CSS = """
+<style>
+:root{
+  --bg:#F7F6F4; --side:#FFFFFF; --ink:#2B2622; --muted:#8C8379;
+  --amber:#B5651D; --amber2:#D98A4A; --soft:#FBE7DA; --line:#EEE9E3;
+  --star:#F5A623; --green:#2F7D43; --green-bg:#EAF5EC;
+  --shadow:0 6px 22px rgba(43,38,34,.07);
+}
+.stApp{ background:var(--bg); }
+header[data-testid="stHeader"]{ display:none; }
+#MainMenu, footer{ visibility:hidden; }
+.block-container{ padding-top:1.4rem; padding-bottom:7rem; max-width:1180px; }
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"]{ background:var(--side); border-right:1px solid var(--line); }
+[data-testid="stSidebar"] .block-container{ padding-top:1rem; }
+.side-brand{ display:flex; align-items:center; gap:11px; margin:2px 4px 14px; }
+.side-logo{ width:42px;height:42px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #FAD9C8, #F3B894);
+  display:flex;align-items:center;justify-content:center;font-size:22px; }
+.side-brand b{ font-size:1.02rem;color:var(--ink);display:block;line-height:1.1; }
+.side-brand span{ font-size:.78rem;color:var(--muted); }
+.side-h{ font-size:.72rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);
+  font-weight:700;margin:16px 6px 4px; }
+.recent{ display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;color:#6f665d; }
+.recent:hover{ background:#FAF7F2; }
+.recent .rc-ic{ font-size:.9rem;opacity:.7; }
+.recent .rc-t{ font-size:.84rem;font-weight:500;color:var(--ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:165px; }
+.side-sep{ height:1px;background:var(--line);margin:16px 4px 6px; }
+
+/* ---------- Welcome / empty state ---------- */
+.welcome{ text-align:center;margin:5vh 0 6px; }
+.w-logo{ width:74px;height:74px;border-radius:50%;margin:0 auto 14px;
+  background:radial-gradient(circle at 30% 30%,#FAD9C8,#F0AE7E);
+  display:flex;align-items:center;justify-content:center;font-size:38px;
+  box-shadow:var(--shadow); }
+.welcome h1{ margin:0;font-size:1.85rem;font-weight:800;color:var(--ink);letter-spacing:-.5px; }
+.welcome p{ margin:8px auto 0;color:var(--muted);font-size:1rem;max-width:560px; }
+.chips-label{ text-align:center;color:var(--muted);font-size:.82rem;font-weight:600;
+  margin:22px 0 10px; }
+
+/* ---------- Chat bubbles ---------- */
+.row-user{ display:flex;justify-content:flex-end;margin:12px 0; }
+.b-user{ background:var(--soft);color:var(--ink);padding:11px 15px;border-radius:16px 16px 4px 16px;
+  max-width:72%;box-shadow:var(--shadow);font-size:.96rem;line-height:1.45; }
+.row-bot{ display:flex;gap:11px;margin:12px 0;align-items:flex-start; }
+.b-ava{ width:38px;height:38px;border-radius:50%;flex:0 0 38px;
+  background:radial-gradient(circle at 30% 30%,#FAD9C8,#F3B894);
+  display:flex;align-items:center;justify-content:center;font-size:19px;margin-top:2px; }
+.b-bot{ background:#fff;color:var(--ink);padding:12px 16px;border-radius:4px 16px 16px 16px;
+  max-width:78%;box-shadow:var(--shadow);font-size:.96rem;line-height:1.5;border:1px solid var(--line); }
+.b-bot p:first-child{ margin-top:0; } .b-bot p:last-child{ margin-bottom:0; }
+.b-time{ font-size:.7rem;color:var(--muted);margin-top:6px;text-align:right; }
+.b-time .rr{ color:#36C26B; }
+
+/* ---------- Product cards (premium / glassmorphism) ---------- */
+.pgrid{ display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;
+  margin:10px 0 6px 49px; }
+.pcard{ position:relative;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.6);border-radius:26px;overflow:hidden;
+  box-shadow:0 18px 50px rgba(17,24,39,.09);display:flex;flex-direction:column;
+  transition:transform .35s ease, box-shadow .35s ease; }
+.pcard:hover{ transform:translateY(-8px);box-shadow:0 30px 70px rgba(17,24,39,.16); }
+.pc-img{ padding:24px;background:linear-gradient(180deg,#fafafa,#ffffff); }
+.pc-img img{ width:100%;aspect-ratio:1;object-fit:contain;transition:.4s; }
+.pcard:hover .pc-img img{ transform:scale(1.06); }
+.pc-content{ padding:20px 22px 22px;display:flex;flex-direction:column;flex:1; }
+.pc-badge{ align-self:flex-start;display:inline-flex;padding:6px 12px;border-radius:999px;
+  background:#ECFDF3;color:#15803D;font-size:.7rem;font-weight:700;margin-bottom:12px; }
+.pc-title{ font-size:1.16rem;font-weight:800;color:#111827;line-height:1.25;margin-bottom:10px; }
+.pc-rating{ display:flex;align-items:center;gap:7px;margin-bottom:12px;color:#6B7280;font-size:.84rem; }
+.pc-rating strong{ color:#111827; } .pc-star{ color:#F59E0B; }
+.pc-desc{ color:#6B7280;line-height:1.6;font-size:.86rem;margin-bottom:16px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
+.pc-price-row{ display:flex;justify-content:space-between;align-items:center;
+  margin-top:auto;margin-bottom:16px; }
+.pc-price{ font-size:1.7rem;font-weight:800;color:#111827;line-height:1; }
+.pc-promo{ color:#B5651D;font-size:.74rem;font-weight:700;margin-top:4px; }
+.pc-actions{ display:flex;gap:10px; }
+.pc-view{ flex:1;height:48px;display:flex;align-items:center;justify-content:center;
+  text-decoration:none;border-radius:14px;color:#fff;font-size:.9rem;font-weight:700;
+  background:linear-gradient(135deg,#6366F1,#8B5CF6);transition:.25s; }
+.pc-view:hover{ transform:translateY(-2px);color:#fff; }
+.pc-cart{ width:48px;height:48px;display:flex;align-items:center;justify-content:center;
+  text-decoration:none;border-radius:14px;background:#111827;color:#fff;font-size:18px; }
+.pc-cart:hover{ background:#000;color:#fff; }
+
+/* ---------- Chips (Streamlit buttons) ---------- */
+div[data-testid="stButton"] > button{
+  border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);
+  font-weight:600;font-size:.9rem;box-shadow:var(--shadow);padding:.45rem 1rem; }
+div[data-testid="stButton"] > button:hover{ border-color:var(--amber);color:var(--amber); }
+
+/* ---------- Chat input ---------- */
+[data-testid="stChatInput"]{ border-radius:16px;border:1px solid var(--line);
+  box-shadow:var(--shadow);background:#fff; }
+.disclaimer{ text-align:center;color:var(--muted);font-size:.78rem;margin-top:8px; }
+
+[data-testid="stSidebar"] [data-testid="stExpander"]{ border:none; }
+</style>
+"""
