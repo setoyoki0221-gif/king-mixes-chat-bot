@@ -305,3 +305,15 @@ def decide_after_grading(state: AgentState) -> str:
     if state["rewrites"] >= MAX_REWRITES:
         return "generate"  # out of retries; answer from what we have
     return "rewrite"
+
+
+# --------------------------------------------------------------------------- #
+# Graph assembly
+# --------------------------------------------------------------------------- #
+def build_graph(fast: bool | None = None):
+    """Compile and return the LangGraph agent.
+
+    Smart graph self-corrects: retrieve -> grade -> rewrite/generate. Fast graph
+    collapses to retrieve -> generate for lower latency. ``fast`` defaults to the
+    AGENT_FAST setting, so callers can choose per graph without touching config.
+    """
