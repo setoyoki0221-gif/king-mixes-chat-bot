@@ -23,3 +23,10 @@ def store():
     if not config.CHROMA_DIR.exists():
         pytest.skip("chroma_db not built — run `python ingest.py`")
     return agent.get_vectorstore()
+
+
+# --------------------------------------------------------------------------- #
+# Index freshness
+# --------------------------------------------------------------------------- #
+def test_index_matches_the_dataset(store, real_catalog):
+    """Fails if products.json changed but `python ingest.py` wasn't re-run."""
