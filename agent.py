@@ -317,3 +317,8 @@ def build_graph(fast: bool | None = None):
     collapses to retrieve -> generate for lower latency. ``fast`` defaults to the
     AGENT_FAST setting, so callers can choose per graph without touching config.
     """
+    fast = config.AGENT_FAST if fast is None else fast
+    g = StateGraph(AgentState)
+    g.add_node("retrieve", retrieve)
+    g.add_node("generate", generate)
+    g.add_edge(START, "retrieve")
