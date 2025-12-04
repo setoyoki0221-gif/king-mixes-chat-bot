@@ -135,3 +135,11 @@ div[data-testid="stButton"] > button:hover{ border-color:var(--amber);color:var(
 [data-testid="stSidebar"] [data-testid="stExpander"]{ border:none; }
 </style>
 """
+
+
+# --------------------------------------------------------------------------- #
+# Cached resources
+# --------------------------------------------------------------------------- #
+@st.cache_resource(show_spinner="Warming up the AI agent…")
+def load_graph(fast: bool):
+    return build_graph(fast=fast)
