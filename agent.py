@@ -322,3 +322,10 @@ def build_graph(fast: bool | None = None):
     g.add_node("retrieve", retrieve)
     g.add_node("generate", generate)
     g.add_edge(START, "retrieve")
+
+    if fast:
+        g.add_edge("retrieve", "generate")
+    else:
+        g.add_node("grade", grade_documents)
+        g.add_node("rewrite", rewrite_query)
+        g.add_edge("retrieve", "grade")
