@@ -192,3 +192,9 @@ def test_semantic_question_uses_vector_store_at_k6(monkeypatch):
     monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
     out = agent.retrieve(make_state("What cookie mixes do you have?"))
     assert store.queries == [("What cookie mixes do you have?", agent.RETRIEVE_K)]
+    assert out["structured"] is False and out["note"] == "" and len(out["documents"]) == agent.RETRIEVE_K
+
+
+def test_semantic_followup_embeds_earlier_topic_too(monkeypatch):
+    store = FakeStore([make_doc("Mix", 5.0)])
+    monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
