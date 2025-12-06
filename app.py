@@ -143,3 +143,8 @@ div[data-testid="stButton"] > button:hover{ border-color:var(--amber);color:var(
 @st.cache_resource(show_spinner="Warming up the AI agent…")
 def load_graph(fast: bool):
     return build_graph(fast=fast)
+
+
+@st.cache_data(show_spinner=False)
+def graph_mermaid(_graph) -> str:
+    return _graph.get_graph().draw_mermaid()
