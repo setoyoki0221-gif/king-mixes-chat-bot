@@ -148,3 +148,8 @@ def load_graph(fast: bool):
 @st.cache_data(show_spinner=False)
 def graph_mermaid(_graph) -> str:
     return _graph.get_graph().draw_mermaid()
+
+
+@st.cache_data(show_spinner=False)
+def product_descriptions() -> dict[str, str]:
+    """Map product URL -> short description (for the cards)."""
