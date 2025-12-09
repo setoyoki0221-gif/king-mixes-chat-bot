@@ -198,3 +198,14 @@ def test_semantic_question_uses_vector_store_at_k6(monkeypatch):
 def test_semantic_followup_embeds_earlier_topic_too(monkeypatch):
     store = FakeStore([make_doc("Mix", 5.0)])
     monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
+    hist = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
+    agent.retrieve(make_state("Which is best for beginners?", hist))
+    assert "cookie" in store.queries[0][0] and "beginners" in store.queries[0][0]
+
+
+def test_after_a_rewrite_the_query_goes_straight_to_semantic_search(monkeypatch):
+    """A rewritten query is a search string, not a user question: no structured parsing."""
+    store = FakeStore([make_doc("Mix", 5.0)])
+    monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
+    out = agent.retrieve(make_state("orig", question="cheapest budget gluten free", rewrites=1))
+    assert store.queries[0][0] == "cheapest budget gluten free"
