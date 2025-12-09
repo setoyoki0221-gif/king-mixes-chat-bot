@@ -329,3 +329,11 @@ def build_graph(fast: bool | None = None):
         g.add_node("grade", grade_documents)
         g.add_node("rewrite", rewrite_query)
         g.add_edge("retrieve", "grade")
+        g.add_conditional_edges(
+            "grade",
+            decide_after_grading,
+            {"generate": "generate", "rewrite": "rewrite"},
+        )
+        g.add_edge("rewrite", "retrieve")
+
+    g.add_edge("generate", END)
