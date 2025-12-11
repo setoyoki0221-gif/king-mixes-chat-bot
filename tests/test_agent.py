@@ -209,3 +209,12 @@ def test_after_a_rewrite_the_query_goes_straight_to_semantic_search(monkeypatch)
     monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
     out = agent.retrieve(make_state("orig", question="cheapest budget gluten free", rewrites=1))
     assert store.queries[0][0] == "cheapest budget gluten free"
+    assert out["structured"] is False
+
+
+# --------------------------------------------------------------------------- #
+# Whole graph (stub LLMs)
+# --------------------------------------------------------------------------- #
+@pytest.mark.parametrize("fast", [True, False])
+def test_graph_exact_lookup_never_calls_grader_or_rewriter(monkeypatch, real_catalog, fast):
+    no_embeddings(monkeypatch)
