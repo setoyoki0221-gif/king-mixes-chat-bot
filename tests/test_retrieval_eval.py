@@ -31,3 +31,4 @@ def store():
 def test_index_matches_the_dataset(store, real_catalog):
     """Fails if products.json changed but `python ingest.py` wasn't re-run."""
     stored = store.get(include=["metadatas"])["metadatas"]
+    assert len(stored) == len(real_catalog), "document count differs: re-run ingest.py"
