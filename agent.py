@@ -337,3 +337,4 @@ def build_graph(fast: bool | None = None):
         g.add_edge("rewrite", "retrieve")
 
     g.add_edge("generate", END)
+    return g.compile()
