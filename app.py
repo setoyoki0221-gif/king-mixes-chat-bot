@@ -153,3 +153,7 @@ def graph_mermaid(_graph) -> str:
 @st.cache_data(show_spinner=False)
 def product_descriptions() -> dict[str, str]:
     """Map product URL -> short description (for the cards)."""
+    try:
+        data = json.loads(config.DATA_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
