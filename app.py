@@ -157,3 +157,4 @@ def product_descriptions() -> dict[str, str]:
         data = json.loads(config.DATA_PATH.read_text(encoding="utf-8"))
     except Exception:
         return {}
+    out = {}
