@@ -218,3 +218,11 @@ def test_after_a_rewrite_the_query_goes_straight_to_semantic_search(monkeypatch)
 @pytest.mark.parametrize("fast", [True, False])
 def test_graph_exact_lookup_never_calls_grader_or_rewriter(monkeypatch, real_catalog, fast):
     no_embeddings(monkeypatch)
+    gen, short = Recorder("ANSWER"), Recorder("NO")
+    monkeypatch.setattr(agent, "_gen_llm", gen.runnable())
+    monkeypatch.setattr(agent, "_short_llm", short.runnable())
+
+    out = agent.ask(agent.build_graph(fast=fast), "What's the cheapest mix?")
+
+    assert out["answer"] == "ANSWER"
+    assert short.prompts == [] and len(gen.prompts) == 1
