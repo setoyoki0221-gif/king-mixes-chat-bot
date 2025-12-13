@@ -158,3 +158,5 @@ def product_descriptions() -> dict[str, str]:
     except Exception:
         return {}
     out = {}
+    for p in data:
+        desc = (p.get("description") or "").split(". ")[0].strip()
