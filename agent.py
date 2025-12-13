@@ -338,3 +338,12 @@ def build_graph(fast: bool | None = None):
 
     g.add_edge("generate", END)
     return g.compile()
+
+
+def _norm(text: str) -> str:
+    """Lowercase and strip punctuation, space-padded for whole-word containment.
+
+    Makes "Gluten-Free Sugar Cookie Mix", "gluten free sugar cookie mix" and
+    "**Gluten-Free Sugar Cookie Mix**" compare equal, and "Cake & Cupcake" match
+    "cake and cupcake".
+    """
