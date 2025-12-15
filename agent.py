@@ -347,3 +347,5 @@ def _norm(text: str) -> str:
     "**Gluten-Free Sugar Cookie Mix**" compare equal, and "Cake & Cupcake" match
     "cake and cupcake".
     """
+    t = (text or "").lower().replace("&", " and ")
+    return " " + re.sub(r"[^a-z0-9]+", " ", t).strip() + " "
