@@ -226,3 +226,6 @@ def test_graph_exact_lookup_never_calls_grader_or_rewriter(monkeypatch, real_cat
 
     assert out["answer"] == "ANSWER"
     assert short.prompts == [] and len(gen.prompts) == 1
+    cheapest = min(d.metadata["price_value"] for d in real_catalog)
+    assert out["sources"][0]["price"] == f"${cheapest:.2f}"
+    assert "CATALOG LOOKUP" in gen.prompts[0][0].content
