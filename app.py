@@ -160,3 +160,5 @@ def product_descriptions() -> dict[str, str]:
     out = {}
     for p in data:
         desc = (p.get("description") or "").split(". ")[0].strip()
+        if len(desc) > 95:
+            desc = desc[:92].rstrip() + "…"
