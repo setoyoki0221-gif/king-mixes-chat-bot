@@ -349,3 +349,12 @@ def _norm(text: str) -> str:
     """
     t = (text or "").lower().replace("&", " and ")
     return " " + re.sub(r"[^a-z0-9]+", " ", t).strip() + " "
+
+
+def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list[dict]:
+    """The retrieved products the answer actually names (for the UI cards).
+
+    Avoids dumping every retrieved document as a card. Returns [] when the answer
+    cites no product. A title that is only part of another cited title (e.g.
+    "Cookie Mix" inside "Outrageous Chocolate Chip Cookie Mix") is not counted.
+    """
