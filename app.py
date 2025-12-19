@@ -162,3 +162,4 @@ def product_descriptions() -> dict[str, str]:
         desc = (p.get("description") or "").split(". ")[0].strip()
         if len(desc) > 95:
             desc = desc[:92].rstrip() + "…"
+        out[p.get("url", "")] = desc
