@@ -358,3 +358,4 @@ def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list
     cites no product. A title that is only part of another cited title (e.g.
     "Cookie Mix" inside "Outrageous Chocolate Chip Cookie Mix") is not counted.
     """
+    ans = _norm(answer)
