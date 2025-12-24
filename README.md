@@ -95,3 +95,16 @@ See [.env.example](.env.example) for every variable. `gemini` and `groq` need an
 extra package: `pip install -r requirements-optional.txt`.
 
 ---
+
+## Run locally
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env          # defaults work with no API key (local model)
+
+# (optional) re-scrape + rebuild the knowledge base
+python scraper/scrape.py
+python ingest.py
+
+streamlit run app.py
+```
