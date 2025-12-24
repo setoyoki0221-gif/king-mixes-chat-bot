@@ -1,0 +1,7 @@
+# Extra hosted LLM providers. Not needed for the default (local) setup or the
+# Hugging Face Space. Install only if you set LLM_PROVIDER to one of these:
+#
+#     pip install -r requirements-optional.txt
+#
+langchain-groq>=1.0,<2           # LLM_PROVIDER=groq
+langchain-google-genai>=4.0,<5   # LLM_PROVIDER=gemini
