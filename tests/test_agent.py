@@ -233,3 +233,11 @@ def test_graph_exact_lookup_never_calls_grader_or_rewriter(monkeypatch, real_cat
 
 def test_graph_unmatched_attribute_answers_once_without_retry_loop(monkeypatch):
     no_embeddings(monkeypatch)
+    gen, short = Recorder("None found."), Recorder("NO")
+    monkeypatch.setattr(agent, "_gen_llm", gen.runnable())
+    monkeypatch.setattr(agent, "_short_llm", short.runnable())
+
+    out = agent.ask(agent.build_graph(fast=False), "Do you have vegan options?")
+
+    assert out["sources"] == [] and short.prompts == [] and len(gen.prompts) == 1
+    assert "no products in the catalog match" in gen.prompts[0][0].content
