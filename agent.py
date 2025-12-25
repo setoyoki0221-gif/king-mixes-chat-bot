@@ -359,3 +359,7 @@ def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list
     "Cookie Mix" inside "Outrageous Chocolate Chip Cookie Mix") is not counted.
     """
     ans = _norm(answer)
+    hits: list[tuple[str, dict]] = []
+    seen: set[str] = set()
+    for s in sources:
+        title = (s.get("title") or "").strip()
