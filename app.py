@@ -164,3 +164,8 @@ def product_descriptions() -> dict[str, str]:
             desc = desc[:92].rstrip() + "…"
         out[p.get("url", "")] = desc
     return out
+
+
+@st.cache_data(show_spinner=False)
+def data_as_of() -> str:
+    """Human-readable date the catalog was scraped (empty if unknown)."""
