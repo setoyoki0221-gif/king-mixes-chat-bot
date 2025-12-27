@@ -363,3 +363,6 @@ def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list
     seen: set[str] = set()
     for s in sources:
         title = (s.get("title") or "").strip()
+        url = s.get("url", "")
+        if not title or url in seen:
+            continue
