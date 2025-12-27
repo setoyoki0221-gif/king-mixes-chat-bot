@@ -169,3 +169,8 @@ def product_descriptions() -> dict[str, str]:
 @st.cache_data(show_spinner=False)
 def data_as_of() -> str:
     """Human-readable date the catalog was scraped (empty if unknown)."""
+    try:
+        meta = json.loads(config.DATA_PATH.with_name("meta.json").read_text(encoding="utf-8"))
+        return datetime.fromisoformat(meta["scraped_at"]).strftime("%b %d, %Y").replace(" 0", " ")
+    except Exception:
+        return ""
