@@ -241,3 +241,7 @@ def test_graph_unmatched_attribute_answers_once_without_retry_loop(monkeypatch):
 
     assert out["sources"] == [] and short.prompts == [] and len(gen.prompts) == 1
     assert "no products in the catalog match" in gen.prompts[0][0].content
+
+
+def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeypatch):
+    """Grader always says NO: rewrite twice, then still answer from retrieved docs."""
