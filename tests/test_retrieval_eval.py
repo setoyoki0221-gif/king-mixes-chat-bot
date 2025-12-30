@@ -36,3 +36,6 @@ def test_index_matches_the_dataset(store, real_catalog):
     by_url = {m["url"]: m for m in stored}
     for d in real_catalog:
         m = by_url.get(d.metadata["url"])
+        assert m is not None, f"not indexed: {d.metadata['title']}"
+        assert m["price"] == d.metadata["price"], f"stale price for {d.metadata['title']}: re-run ingest.py"
+        assert m.get("price_value") == d.metadata.get("price_value")
