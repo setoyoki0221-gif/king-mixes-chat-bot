@@ -245,3 +245,6 @@ def test_graph_unmatched_attribute_answers_once_without_retry_loop(monkeypatch):
 
 def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeypatch):
     """Grader always says NO: rewrite twice, then still answer from retrieved docs."""
+    docs = [make_doc("Sugar Cookie Mix", 8.95), make_doc("Brownie Mix", 8.95)]
+    store = FakeStore(docs)
+    monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
