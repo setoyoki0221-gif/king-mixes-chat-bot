@@ -174,3 +174,14 @@ def data_as_of() -> str:
         return datetime.fromisoformat(meta["scraped_at"]).strftime("%b %d, %Y").replace(" 0", " ")
     except Exception:
         return ""
+
+
+def render_mermaid(src: str, height: int = 300) -> None:
+    diagram = f"""
+    <div class="mermaid" style="text-align:center;">{src}</div>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({{ startOnLoad:true, theme:'base',
+        themeVariables:{{ primaryColor:'#FBE7DA', primaryBorderColor:'#B5651D',
+                          lineColor:'#A85812', fontFamily:'sans-serif' }} }});
+    </script>"""
