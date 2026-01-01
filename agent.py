@@ -366,3 +366,4 @@ def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list
         url = s.get("url", "")
         if not title or url in seen:
             continue
+        core = _norm(title.split(" - ")[0])  # drop "... - 12-Pack" style suffixes
