@@ -367,3 +367,13 @@ def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list
         if not title or url in seen:
             continue
         core = _norm(title.split(" - ")[0])  # drop "... - 12-Pack" style suffixes
+        if core.strip() and core in ans:
+            seen.add(url)
+            hits.append((core, s))
+    kept = [s for core, s in hits
+            if not any(core != other and core in other for other, _ in hits)]
+    return kept[:limit]
+
+
+def ask(graph, question: str, history: list[BaseMessage] | None = None) -> dict:
+    """Convenience wrapper: run one turn and return {answer, sources}."""
