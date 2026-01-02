@@ -185,3 +185,4 @@ def render_mermaid(src: str, height: int = 300) -> None:
         themeVariables:{{ primaryColor:'#FBE7DA', primaryBorderColor:'#B5651D',
                           lineColor:'#A85812', fontFamily:'sans-serif' }} }});
     </script>"""
+    components.html(diagram, height=height, scrolling=False)
