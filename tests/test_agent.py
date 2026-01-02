@@ -248,3 +248,11 @@ def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeyp
     docs = [make_doc("Sugar Cookie Mix", 8.95), make_doc("Brownie Mix", 8.95)]
     store = FakeStore(docs)
     monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
+
+    def short_reply(msgs):
+        if "ON-TOPIC" in msgs[0].content:        # grading prompt
+            return "NO"
+        return f"rewritten query {len(store.queries)}"   # rewrite prompt: always something new
+
+    short, gen = Recorder(short_reply), Recorder("done")
+    monkeypatch.setattr(agent, "_short_llm", short.runnable())
