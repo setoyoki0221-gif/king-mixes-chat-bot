@@ -39,3 +39,21 @@ def test_index_matches_the_dataset(store, real_catalog):
         assert m is not None, f"not indexed: {d.metadata['title']}"
         assert m["price"] == d.metadata["price"], f"stale price for {d.metadata['title']}: re-run ingest.py"
         assert m.get("price_value") == d.metadata.get("price_value")
+
+
+# --------------------------------------------------------------------------- #
+# Golden questions (semantic path): the right kind of product must appear in the top 6
+# --------------------------------------------------------------------------- #
+GOLDEN = [
+    # (question, word expected in titles, minimum matches among the top 6)
+    ("What cookie mixes do you have?", "cookie", 4),
+    ("gluten free pancake mix", "pancake", 2),
+    ("brownie mix", "brownie", 2),
+    ("scone mix", "scone", 4),
+    ("pizza crust mix", "pizza", 1),
+    ("muffin mix", "muffin", 4),
+    ("a mix for making bread", "bread", 2),
+    ("waffle mix", "waffle", 1),
+    ("cornbread", "cornbread", 1),
+    ("popovers", "popover", 1),
+]
