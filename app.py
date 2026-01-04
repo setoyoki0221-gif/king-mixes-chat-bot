@@ -186,3 +186,10 @@ def render_mermaid(src: str, height: int = 300) -> None:
                           lineColor:'#A85812', fontFamily:'sans-serif' }} }});
     </script>"""
     components.html(diagram, height=height, scrolling=False)
+
+
+# --------------------------------------------------------------------------- #
+# Rendering helpers
+# --------------------------------------------------------------------------- #
+def product_card(s: dict, descs: dict[str, str]) -> str:
+    title = html.escape(s.get("title", ""))
