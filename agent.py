@@ -378,3 +378,14 @@ def referenced_sources(answer: str, sources: list[dict], limit: int = 4) -> list
 def ask(graph, question: str, history: list[BaseMessage] | None = None) -> dict:
     """Convenience wrapper: run one turn and return {answer, sources}."""
     history = history or []
+    state = {
+        "messages": history + [HumanMessage(content=question)],
+        "question": question,
+        "original_question": question,
+        "documents": [],
+        "note": "",
+        "structured": False,
+        "relevant": True,
+        "generation": "",
+        "rewrites": 0,
+    }
