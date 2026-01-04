@@ -256,3 +256,10 @@ def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeyp
 
     short, gen = Recorder(short_reply), Recorder("done")
     monkeypatch.setattr(agent, "_short_llm", short.runnable())
+    monkeypatch.setattr(agent, "_gen_llm", gen.runnable())
+
+    out = agent.ask(agent.build_graph(fast=False), "tell me about stuff")
+
+    assert [q for q, _ in store.queries] == [
+        "tell me about stuff", "rewritten query 1", "rewritten query 2",
+    ]
