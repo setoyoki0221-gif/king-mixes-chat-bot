@@ -108,3 +108,6 @@ python ingest.py
 
 streamlit run app.py
 ```
+
+The first run downloads the small local model (~3 GB for the 1.5B default; set
+`LOCAL_CHAT_MODEL=Qwen/Qwen2.5-0.5B-Instruct` for a lighter one) once.
