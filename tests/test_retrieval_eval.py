@@ -57,3 +57,8 @@ GOLDEN = [
     ("cornbread", "cornbread", 1),
     ("popovers", "popover", 1),
 ]
+
+
+@pytest.mark.parametrize("question, word, min_hits", GOLDEN, ids=[g[0] for g in GOLDEN])
+def test_semantic_search_finds_the_right_kind_of_product(store, question, word, min_hits):
+    docs = store.similarity_search(question, k=agent.RETRIEVE_K)
