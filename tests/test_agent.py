@@ -263,3 +263,5 @@ def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeyp
     assert [q for q, _ in store.queries] == [
         "tell me about stuff", "rewritten query 1", "rewritten query 2",
     ]
+    assert len(gen.prompts) == 1
+    assert [s["title"] for s in out["sources"]] == ["Sugar Cookie Mix", "Brownie Mix"]  # never discarded
