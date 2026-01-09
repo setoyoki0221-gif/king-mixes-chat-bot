@@ -389,3 +389,4 @@ def ask(graph, question: str, history: list[BaseMessage] | None = None) -> dict:
         "generation": "",
         "rewrites": 0,
     }
+    result = graph.invoke(state)
