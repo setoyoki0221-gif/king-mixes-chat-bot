@@ -265,3 +265,7 @@ def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeyp
     ]
     assert len(gen.prompts) == 1
     assert [s["title"] for s in out["sources"]] == ["Sugar Cookie Mix", "Brownie Mix"]  # never discarded
+
+
+def test_graph_fast_mode_skips_grading(monkeypatch):
+    store = FakeStore([make_doc("Sugar Cookie Mix", 8.95)])
