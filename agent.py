@@ -390,3 +390,14 @@ def ask(graph, question: str, history: list[BaseMessage] | None = None) -> dict:
         "rewrites": 0,
     }
     result = graph.invoke(state)
+    sources = [
+        {"title": d.metadata.get("title", ""),
+         "url": d.metadata.get("url", ""),
+         "price": d.metadata.get("price", ""),
+         "promo": d.metadata.get("promo", ""),
+         "image": d.metadata.get("image", ""),
+         "rating": d.metadata.get("rating", 0),
+         "review_count": d.metadata.get("review_count", 0),
+         "badges": d.metadata.get("badges", "")}
+        for d in result.get("documents", [])
+    ]
