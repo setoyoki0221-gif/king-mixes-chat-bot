@@ -196,3 +196,4 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
     url = html.escape(s.get("url", "") or "#")
     price = html.escape(s.get("price", ""))
     img = html.escape(s.get("image", ""))
+    desc = html.escape(descs.get(s.get("url", ""), ""))
