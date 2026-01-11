@@ -401,3 +401,9 @@ def ask(graph, question: str, history: list[BaseMessage] | None = None) -> dict:
          "badges": d.metadata.get("badges", "")}
         for d in result.get("documents", [])
     ]
+    return {"answer": result["generation"], "sources": sources}
+
+
+if __name__ == "__main__":
+    # Quick smoke test from the command line.
+    graph = build_graph()
