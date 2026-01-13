@@ -269,3 +269,9 @@ def test_graph_smart_mode_retries_then_answers_with_the_documents_it_has(monkeyp
 
 def test_graph_fast_mode_skips_grading(monkeypatch):
     store = FakeStore([make_doc("Sugar Cookie Mix", 8.95)])
+    monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
+    short, gen = Recorder("NO"), Recorder("done")
+    monkeypatch.setattr(agent, "_short_llm", short.runnable())
+    monkeypatch.setattr(agent, "_gen_llm", gen.runnable())
+
+    graph = agent.build_graph(fast=True)
