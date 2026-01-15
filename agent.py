@@ -407,3 +407,5 @@ def ask(graph, question: str, history: list[BaseMessage] | None = None) -> dict:
 if __name__ == "__main__":
     # Quick smoke test from the command line.
     graph = build_graph()
+    out = ask(graph, "What gluten-free cookie mixes do you have?")
+    print("\nANSWER:\n", out["answer"])
