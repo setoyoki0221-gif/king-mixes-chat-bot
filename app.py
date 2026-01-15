@@ -197,3 +197,8 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
     price = html.escape(s.get("price", ""))
     img = html.escape(s.get("image", ""))
     desc = html.escape(descs.get(s.get("url", ""), ""))
+
+    try:
+        r = float(s.get("rating") or 0)
+    except (TypeError, ValueError):
+        r = 0.0
