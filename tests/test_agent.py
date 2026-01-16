@@ -275,3 +275,10 @@ def test_graph_fast_mode_skips_grading(monkeypatch):
     monkeypatch.setattr(agent, "_gen_llm", gen.runnable())
 
     graph = agent.build_graph(fast=True)
+    assert set(graph.get_graph().nodes) == {"__start__", "__end__", "retrieve", "generate"}
+    agent.ask(graph, "cookie mixes")
+    assert short.prompts == []
+
+
+def test_graph_survives_braces_in_the_question_and_history(monkeypatch):
+    store = FakeStore([make_doc("Sugar Cookie Mix", 8.95)])
