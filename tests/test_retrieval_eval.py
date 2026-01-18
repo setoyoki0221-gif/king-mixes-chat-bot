@@ -63,3 +63,6 @@ GOLDEN = [
 def test_semantic_search_finds_the_right_kind_of_product(store, question, word, min_hits):
     docs = store.similarity_search(question, k=agent.RETRIEVE_K)
     hits = sum(word in d.metadata["title"].lower() for d in docs)
+    assert hits >= min_hits, f"only {hits}/{len(docs)} titles mention {word!r}: " + str(
+        [d.metadata["title"] for d in docs]
+    )
