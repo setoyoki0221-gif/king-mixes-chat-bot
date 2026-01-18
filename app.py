@@ -203,3 +203,8 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
     except (TypeError, ValueError):
         r = 0.0
     reviews = s.get("review_count") or 0
+    rating_html = (
+        f'<div class="pc-rating"><span class="pc-star">★</span> '
+        f'<strong>{r:.1f}</strong> <span>({reviews} Reviews)</span></div>'
+        if r > 0 else ""
+    )
