@@ -409,3 +409,6 @@ if __name__ == "__main__":
     graph = build_graph()
     out = ask(graph, "What gluten-free cookie mixes do you have?")
     print("\nANSWER:\n", out["answer"])
+    print("\nSOURCES:")
+    for s in out["sources"]:
+        print(" -", s["title"], s["price"], s["url"])
