@@ -202,3 +202,4 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
         r = float(s.get("rating") or 0)
     except (TypeError, ValueError):
         r = 0.0
+    reviews = s.get("review_count") or 0
