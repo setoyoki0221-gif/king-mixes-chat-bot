@@ -208,3 +208,5 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
         f'<strong>{r:.1f}</strong> <span>({reviews} Reviews)</span></div>'
         if r > 0 else ""
     )
+
+    badges = [b.strip() for b in (s.get("badges") or "").split(",") if b.strip()]
