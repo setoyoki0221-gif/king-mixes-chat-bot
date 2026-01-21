@@ -285,3 +285,9 @@ def test_graph_survives_braces_in_the_question_and_history(monkeypatch):
     monkeypatch.setattr(agent, "get_vectorstore", lambda: store)
     monkeypatch.setattr(agent, "_gen_llm", Recorder("ok").runnable())
     hist = [HumanMessage(content="what is {this}"), AIMessage(content="a {thing}")]
+    out = agent.ask(agent.build_graph(fast=True), "and {that}?", history=hist)
+    assert out["answer"] == "ok"
+
+
+def test_build_graph_defaults_to_config_but_param_wins(monkeypatch):
+    monkeypatch.setattr(agent.config, "AGENT_FAST", True)
