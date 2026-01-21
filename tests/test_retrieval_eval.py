@@ -66,3 +66,11 @@ def test_semantic_search_finds_the_right_kind_of_product(store, question, word, 
     assert hits >= min_hits, f"only {hits}/{len(docs)} titles mention {word!r}: " + str(
         [d.metadata["title"] for d in docs]
     )
+
+
+# --------------------------------------------------------------------------- #
+# Hybrid behaviour through the real graph (stub LLM)
+# --------------------------------------------------------------------------- #
+class StubLLM:
+    def __init__(self):
+        self.system_prompts = []
