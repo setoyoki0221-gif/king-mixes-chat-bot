@@ -210,3 +210,4 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
     )
 
     badges = [b.strip() for b in (s.get("badges") or "").split(",") if b.strip()]
+    priority = ["glutenfree", "vegan", "organic", "nongmo", "kosherpareve", "kosherdairy"]
