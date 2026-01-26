@@ -291,3 +291,12 @@ def test_graph_survives_braces_in_the_question_and_history(monkeypatch):
 
 def test_build_graph_defaults_to_config_but_param_wins(monkeypatch):
     monkeypatch.setattr(agent.config, "AGENT_FAST", True)
+    assert "grade" not in agent.build_graph().get_graph().nodes
+    assert "grade" in agent.build_graph(fast=False).get_graph().nodes
+
+
+# --------------------------------------------------------------------------- #
+# Source cards
+# --------------------------------------------------------------------------- #
+def src(title, url=None):
+    return {"title": title, "url": url or f"https://x/{title}"}
