@@ -212,3 +212,7 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
     badges = [b.strip() for b in (s.get("badges") or "").split(",") if b.strip()]
     priority = ["glutenfree", "vegan", "organic", "nongmo", "kosherpareve", "kosherdairy"]
     badges.sort(key=lambda b: priority.index(b) if b in priority else 99)
+    badge_html = (
+        f'<span class="pc-badge">{html.escape(BADGE_LABELS.get(badges[0], badges[0].title()))}</span>'
+        if badges else ""
+    )
