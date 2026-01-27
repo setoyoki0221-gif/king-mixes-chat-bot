@@ -216,3 +216,5 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
         f'<span class="pc-badge">{html.escape(BADGE_LABELS.get(badges[0], badges[0].title()))}</span>'
         if badges else ""
     )
+
+    img_html = f'<img src="{img}" loading="lazy" alt="">' if img else ""
