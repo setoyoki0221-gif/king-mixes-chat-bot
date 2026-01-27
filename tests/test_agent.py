@@ -300,3 +300,7 @@ def test_build_graph_defaults_to_config_but_param_wins(monkeypatch):
 # --------------------------------------------------------------------------- #
 def src(title, url=None):
     return {"title": title, "url": url or f"https://x/{title}"}
+
+
+def names(found):
+    return [s["title"] for s in found]
