@@ -74,3 +74,6 @@ def test_semantic_search_finds_the_right_kind_of_product(store, question, word, 
 class StubLLM:
     def __init__(self):
         self.system_prompts = []
+
+    def runnable(self):
+        from langchain_core.runnables import RunnableLambda
