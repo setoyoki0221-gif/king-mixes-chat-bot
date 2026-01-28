@@ -77,3 +77,14 @@ class StubLLM:
 
     def runnable(self):
         from langchain_core.runnables import RunnableLambda
+
+        def call(pv):
+            self.system_prompts.append(pv.to_messages()[0].content)
+            return AIMessage(content="stub")
+
+        return RunnableLambda(call)
+
+
+@pytest.fixture
+def graph(monkeypatch, store):
+    from langchain_core.runnables import RunnableLambda
