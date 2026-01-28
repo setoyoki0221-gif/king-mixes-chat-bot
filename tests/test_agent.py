@@ -304,3 +304,7 @@ def src(title, url=None):
 
 def names(found):
     return [s["title"] for s in found]
+
+
+def test_referenced_sources_ignores_punctuation_and_markdown():
+    sources = [src("Gluten-Free Sugar Cookie Mix"), src("Pancake Mix")]
