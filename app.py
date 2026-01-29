@@ -219,3 +219,4 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
 
     img_html = f'<img src="{img}" loading="lazy" alt="">' if img else ""
     desc_html = f'<p class="pc-desc">{desc}</p>' if desc else ""
+    promo = html.escape(s.get("promo", "") or "")
