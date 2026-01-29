@@ -308,3 +308,9 @@ def names(found):
 
 def test_referenced_sources_ignores_punctuation_and_markdown():
     sources = [src("Gluten-Free Sugar Cookie Mix"), src("Pancake Mix")]
+    answer = "Try the **gluten free sugar cookie mix** — only $4.99."
+    assert names(agent.referenced_sources(answer, sources)) == ["Gluten-Free Sugar Cookie Mix"]
+
+
+def test_referenced_sources_treats_ampersand_as_and():
+    sources = [src("Confetti Cake & Cupcake Mix")]
