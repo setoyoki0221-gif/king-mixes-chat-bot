@@ -314,3 +314,13 @@ def test_referenced_sources_ignores_punctuation_and_markdown():
 
 def test_referenced_sources_treats_ampersand_as_and():
     sources = [src("Confetti Cake & Cupcake Mix")]
+    assert names(agent.referenced_sources("Go with the Confetti Cake and Cupcake Mix.", sources))
+
+
+def test_referenced_sources_drops_pack_size_suffix():
+    sources = [src("Gluten-Free Single Serve Brownie Mix - 12-Pack")]
+    assert names(agent.referenced_sources("The Gluten-Free Single Serve Brownie Mix is handy.", sources))
+
+
+def test_referenced_sources_needs_whole_words():
+    assert agent.referenced_sources("I like the cupcake mix.", [src("Cake Mix")]) == []
