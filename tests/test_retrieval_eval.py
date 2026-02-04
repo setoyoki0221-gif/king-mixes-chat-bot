@@ -88,3 +88,14 @@ class StubLLM:
 @pytest.fixture
 def graph(monkeypatch, store):
     from langchain_core.runnables import RunnableLambda
+
+    gen = StubLLM()
+    monkeypatch.setattr(agent, "_gen_llm", gen.runnable())
+    monkeypatch.setattr(agent, "_short_llm", RunnableLambda(lambda pv: AIMessage(content="YES")))
+    g = agent.build_graph(fast=False)
+    g.gen = gen
+    return g
+
+
+def test_topic_without_a_title_match_ranks_semantically_then_sorts_by_price(graph):
+    out = agent.ask(graph, "cheapest mix for a kid's birthday party")
