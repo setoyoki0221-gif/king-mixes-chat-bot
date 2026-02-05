@@ -226,3 +226,20 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
         + "</div>"
         if price else "<div></div>"
     )
+
+    return f"""
+    <div class="pcard">
+      <div class="pc-img">{img_html}</div>
+      <div class="pc-content">
+        {badge_html}
+        <div class="pc-title">{title}</div>
+        {rating_html}
+        {desc_html}
+        <div class="pc-price-row">{price_html}</div>
+        <div class="pc-actions">
+          <a class="pc-view" href="{url}" target="_blank" rel="noopener">View Product →</a>
+          <a class="pc-cart" href="{url}" target="_blank" rel="noopener"
+             title="Open on King Arthur Baking" aria-label="Open on King Arthur Baking">🛒</a>
+        </div>
+      </div>
+    </div>"""
