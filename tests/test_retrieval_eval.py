@@ -99,3 +99,4 @@ def graph(monkeypatch, store):
 
 def test_topic_without_a_title_match_ranks_semantically_then_sorts_by_price(graph):
     out = agent.ask(graph, "cheapest mix for a kid's birthday party")
+    prices = [float(s["price"].lstrip("$")) for s in out["sources"]]
