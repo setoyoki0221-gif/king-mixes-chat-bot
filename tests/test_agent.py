@@ -324,3 +324,7 @@ def test_referenced_sources_drops_pack_size_suffix():
 
 def test_referenced_sources_needs_whole_words():
     assert agent.referenced_sources("I like the cupcake mix.", [src("Cake Mix")]) == []
+
+
+def test_referenced_sources_prefers_the_longer_cited_title():
+    sources = [src("Cookie Mix"), src("Outrageous Chocolate Chip Cookie Mix")]
