@@ -243,3 +243,13 @@ def product_card(s: dict, descs: dict[str, str]) -> str:
         </div>
       </div>
     </div>"""
+
+
+def render_turn(turn: dict, descs: dict[str, str]) -> None:
+    if turn["role"] == "user":
+        st.markdown(
+            f'<div class="row-user"><div class="b-user">{html.escape(turn["content"])}'
+            f'<div class="b-time">{turn["time"]} <span class="rr">✓✓</span></div>'
+            f'</div></div>',
+            unsafe_allow_html=True,
+        )
