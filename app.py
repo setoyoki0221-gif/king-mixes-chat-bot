@@ -253,3 +253,4 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
             f'</div></div>',
             unsafe_allow_html=True,
         )
+        return
