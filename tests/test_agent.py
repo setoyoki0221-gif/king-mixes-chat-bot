@@ -328,3 +328,5 @@ def test_referenced_sources_needs_whole_words():
 
 def test_referenced_sources_prefers_the_longer_cited_title():
     sources = [src("Cookie Mix"), src("Outrageous Chocolate Chip Cookie Mix")]
+    found = agent.referenced_sources("Try the Outrageous Chocolate Chip Cookie Mix.", sources)
+    assert names(found) == ["Outrageous Chocolate Chip Cookie Mix"]
