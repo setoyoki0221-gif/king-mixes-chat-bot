@@ -254,3 +254,5 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
             unsafe_allow_html=True,
         )
         return
+
+    answer_html = md.markdown(turn["content"], extensions=["nl2br"])
