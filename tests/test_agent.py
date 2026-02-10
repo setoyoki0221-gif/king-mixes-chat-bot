@@ -330,3 +330,9 @@ def test_referenced_sources_prefers_the_longer_cited_title():
     sources = [src("Cookie Mix"), src("Outrageous Chocolate Chip Cookie Mix")]
     found = agent.referenced_sources("Try the Outrageous Chocolate Chip Cookie Mix.", sources)
     assert names(found) == ["Outrageous Chocolate Chip Cookie Mix"]
+
+
+def test_referenced_sources_limit_dedupe_and_empty():
+    sources = [src(f"Mix Number {c}") for c in "ABCDEF"] + [src("Mix Number A", "https://x/Mix Number A")]
+    answer = " ".join(f"Mix Number {c}" for c in "ABCDEF")
+    assert len(agent.referenced_sources(answer, sources, limit=4)) == 4
