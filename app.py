@@ -256,3 +256,9 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
         return
 
     answer_html = md.markdown(turn["content"], extensions=["nl2br"])
+    st.markdown(
+        f'<div class="row-bot"><div class="b-ava">🧁</div>'
+        f'<div class="b-bot">{answer_html}'
+        f'<div class="b-time">{turn["time"]}</div></div></div>',
+        unsafe_allow_html=True,
+    )
