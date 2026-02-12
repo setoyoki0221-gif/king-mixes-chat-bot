@@ -336,3 +336,6 @@ def test_referenced_sources_limit_dedupe_and_empty():
     sources = [src(f"Mix Number {c}") for c in "ABCDEF"] + [src("Mix Number A", "https://x/Mix Number A")]
     answer = " ".join(f"Mix Number {c}" for c in "ABCDEF")
     assert len(agent.referenced_sources(answer, sources, limit=4)) == 4
+    assert len(names(agent.referenced_sources(answer, sources, limit=10))) == 6   # no duplicate card
+    assert agent.referenced_sources("Nothing relevant here.", sources) == []
+    assert agent.referenced_sources("", sources) == []
