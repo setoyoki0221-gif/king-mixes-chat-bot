@@ -103,3 +103,7 @@ def test_topic_without_a_title_match_ranks_semantically_then_sorts_by_price(grap
     assert 3 <= len(prices) <= 8, "a single weak word match must not collapse the result"
     assert prices == sorted(prices)
     assert prices[0] < 20, "the cheapest party-ish mix should be an ordinary mix, not a $60+ kit"
+
+
+def test_followup_keeps_the_conversation_topic_for_semantic_questions(graph):
+    history = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
