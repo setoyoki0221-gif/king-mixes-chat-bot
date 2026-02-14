@@ -262,3 +262,4 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
         f'<div class="b-time">{turn["time"]}</div></div></div>',
         unsafe_allow_html=True,
     )
+    sources = [s for s in turn.get("sources", []) if s.get("title")]
