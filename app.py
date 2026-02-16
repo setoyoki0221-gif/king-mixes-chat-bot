@@ -263,3 +263,5 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
         unsafe_allow_html=True,
     )
     sources = [s for s in turn.get("sources", []) if s.get("title")]
+    if sources:
+        cards = "".join(product_card(s, descs) for s in sources)
