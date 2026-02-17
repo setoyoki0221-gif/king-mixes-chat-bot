@@ -265,3 +265,4 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
     sources = [s for s in turn.get("sources", []) if s.get("title")]
     if sources:
         cards = "".join(product_card(s, descs) for s in sources)
+        st.markdown(f'<div class="pgrid">{cards}</div>', unsafe_allow_html=True)
