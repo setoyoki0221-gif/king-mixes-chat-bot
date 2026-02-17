@@ -107,3 +107,12 @@ def test_topic_without_a_title_match_ranks_semantically_then_sorts_by_price(grap
 
 def test_followup_keeps_the_conversation_topic_for_semantic_questions(graph):
     history = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
+    out = agent.ask(graph, "Which is best for beginners?", history=history)
+    cookies = sum("cookie" in s["title"].lower() for s in out["sources"])
+    assert cookies >= 3, [s["title"] for s in out["sources"]]
+
+
+def test_followup_cheapest_one_is_cheapest_among_the_topic(graph, real_catalog):
+    history = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
+    out = agent.ask(graph, "What's the cheapest one?", history=history)
+    cookie_min = min(d.metadata["price_value"] for d in real_catalog if "cookie" in d.metadata["title"].lower())
