@@ -266,3 +266,15 @@ def render_turn(turn: dict, descs: dict[str, str]) -> None:
     if sources:
         cards = "".join(product_card(s, descs) for s in sources)
         st.markdown(f'<div class="pgrid">{cards}</div>', unsafe_allow_html=True)
+
+
+# --------------------------------------------------------------------------- #
+# Sidebar
+# --------------------------------------------------------------------------- #
+def sidebar(graph) -> None:
+    with st.sidebar:
+        st.markdown(
+            '<div class="side-brand"><div class="side-logo">🧁</div>'
+            '<div><b>King Arthur</b><span>Baking Assistant ✨</span></div></div>',
+            unsafe_allow_html=True,
+        )
