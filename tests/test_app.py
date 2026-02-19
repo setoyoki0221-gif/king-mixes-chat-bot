@@ -11,3 +11,9 @@ import agent
 import config
 
 ANSWER = "The cheapest is the Gluten-Free Sugar Cookie Mix at $4.99."
+
+
+@pytest.fixture
+def app(monkeypatch):
+    def boom():
+        raise AssertionError("a plain 'cheapest' question must not need embeddings")
