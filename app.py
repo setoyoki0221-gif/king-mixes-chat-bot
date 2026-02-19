@@ -278,3 +278,5 @@ def sidebar(graph) -> None:
             '<div><b>King Arthur</b><span>Baking Assistant ✨</span></div></div>',
             unsafe_allow_html=True,
         )
+        if st.button("➕  New Chat", use_container_width=True):
+            st.session_state.chat = []
