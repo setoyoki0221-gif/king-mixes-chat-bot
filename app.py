@@ -280,3 +280,4 @@ def sidebar(graph) -> None:
         )
         if st.button("➕  New Chat", use_container_width=True):
             st.session_state.chat = []
+            st.rerun()
