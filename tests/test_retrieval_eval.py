@@ -116,3 +116,5 @@ def test_followup_cheapest_one_is_cheapest_among_the_topic(graph, real_catalog):
     history = [HumanMessage(content="What cookie mixes do you have?"), AIMessage(content="Several.")]
     out = agent.ask(graph, "What's the cheapest one?", history=history)
     cookie_min = min(d.metadata["price_value"] for d in real_catalog if "cookie" in d.metadata["title"].lower())
+    assert out["sources"][0]["price"] == f"${cookie_min:.2f}"
+    assert all("cookie" in s["title"].lower() for s in out["sources"])
