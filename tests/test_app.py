@@ -17,3 +17,5 @@ ANSWER = "The cheapest is the Gluten-Free Sugar Cookie Mix at $4.99."
 def app(monkeypatch):
     def boom():
         raise AssertionError("a plain 'cheapest' question must not need embeddings")
+
+    monkeypatch.setattr(agent, "_gen_llm", RunnableLambda(lambda pv: AIMessage(content=ANSWER)))
