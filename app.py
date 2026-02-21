@@ -281,3 +281,6 @@ def sidebar(graph) -> None:
         if st.button("➕  New Chat", use_container_width=True):
             st.session_state.chat = []
             st.rerun()
+
+        # Recent chats — derived from this session's questions.
+        recents = [t for t in st.session_state.get("chat", []) if t["role"] == "user"][::-1][:6]
