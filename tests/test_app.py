@@ -19,3 +19,5 @@ def app(monkeypatch):
         raise AssertionError("a plain 'cheapest' question must not need embeddings")
 
     monkeypatch.setattr(agent, "_gen_llm", RunnableLambda(lambda pv: AIMessage(content=ANSWER)))
+    monkeypatch.setattr(agent, "_short_llm", RunnableLambda(lambda pv: AIMessage(content="YES")))
+    monkeypatch.setattr(agent, "get_vectorstore", boom)
