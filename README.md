@@ -123,3 +123,9 @@ pip install -r requirements-dev.txt
 pytest                        # everything (several minutes: loads the embedding model)
 pytest -m "not retrieval"     # fast (~15 s): pure logic, data checks, stub-LLM agent + app tests
 ```
+
+- `test_catalog.py` — query parsing, exact lookups, follow-ups (synthetic data + invariants on the real catalog)
+- `test_scraper.py` / `test_data.py` — price/promo parsing, the scrape guard, dataset sanity
+- `test_agent.py` — prompt/brace regression, grading, rewriting, source cards, graph wiring (stub LLM)
+- `test_app.py` — runs the real Streamlit script headlessly (stub LLM): page loads, answer + product card render
+- `test_retrieval_eval.py` — golden questions against the real vector store (marker `retrieval`)
