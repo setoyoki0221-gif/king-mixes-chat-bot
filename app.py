@@ -286,3 +286,8 @@ def sidebar(graph) -> None:
         recents = [t for t in st.session_state.get("chat", []) if t["role"] == "user"][::-1][:6]
         if recents:
             st.markdown('<div class="side-h">Recent</div>', unsafe_allow_html=True)
+            rows = "".join(
+                f'<div class="recent"><span class="rc-ic">💬</span>'
+                f'<span class="rc-t">{html.escape(t["content"])}</span></div>'
+                for t in recents
+            )
