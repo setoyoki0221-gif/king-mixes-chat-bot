@@ -284,3 +284,5 @@ def sidebar(graph) -> None:
 
         # Recent chats — derived from this session's questions.
         recents = [t for t in st.session_state.get("chat", []) if t["role"] == "user"][::-1][:6]
+        if recents:
+            st.markdown('<div class="side-h">Recent</div>', unsafe_allow_html=True)
