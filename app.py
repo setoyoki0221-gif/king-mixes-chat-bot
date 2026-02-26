@@ -291,3 +291,4 @@ def sidebar(graph) -> None:
                 f'<span class="rc-t">{html.escape(t["content"])}</span></div>'
                 for t in recents
             )
+            st.markdown(rows, unsafe_allow_html=True)
