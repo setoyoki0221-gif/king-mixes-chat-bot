@@ -292,3 +292,5 @@ def sidebar(graph) -> None:
                 for t in recents
             )
             st.markdown(rows, unsafe_allow_html=True)
+
+        st.markdown('<div class="side-sep"></div>', unsafe_allow_html=True)
