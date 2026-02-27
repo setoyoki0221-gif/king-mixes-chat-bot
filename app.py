@@ -294,3 +294,7 @@ def sidebar(graph) -> None:
             st.markdown(rows, unsafe_allow_html=True)
 
         st.markdown('<div class="side-sep"></div>', unsafe_allow_html=True)
+
+        # The required agent-graph visualization + settings.
+        with st.expander("🕸️  Agent graph"):
+            render_mermaid(graph_mermaid(graph))
