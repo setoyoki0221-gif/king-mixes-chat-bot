@@ -21,3 +21,12 @@ def app(monkeypatch):
     monkeypatch.setattr(agent, "_gen_llm", RunnableLambda(lambda pv: AIMessage(content=ANSWER)))
     monkeypatch.setattr(agent, "_short_llm", RunnableLambda(lambda pv: AIMessage(content="YES")))
     monkeypatch.setattr(agent, "get_vectorstore", boom)
+    return AppTest.from_file(str(config.ROOT / "app.py"), default_timeout=120)
+
+
+def page_html(at: AppTest) -> str:
+    return "\n".join(m.value for m in at.markdown)
+
+
+def test_first_load_renders_without_errors(app):
+    at = app.run()
