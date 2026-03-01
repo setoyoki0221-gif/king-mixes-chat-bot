@@ -30,3 +30,12 @@ def page_html(at: AppTest) -> str:
 
 def test_first_load_renders_without_errors(app):
     at = app.run()
+    assert not at.exception, [e.value for e in at.exception]
+    html = page_html(at)
+    assert "King Arthur Mixes Assistant" in html
+    assert "Prices and ratings as of" in html            # data freshness is shown
+    assert [b.label for b in at.button if "Gluten free" in b.label]   # suggestion chips present
+
+
+def test_a_question_produces_an_answer_and_a_product_card(app):
+    at = app.run()
