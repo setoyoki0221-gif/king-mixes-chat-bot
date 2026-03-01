@@ -298,3 +298,6 @@ def sidebar(graph) -> None:
         # The required agent-graph visualization + settings.
         with st.expander("🕸️  Agent graph"):
             render_mermaid(graph_mermaid(graph))
+        with st.expander("⚙️  Settings"):
+            st.toggle("Fast mode", key="fast_mode",
+                      help="Fast: retrieve → answer. Smart: adds grade → rewrite self-correction.")
