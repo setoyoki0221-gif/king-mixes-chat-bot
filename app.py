@@ -301,3 +301,5 @@ def sidebar(graph) -> None:
         with st.expander("⚙️  Settings"):
             st.toggle("Fast mode", key="fast_mode",
                       help="Fast: retrieve → answer. Smart: adds grade → rewrite self-correction.")
+            st.caption(f"Model: `{config.active_chat_model()}` · "
+                       f"Embeddings: `{config.HF_EMBED_MODEL if config.EMBED_PROVIDER == 'huggingface' else config.OPENAI_EMBED_MODEL}`")
