@@ -39,3 +39,5 @@ def test_first_load_renders_without_errors(app):
 
 def test_a_question_produces_an_answer_and_a_product_card(app):
     at = app.run()
+    at.session_state["pending"] = "What's the cheapest mix?"
+    at = at.run()
