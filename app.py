@@ -303,3 +303,14 @@ def sidebar(graph) -> None:
                       help="Fast: retrieve → answer. Smart: adds grade → rewrite self-correction.")
             st.caption(f"Model: `{config.active_chat_model()}` · "
                        f"Embeddings: `{config.HF_EMBED_MODEL if config.EMBED_PROVIDER == 'huggingface' else config.OPENAI_EMBED_MODEL}`")
+
+
+# --------------------------------------------------------------------------- #
+# Main
+# --------------------------------------------------------------------------- #
+SUGGESTIONS = [
+    ("🌿", "Gluten free options", "What gluten-free mixes do you have?"),
+    ("🎂", "Birthday cake ideas", "Recommend a mix for a kid's birthday party"),
+    ("⭐", "Top rated mixes", "Which mixes have the best reviews?"),
+    ("🍪", "Cookie recipes", "What cookie mixes do you have?"),
+]
