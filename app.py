@@ -314,3 +314,8 @@ SUGGESTIONS = [
     ("⭐", "Top rated mixes", "Which mixes have the best reviews?"),
     ("🍪", "Cookie recipes", "What cookie mixes do you have?"),
 ]
+FOLLOWUPS = [
+    "Which is best for beginners?",
+    "Do you have vegan options?",
+    "What's the cheapest one?",
+]
