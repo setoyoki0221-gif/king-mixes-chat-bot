@@ -319,3 +319,7 @@ FOLLOWUPS = [
     "Do you have vegan options?",
     "What's the cheapest one?",
 ]
+
+
+def main() -> None:
+    st.markdown(CSS, unsafe_allow_html=True)
