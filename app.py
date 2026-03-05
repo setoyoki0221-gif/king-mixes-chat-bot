@@ -323,3 +323,4 @@ FOLLOWUPS = [
 
 def main() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
+    st.session_state.setdefault("fast_mode", True)
