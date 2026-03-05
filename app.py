@@ -324,3 +324,4 @@ FOLLOWUPS = [
 def main() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     st.session_state.setdefault("fast_mode", True)
+    st.session_state.setdefault("chat", [])  # list of {role, content, time, sources}
