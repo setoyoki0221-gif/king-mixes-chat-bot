@@ -41,3 +41,12 @@ def test_a_question_produces_an_answer_and_a_product_card(app):
     at = app.run()
     at.session_state["pending"] = "What's the cheapest mix?"
     at = at.run()
+
+    assert not at.exception, [e.value for e in at.exception]
+    chat = at.session_state["chat"]
+    assert [t["role"] for t in chat] == ["user", "assistant"]
+    assert chat[1]["content"] == ANSWER
+    # Only the product the answer names gets a card.
+    assert [s["title"] for s in chat[1]["sources"]] == ["Gluten-Free Sugar Cookie Mix"]
+
+    html = page_html(at)
