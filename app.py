@@ -325,3 +325,6 @@ def main() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     st.session_state.setdefault("fast_mode", True)
     st.session_state.setdefault("chat", [])  # list of {role, content, time, sources}
+    graph = load_graph(st.session_state["fast_mode"])
+    sidebar(graph)
+    descs = product_descriptions()
