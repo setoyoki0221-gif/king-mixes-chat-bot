@@ -52,3 +52,7 @@ def test_a_question_produces_an_answer_and_a_product_card(app):
     html = page_html(at)
     assert 'class="pcard"' in html and "$4.99" in html
     assert "In Stock" not in html                        # we have no stock data; don't claim it
+
+
+def test_follow_up_chips_appear_after_an_answer(app):
+    at = app.run()
