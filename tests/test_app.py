@@ -50,3 +50,5 @@ def test_a_question_produces_an_answer_and_a_product_card(app):
     assert [s["title"] for s in chat[1]["sources"]] == ["Gluten-Free Sugar Cookie Mix"]
 
     html = page_html(at)
+    assert 'class="pcard"' in html and "$4.99" in html
+    assert "In Stock" not in html                        # we have no stock data; don't claim it
