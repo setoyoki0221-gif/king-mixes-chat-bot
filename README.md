@@ -129,3 +129,5 @@ pytest -m "not retrieval"     # fast (~15 s): pure logic, data checks, stub-LLM 
 - `test_agent.py` — prompt/brace regression, grading, rewriting, source cards, graph wiring (stub LLM)
 - `test_app.py` — runs the real Streamlit script headlessly (stub LLM): page loads, answer + product card render
 - `test_retrieval_eval.py` — golden questions against the real vector store (marker `retrieval`)
+
+---
