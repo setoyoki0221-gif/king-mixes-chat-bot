@@ -328,3 +328,5 @@ def main() -> None:
     graph = load_graph(st.session_state["fast_mode"])
     sidebar(graph)
     descs = product_descriptions()
+
+    empty = not st.session_state.chat
