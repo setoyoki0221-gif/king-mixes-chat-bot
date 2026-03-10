@@ -340,3 +340,4 @@ def main() -> None:
             'answers come straight from the catalog, with pictures.</p></div>',
             unsafe_allow_html=True,
         )
+        st.markdown('<div class="chips-label">Try one of these</div>', unsafe_allow_html=True)
