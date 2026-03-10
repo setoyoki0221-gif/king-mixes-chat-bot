@@ -330,3 +330,13 @@ def main() -> None:
     descs = product_descriptions()
 
     empty = not st.session_state.chat
+
+    if empty:
+        # Welcome / empty state: greeting + suggestion chips.
+        st.markdown(
+            '<div class="welcome"><div class="w-logo">🧁</div>'
+            '<h1>King Arthur Mixes Assistant</h1>'
+            '<p>Ask about flavors, prices, ratings, or dietary options — '
+            'answers come straight from the catalog, with pictures.</p></div>',
+            unsafe_allow_html=True,
+        )
