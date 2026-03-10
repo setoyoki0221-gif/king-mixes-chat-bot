@@ -56,3 +56,5 @@ def test_a_question_produces_an_answer_and_a_product_card(app):
 
 def test_follow_up_chips_appear_after_an_answer(app):
     at = app.run()
+    at.session_state["pending"] = "What's the cheapest mix?"
+    at = at.run()
