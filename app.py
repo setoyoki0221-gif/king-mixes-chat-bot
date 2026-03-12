@@ -341,3 +341,4 @@ def main() -> None:
             unsafe_allow_html=True,
         )
         st.markdown('<div class="chips-label">Try one of these</div>', unsafe_allow_html=True)
+        cols = st.columns(len(SUGGESTIONS))
