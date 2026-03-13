@@ -342,3 +342,7 @@ def main() -> None:
         )
         st.markdown('<div class="chips-label">Try one of these</div>', unsafe_allow_html=True)
         cols = st.columns(len(SUGGESTIONS))
+        for col, (emoji, label, query) in zip(cols, SUGGESTIONS):
+            if col.button(f"{emoji}  {label}", use_container_width=True, key=f"sug-{label}"):
+                st.session_state.pending = query
+                st.rerun()
