@@ -131,3 +131,13 @@ pytest -m "not retrieval"     # fast (~15 s): pure logic, data checks, stub-LLM 
 - `test_retrieval_eval.py` — golden questions against the real vector store (marker `retrieval`)
 
 ---
+
+## Deploy to Hugging Face Spaces
+
+1. Create a new **Space** → SDK **Streamlit**.
+2. Upload this repo (including `data/products.json` and `chroma_db/` so the Space
+   doesn't need to re-scrape or re-embed).
+3. If you use a hosted provider (e.g. `huggingface`/`openai`), add the key as a
+   **Space secret** (`HF_TOKEN`, `OPENAI_API_KEY`, …). The default `local`
+   provider needs **no secret**.
+4. The Space builds from `requirements.txt` and launches `app.py` automatically.
