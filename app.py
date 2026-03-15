@@ -346,3 +346,7 @@ def main() -> None:
             if col.button(f"{emoji}  {label}", use_container_width=True, key=f"sug-{label}"):
                 st.session_state.pending = query
                 st.rerun()
+    else:
+        # Conversation
+        for turn in st.session_state.chat:
+            render_turn(turn, descs)
