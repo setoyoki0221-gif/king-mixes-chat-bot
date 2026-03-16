@@ -58,3 +58,8 @@ def test_follow_up_chips_appear_after_an_answer(app):
     at = app.run()
     at.session_state["pending"] = "What's the cheapest mix?"
     at = at.run()
+    assert any("cheapest one" in b.label for b in at.button)
+
+
+def test_new_chat_clears_the_conversation(app):
+    at = app.run()
