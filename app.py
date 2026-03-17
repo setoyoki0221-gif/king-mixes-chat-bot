@@ -350,3 +350,7 @@ def main() -> None:
         # Conversation
         for turn in st.session_state.chat:
             render_turn(turn, descs)
+
+        # Follow-up chips after the latest assistant answer
+        if st.session_state.chat[-1]["role"] == "assistant":
+            fcols = st.columns(len(FOLLOWUPS))
