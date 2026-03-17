@@ -63,3 +63,8 @@ def test_follow_up_chips_appear_after_an_answer(app):
 
 def test_new_chat_clears_the_conversation(app):
     at = app.run()
+    at.session_state["pending"] = "What's the cheapest mix?"
+    at = at.run()
+    new_chat = next(b for b in at.button if "New Chat" in b.label)
+    at = new_chat.click().run()
+    assert at.session_state["chat"] == []
