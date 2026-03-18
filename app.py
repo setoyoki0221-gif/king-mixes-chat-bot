@@ -354,3 +354,9 @@ def main() -> None:
         # Follow-up chips after the latest assistant answer
         if st.session_state.chat[-1]["role"] == "assistant":
             fcols = st.columns(len(FOLLOWUPS))
+            for col, q in zip(fcols, FOLLOWUPS):
+                if col.button(q, use_container_width=True, key=f"fu-{q}-{len(st.session_state.chat)}"):
+                    st.session_state.pending = q
+                    st.rerun()
+
+    prompt = st.chat_input("Ask anything about baking…")
