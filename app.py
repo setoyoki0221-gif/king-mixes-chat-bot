@@ -365,3 +365,4 @@ def main() -> None:
 
     if prompt:
         now = datetime.now().strftime("%I:%M %p").lstrip("0")
+        st.session_state.chat.append({"role": "user", "content": prompt, "time": now, "sources": []})
