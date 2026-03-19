@@ -372,3 +372,5 @@ def main() -> None:
             else AIMessage(content=t["content"])
             for t in st.session_state.chat[:-1]
         ]
+        with st.spinner("Searching the catalog…"):
+            result = ask(graph, prompt, history=hist)
