@@ -360,3 +360,8 @@ def main() -> None:
                     st.rerun()
 
     prompt = st.chat_input("Ask anything about baking…")
+    if "pending" in st.session_state:
+        prompt = st.session_state.pop("pending")
+
+    if prompt:
+        now = datetime.now().strftime("%I:%M %p").lstrip("0")
