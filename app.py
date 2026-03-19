@@ -366,3 +366,9 @@ def main() -> None:
     if prompt:
         now = datetime.now().strftime("%I:%M %p").lstrip("0")
         st.session_state.chat.append({"role": "user", "content": prompt, "time": now, "sources": []})
+        # Build agent history from prior turns.
+        hist = [
+            HumanMessage(content=t["content"]) if t["role"] == "user"
+            else AIMessage(content=t["content"])
+            for t in st.session_state.chat[:-1]
+        ]
