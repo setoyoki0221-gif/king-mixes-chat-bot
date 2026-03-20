@@ -380,3 +380,4 @@ def main() -> None:
             "time": datetime.now().strftime("%I:%M %p").lstrip("0"),
             "sources": referenced_sources(result["answer"], result.get("sources", [])),
         })
+        st.rerun()
