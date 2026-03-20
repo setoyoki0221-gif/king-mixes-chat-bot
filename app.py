@@ -374,3 +374,9 @@ def main() -> None:
         ]
         with st.spinner("Searching the catalog…"):
             result = ask(graph, prompt, history=hist)
+        st.session_state.chat.append({
+            "role": "assistant",
+            "content": result["answer"],
+            "time": datetime.now().strftime("%I:%M %p").lstrip("0"),
+            "sources": referenced_sources(result["answer"], result.get("sources", [])),
+        })
