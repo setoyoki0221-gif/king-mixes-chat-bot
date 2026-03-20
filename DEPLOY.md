@@ -22,3 +22,9 @@ prebuilt knowledge base), so the Space never re-scrapes or re-embeds.
    - **Visibility:** Public
 4. Click **Create Space**. You now have an empty Space at
    `https://huggingface.co/spaces/<your-username>/king-mixes-assistant`.
+
+## Part B — Get a WRITE token (for pushing code)
+
+1. Go to **https://huggingface.co/settings/tokens**.
+2. **Create new token** → **Type: Write** → name it `deploy` → **Create**.
+3. Copy the `hf_...` token (you'll paste it as the *password* when git asks).
