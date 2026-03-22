@@ -381,3 +381,5 @@ def main() -> None:
             "sources": referenced_sources(result["answer"], result.get("sources", [])),
         })
         st.rerun()
+
+    as_of = data_as_of()
