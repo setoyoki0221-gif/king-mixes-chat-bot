@@ -383,3 +383,10 @@ def main() -> None:
         st.rerun()
 
     as_of = data_as_of()
+    st.markdown(
+        '<div class="disclaimer">🛡️ AI responses may be inaccurate. '
+        'Please double-check important information.'
+        + (f" Prices and ratings as of {html.escape(as_of)}." if as_of else "")
+        + '</div>',
+        unsafe_allow_html=True,
+    )
