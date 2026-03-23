@@ -141,3 +141,5 @@ pytest -m "not retrieval"     # fast (~15 s): pure logic, data checks, stub-LLM 
    **Space secret** (`HF_TOKEN`, `OPENAI_API_KEY`, …). The default `local`
    provider needs **no secret**.
 4. The Space builds from `requirements.txt` and launches `app.py` automatically.
+
+---
