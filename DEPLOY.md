@@ -28,3 +28,7 @@ prebuilt knowledge base), so the Space never re-scrapes or re-embeds.
 1. Go to **https://huggingface.co/settings/tokens**.
 2. **Create new token** → **Type: Write** → name it `deploy` → **Create**.
 3. Copy the `hf_...` token (you'll paste it as the *password* when git asks).
+
+## Part C — Push your files (run in PowerShell, in the project folder)
+
+Replace `<your-username>` and `<space-name>` below.
