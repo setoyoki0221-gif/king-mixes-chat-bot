@@ -60,3 +60,14 @@ When prompted:
   few minutes), then **Running**.
 - The **first question** downloads the model (~3 GB, on HF's fast servers) and
   will take ~1 minute; after that answers are cached and quicker.
+
+## Part E — Done
+
+Your assistant is live at
+`https://huggingface.co/spaces/<your-username>/<space-name>`.
+
+---
+
+## Optional: better/faster answers
+
+Set these under the Space's **Settings → Variables and secrets**:
