@@ -143,3 +143,22 @@ pytest -m "not retrieval"     # fast (~15 s): pure logic, data checks, stub-LLM 
 4. The Space builds from `requirements.txt` and launches `app.py` automatically.
 
 ---
+
+## Project layout
+
+```
+king-mixes-bot/
+├── app.py              # Streamlit UI + agent-graph plot
+├── agent.py            # LangGraph self-correcting RAG agent
+├── catalog.py          # product documents + exact (non-semantic) lookup, follow-ups
+├── ingest.py           # build the Chroma vector store
+├── providers.py        # swappable LLM / embedding providers
+├── config.py           # paths, provider selection, model names
+├── scraper/scrape.py   # King Arthur "Mixes" scraper (validates before saving)
+├── data/products.json  # scraped knowledge base (118 products)
+├── data/meta.json      # when the data was scraped
+├── chroma_db/          # persisted vector store
+├── tests/              # pytest suite
+├── requirements.txt    # core deps (requirements-optional.txt, requirements-dev.txt)
+└── README.md
+```
