@@ -71,3 +71,12 @@ Your assistant is live at
 ## Optional: better/faster answers
 
 Set these under the Space's **Settings → Variables and secrets**:
+
+| Variable | Value | Effect |
+|---|---|---|
+| `LOCAL_CHAT_MODEL` | `Qwen/Qwen2.5-0.5B-Instruct` | Faster, lighter (lower quality) |
+| `LLM_PROVIDER` + `HF_TOKEN` | `huggingface` + an inference-enabled token | Best quality (Llama-3.1-8B), if your token has the *Inference Providers* permission |
+
+After changing variables, click **Restart** on the Space.
+
+---
