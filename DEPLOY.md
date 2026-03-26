@@ -80,3 +80,13 @@ Set these under the Space's **Settings → Variables and secrets**:
 After changing variables, click **Restart** on the Space.
 
 ---
+
+## Alternative: upload via the website (no git)
+
+On the Space page → **Files** tab → **Add file → Upload files**. Drag in every
+file **and folder** from the project **except `.env`** and `.claude/`:
+`app.py`, `agent.py`, `catalog.py`, `ingest.py`, `providers.py`, `config.py`,
+`requirements.txt`, `README.md`, `.streamlit/`, `scraper/`, `data/products.json`,
+`data/meta.json`, and the whole `chroma_db/` folder. (`tests/` and the other
+`requirements-*.txt` files are optional on a Space.) Git (Part C) is easier for
+the `chroma_db/` folder.
